@@ -15,7 +15,7 @@ Validation Occurs  each request, Spring doesn’t store anything — the token c
 It scales well, is secure, and avoids session bloat.
 
 ## Running Environment
-You must allow expose of endpoints on: com.thukera.security.WebSecurity.
+You must allow expose of endpoints on: com.thukera.config.WebSecurity.
 Applications use Log4J and rotate logs while running on Java, or WebServices according with your YML configuration. 
 For WebServices, manage your dependencies and develop yourself, adding property spring build configuration.
 For build on containers, you can configure your preffers on current Dockerfile; 
