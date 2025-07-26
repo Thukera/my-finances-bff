@@ -5,3 +5,45 @@
 [DEBUG] 2025-07-26 15:38:19.810 [main] MyFinancesBffTests - Running with Spring Boot v3.5.3, Spring v6.2.8
 [INFO ] 2025-07-26 15:38:19.811 [main] MyFinancesBffTests - No active profile set, falling back to 1 default profile: "default"
 [INFO ] 2025-07-26 15:38:27.077 [main] MyFinancesBffTests - Started MyFinancesBffTests in 7.962 seconds (process running for 9.714)
+[INFO ] 2025-07-26 15:40:55.224 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 2328 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 15:40:55.236 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 15:40:55.237 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-07-26 15:40:59.214 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-07-26 15:41:00.175 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 5.547 seconds (process running for 6.696)
+[INFO ] 2025-07-26 15:41:00.178 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-07-26 15:41:00.178 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-07-26 15:41:00.178 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-07-26 15:46:24.348 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[INFO ] 2025-07-26 15:46:41.011 [http-nio-9090-exec-3] AuthRestAPIs - ######## ### ######## ###  SIGN UP  ### ######## ### ########
+[DEBUG] 2025-07-26 15:46:41.265 [http-nio-9090-exec-3] AuthRestAPIs - ## General Exception
+[ERROR] 2025-07-26 15:46:41.266 [http-nio-9090-exec-3] AuthRestAPIs - ### Exception : class org.springframework.dao.DataIntegrityViolationException
+[ERROR] 2025-07-26 15:46:41.266 [http-nio-9090-exec-3] AuthRestAPIs - ### Message : could not execute statement [ERROR: duplicate key value violates unique constraint "tb_users_pkey"
+  Detail: Key (id)=(1) already exists.] [insert into tb_users (doc,email,name,password,status,username,id) values (?,?,?,?,?,?,?)]; SQL [insert into tb_users (doc,email,name,password,status,username,id) values (?,?,?,?,?,?,?)]; constraint [tb_users_pkey]
+[INFO ] 2025-07-26 15:46:50.852 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 2328 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 15:46:50.852 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 15:46:50.852 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-07-26 15:46:51.730 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-07-26 15:46:52.164 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.369 seconds (process running for 358.685)
+[INFO ] 2025-07-26 15:46:52.166 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-07-26 15:46:52.166 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-07-26 15:46:52.166 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-07-26 15:47:04.777 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN UP  ### ######## ### ########
+[DEBUG] 2025-07-26 15:47:04.870 [http-nio-9090-exec-2] AuthRestAPIs - ### User Saved!!
+[INFO ] 2025-07-26 20:18:25.929 [main] MyFinancesBffTests - Starting MyFinancesBffTests using Java 21.0.4 with PID 21488 (started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 20:18:25.947 [main] MyFinancesBffTests - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 20:18:25.948 [main] MyFinancesBffTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-07-26 20:28:51.188 [main] MyFinancesBffTests - Starting MyFinancesBffTests using Java 21.0.4 with PID 13816 (started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 20:28:51.200 [main] MyFinancesBffTests - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 20:28:51.201 [main] MyFinancesBffTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-07-26 20:30:03.171 [main] MyFinancesBffTests - Starting MyFinancesBffTests using Java 21.0.4 with PID 12604 (started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 20:30:03.191 [main] MyFinancesBffTests - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 20:30:03.192 [main] MyFinancesBffTests - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-07-26 20:30:13.004 [main] MyFinancesBffTests - Started MyFinancesBffTests in 10.539 seconds (process running for 12.321)
+[INFO ] 2025-07-26 20:30:25.490 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 26264 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-07-26 20:30:25.499 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-07-26 20:30:25.500 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-07-26 20:30:30.043 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-07-26 20:30:31.070 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.196 seconds (process running for 7.424)
+[INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
