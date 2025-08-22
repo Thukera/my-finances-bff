@@ -47,3 +47,191 @@
 [INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
 [INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
 [INFO ] 2025-07-26 20:30:31.073 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:26:57.470 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:26:57.491 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:26:57.493 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:27:04.739 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:27:05.917 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 9.133 seconds (process running for 10.459)
+[INFO ] 2025-08-22 00:27:05.921 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:27:05.921 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:27:05.921 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:27:41.587 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:27:41.587 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:27:41.588 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:27:43.062 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:27:43.544 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 2.012 seconds (process running for 48.086)
+[INFO ] 2025-08-22 00:27:43.547 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:27:43.547 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:27:43.547 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:27:58.539 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:27:58.540 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:27:58.540 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:27:59.813 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:28:00.291 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.797 seconds (process running for 64.834)
+[INFO ] 2025-08-22 00:28:00.293 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:28:00.293 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:28:00.293 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 00:28:53.940 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 00:29:26.071 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:26.080 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:33.040 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:36.403 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:36.404 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:39.344 [http-nio-9090-exec-6] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:39.345 [http-nio-9090-exec-6] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:42.862 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:29:42.863 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:30:17.204 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:30:17.205 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 00:32:08.546 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 00:35:21.646 [http-nio-9090-exec-9] AuthRestAPIs - ### GLOBAL EXCEPTION HANDLER 
+[ERROR] 2025-08-22 00:35:21.646 [http-nio-9090-exec-9] AuthRestAPIs - ### Exception : class org.springframework.web.bind.MethodArgumentNotValidException
+[ERROR] 2025-08-22 00:35:21.648 [http-nio-9090-exec-9] AuthRestAPIs - ### Message : Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.thukera.user.controller.AuthRestAPIs.registerUser(com.thukera.user.model.forms.SignUpForm): [Field error in object 'signUpForm' on field 'doc': rejected value [null]; codes [NotBlank.signUpForm.doc,NotBlank.doc,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [signUpForm.doc,doc]; arguments []; default message [doc]]; default message [must not be blank]] 
+[INFO ] 2025-08-22 00:35:32.987 [http-nio-9090-exec-1] AuthRestAPIs - ######## ### ######## ###  SIGN UP  ### ######## ### ########
+[DEBUG] 2025-08-22 00:35:32.999 [http-nio-9090-exec-1] AuthRestAPIs - ## General Exception
+[ERROR] 2025-08-22 00:35:32.999 [http-nio-9090-exec-1] AuthRestAPIs - ### Exception : class java.lang.NullPointerException
+[ERROR] 2025-08-22 00:35:33.000 [http-nio-9090-exec-1] AuthRestAPIs - ### Message : Cannot invoke "org.springframework.security.crypto.password.PasswordEncoder.encode(java.lang.CharSequence)" because "this.encoder" is null
+[INFO ] 2025-08-22 00:37:22.785 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:37:22.786 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:37:22.786 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:37:24.209 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:37:24.687 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.946 seconds (process running for 629.229)
+[INFO ] 2025-08-22 00:37:24.688 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:37:24.688 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:37:24.689 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:40:08.634 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:40:08.634 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:40:08.634 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:40:09.838 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:40:10.243 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.643 seconds (process running for 794.785)
+[INFO ] 2025-08-22 00:40:10.244 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:40:10.245 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:40:10.245 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:40:20.724 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN UP  ### ######## ### ########
+[DEBUG] 2025-08-22 00:40:20.730 [http-nio-9090-exec-2] AuthRestAPIs - ## General Exception
+[ERROR] 2025-08-22 00:40:20.730 [http-nio-9090-exec-2] AuthRestAPIs - ### Exception : class java.lang.NullPointerException
+[ERROR] 2025-08-22 00:40:20.730 [http-nio-9090-exec-2] AuthRestAPIs - ### Message : Cannot invoke "org.springframework.security.crypto.password.PasswordEncoder.encode(java.lang.CharSequence)" because "this.encoder" is null
+[INFO ] 2025-08-22 00:40:50.899 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:40:50.900 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:40:50.900 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:40:52.090 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:40:52.492 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.632 seconds (process running for 837.034)
+[INFO ] 2025-08-22 00:40:52.493 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:40:52.493 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:40:52.493 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:41:20.766 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:41:20.768 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:41:20.768 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:41:21.933 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:41:22.343 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.606 seconds (process running for 866.885)
+[INFO ] 2025-08-22 00:41:22.344 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:41:22.344 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:41:22.344 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:17.452 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:42:17.452 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:42:17.453 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:42:18.625 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:42:19.034 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.615 seconds (process running for 923.576)
+[INFO ] 2025-08-22 00:42:19.035 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:19.035 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:42:19.035 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:52.540 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:42:52.541 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:42:52.541 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:42:53.882 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:42:54.295 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.789 seconds (process running for 958.837)
+[INFO ] 2025-08-22 00:42:54.296 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:54.297 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:42:54.297 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:55.862 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:42:55.862 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:42:55.862 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:42:57.055 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:42:57.446 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.614 seconds (process running for 961.988)
+[INFO ] 2025-08-22 00:42:57.448 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:42:57.448 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:42:57.448 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:43:05.169 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:43:05.170 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:43:05.170 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:43:06.351 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:43:06.752 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.616 seconds (process running for 971.295)
+[INFO ] 2025-08-22 00:43:06.753 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:43:06.753 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:43:06.754 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:43:15.004 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN UP  ### ######## ### ########
+[DEBUG] 2025-08-22 00:43:15.270 [http-nio-9090-exec-2] AuthRestAPIs - ### User Saved!!
+[DEBUG] 2025-08-22 00:44:29.436 [http-nio-9090-exec-5] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 00:44:53.421 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 00:47:14.541 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:47:14.541 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:47:14.542 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:47:15.735 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:47:16.138 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.628 seconds (process running for 1220.68)
+[INFO ] 2025-08-22 00:47:16.139 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:47:16.139 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:47:16.139 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:47:32.098 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:47:32.099 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:47:32.099 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:47:33.291 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:47:33.700 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.636 seconds (process running for 1238.242)
+[INFO ] 2025-08-22 00:47:33.701 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:47:33.702 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:47:33.702 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:51:38.248 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:51:38.249 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:51:38.249 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:51:39.492 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:51:39.938 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.731 seconds (process running for 1484.481)
+[INFO ] 2025-08-22 00:51:39.940 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:51:39.940 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:51:39.940 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 00:51:50.284 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### UPDATE USER BY ID
+[DEBUG] 2025-08-22 00:51:50.302 [http-nio-9090-exec-2] AuthRestAPIs - ## General Exception
+[ERROR] 2025-08-22 00:51:50.302 [http-nio-9090-exec-2] AuthRestAPIs - ### Exception : class java.lang.IllegalArgumentException
+[ERROR] 2025-08-22 00:51:50.302 [http-nio-9090-exec-2] AuthRestAPIs - ### Message : rawPassword cannot be null
+[INFO ] 2025-08-22 00:52:25.734 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:52:25.735 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:52:25.735 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:52:26.875 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:52:27.302 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.601 seconds (process running for 1531.844)
+[INFO ] 2025-08-22 00:52:27.303 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:52:27.303 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:52:27.303 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:52:32.987 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:52:32.987 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:52:32.987 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:52:34.123 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:52:34.564 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.609 seconds (process running for 1539.106)
+[INFO ] 2025-08-22 00:52:34.565 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:52:34.565 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:52:34.565 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 00:52:38.673 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### UPDATE USER BY ID
+[DEBUG] 2025-08-22 00:52:38.676 [http-nio-9090-exec-2] AuthRestAPIs - ## General Exception
+[ERROR] 2025-08-22 00:52:38.677 [http-nio-9090-exec-2] AuthRestAPIs - ### Exception : class java.lang.IllegalArgumentException
+[ERROR] 2025-08-22 00:52:38.677 [http-nio-9090-exec-2] AuthRestAPIs - ### Message : rawPassword cannot be null
+[ERROR] 2025-08-22 00:53:48.032 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 00:54:44.754 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:54:44.755 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:54:44.755 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:54:45.935 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:54:46.384 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.663 seconds (process running for 1670.927)
+[INFO ] 2025-08-22 00:54:46.385 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:54:46.385 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:54:46.385 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[ERROR] 2025-08-22 00:54:49.010 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:55:02.290 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 00:55:41.398 [http-nio-9090-exec-4] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 00:55:52.035 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:55:54.971 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 00:56:13.879 [http-nio-9090-exec-9] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 00:57:09.008 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 32840 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 00:57:09.009 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 00:57:09.009 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 00:57:10.156 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 00:57:10.595 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.62 seconds (process running for 1815.137)
+[INFO ] 2025-08-22 00:57:10.596 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 00:57:10.596 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 00:57:10.596 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[ERROR] 2025-08-22 00:57:13.831 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
