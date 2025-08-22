@@ -21,7 +21,12 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -30,42 +35,53 @@ import lombok.Data;
 @Table(name = "tb_credit_card")
 public class CreditCard {
 
-	@Id
-	@Column(name = "card_id")
-	@SequenceGenerator(name = "credit_card_seq", sequenceName = "seq_credit_card", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "credit_card_seq")
-	private Long cardId;
+    @Id
+    @Column(name = "card_id")
+    @SequenceGenerator(name = "credit_card_seq", sequenceName = "seq_credit_card", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "credit_card_seq")
+    private Long cardId;
 
-	@ManyToOne(optional = false)
-	private User user;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-	@Column
-	@NotBlank
-	@Size(max = 50)
-	private String bank;
+    @NotBlank
+    @Size(max = 50)
+    @Column(name = "bank", length = 50, nullable = false)
+    private String bank;
 
-	@NotBlank
-	@Column(name = "end_numbers")
-	@Size(max = 4)
-	private String endnumbers;
+    @NotBlank
+    @Column(name = "end_numbers", length = 4)
+    @Size(max = 4, min = 4)  // exactly 4 digits
+    private String endnumbers;
 
-	@NotBlank
-	@Column(name = "billing_period_start")
-	private int billingPeriodStart;
+    @Min(1)
+    @Max(31)
+    @Column(name = "billing_period_start")
+    private Integer billingPeriodStart;
 
-	@NotBlank
-	@Column(name = "billing_period_end")
-	private int billingPeriodEnd;
+    @Min(1)
+    @Max(31)
+    @Column(name = "billing_period_end")
+    private Integer billingPeriodEnd;
 
-	@Column(name = "used_limit", precision = 16, scale = 2)
-	private BigDecimal usedLimit;
+    @Column(name = "used_limit", precision = 16, scale = 2)
+    private BigDecimal usedLimit = BigDecimal.ZERO;
 
-	@NotBlank
-	@Column(name = "total_limit", precision = 16, scale = 2)
-	private BigDecimal totalLimit;
+    @NotNull
+    @Column(name = "total_limit", precision = 16, scale = 2)
+    private BigDecimal totalLimit;
+    
 
-	@Column(name = "data_cadastro")
-	private LocalDate dataCadastro;
+
+    @Column(name = "data_cadastro", nullable = false)
+    private LocalDate dataCadastro;
+
+    @PrePersist
+    public void prePersist() {
+        if (usedLimit == null) usedLimit = BigDecimal.ZERO;
+        if (dataCadastro == null) dataCadastro = LocalDate.now();
+    }
 
 //	@OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY)
 //	@JoinTable(name = "tb_invoice", joinColumns = @JoinColumn(name = "card_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
@@ -78,11 +94,6 @@ public class CreditCard {
 //			    GROUP BY p.category.name
 //			""")
 //	List<PurchaseClassCount> countByClass(@Param("invoiceId") Long invoiceId);
-
-	@PrePersist
-	public void prePersist() {
-		setDataCadastro(LocalDate.now());
-	}
 
 	public CreditCard() {
 		super();

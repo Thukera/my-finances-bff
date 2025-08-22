@@ -235,3 +235,623 @@
 [INFO ] 2025-08-22 00:57:10.596 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
 [INFO ] 2025-08-22 00:57:10.596 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
 [ERROR] 2025-08-22 00:57:13.831 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 15:39:15.723 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25476 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 15:39:15.744 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 15:39:15.745 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 15:39:20.908 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 15:39:22.068 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.002 seconds (process running for 8.298)
+[INFO ] 2025-08-22 15:39:22.072 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 15:39:22.072 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 15:39:22.073 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 15:39:36.320 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 15:39:41.236 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 15:40:01.543 [http-nio-9090-exec-6] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 15:40:06.728 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 15:40:27.551 [http-nio-9090-exec-8] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[INFO ] 2025-08-22 15:41:28.876 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25476 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 15:41:28.876 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 15:41:28.877 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 15:41:30.131 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 15:41:30.603 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.775 seconds (process running for 136.834)
+[INFO ] 2025-08-22 15:41:30.606 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 15:41:30.606 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 15:41:30.606 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[ERROR] 2025-08-22 15:41:36.943 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 15:41:57.763 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 3856 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 15:41:57.775 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 15:41:57.777 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 15:42:02.800 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 15:42:03.986 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.869 seconds (process running for 15.44)
+[INFO ] 2025-08-22 15:42:03.990 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 15:42:03.990 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 15:42:03.990 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[ERROR] 2025-08-22 15:42:29.217 [http-nio-9090-exec-1] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 15:42:43.507 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 15:42:47.741 [http-nio-9090-exec-4] AuthRestAPIs - ######## ### FIND BY ID
+[ERROR] 2025-08-22 15:42:56.573 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 15:43:17.757 [http-nio-9090-exec-6] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 15:43:22.935 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 16:52:58.628 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 16:52:58.639 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 16:52:58.640 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 16:53:03.988 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 16:53:05.257 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.286 seconds (process running for 8.601)
+[INFO ] 2025-08-22 16:53:05.260 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 16:53:05.261 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 16:53:05.261 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[ERROR] 2025-08-22 16:59:38.813 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-22 16:59:55.639 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 17:00:13.353 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 17:00:41.015 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 17:00:41.015 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 17:00:41.016 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 17:00:42.373 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 17:00:42.825 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.852 seconds (process running for 466.171)
+[INFO ] 2025-08-22 17:00:42.828 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 17:00:42.828 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 17:00:42.828 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 17:51:37.423 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[ERROR] 2025-08-22 17:51:49.988 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-22 17:51:56.648 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-22 17:52:09.570 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 17:52:09.570 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 17:52:09.571 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 17:52:11.277 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 17:52:11.790 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 2.272 seconds (process running for 3555.135)
+[INFO ] 2025-08-22 17:52:11.791 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 17:52:11.791 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 17:52:11.791 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 17:52:38.924 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 17:52:38.924 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@326835de, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 17:52:38.924 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 17:52:38.927 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 17:52:40.614 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 17:52:40.614 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 17:52:40.614 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 17:53:17.357 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 17:53:17.359 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 17:53:17.359 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 17:53:20.358 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 17:53:20.840 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 3.522 seconds (process running for 3624.184)
+[INFO ] 2025-08-22 17:53:20.840 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 17:53:20.840 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 17:53:20.842 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 17:53:26.816 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 17:53:26.817 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@767d9cbe, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 17:53:26.817 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 17:53:26.820 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 17:53:26.825 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 17:53:26.825 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 17:53:26.825 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 17:54:39.206 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 17:54:39.207 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 17:54:39.207 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 17:54:40.445 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 17:54:40.915 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.745 seconds (process running for 3704.26)
+[INFO ] 2025-08-22 17:54:40.917 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 17:54:40.917 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 17:54:40.917 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 17:54:45.875 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 17:54:45.875 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6d920f7b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 17:54:45.876 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 17:54:45.878 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 17:54:45.993 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=-1, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 17:54:45.998 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 17:54:45.998 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 17:54:45.998 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:12:52.433 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:12:52.434 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:12:52.434 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:12:53.750 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:12:54.240 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.852 seconds (process running for 4797.585)
+[INFO ] 2025-08-22 18:12:54.242 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:12:54.242 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:12:54.242 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:13:38.631 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:13:38.632 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@5d31069c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:13:38.632 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:13:38.636 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:13:38.644 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=-1, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:13:38.648 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:13:38.649 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:13:38.649 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:15:18.170 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:15:18.171 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:15:18.171 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:15:19.467 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:15:19.933 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.797 seconds (process running for 4943.277)
+[INFO ] 2025-08-22 18:15:19.936 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:15:19.936 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:15:19.936 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:15:22.540 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:15:22.541 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:15:22.541 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:15:23.830 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:15:24.277 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.771 seconds (process running for 4947.62)
+[INFO ] 2025-08-22 18:15:24.278 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:15:24.278 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:15:24.278 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:15:34.116 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 16972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:15:34.117 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:15:34.117 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:15:35.476 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:15:35.926 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.846 seconds (process running for 4959.27)
+[INFO ] 2025-08-22 18:15:35.927 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:15:35.927 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:15:35.927 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:44:36.080 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:44:36.080 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6d5d525f, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:44:36.080 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:44:36.083 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:44:36.093 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:44:36.098 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:44:36.099 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:44:36.099 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:46:04.718 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25340 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:46:04.732 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:46:04.732 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:46:10.416 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:46:11.676 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.645 seconds (process running for 8.959)
+[INFO ] 2025-08-22 18:46:11.680 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:46:11.680 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:46:11.680 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:46:53.926 [http-nio-9090-exec-1] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:46:53.927 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@541cf73e, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:46:53.927 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:46:53.930 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:46:53.938 [http-nio-9090-exec-1] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:46:53.980 [http-nio-9090-exec-1] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:46:53.981 [http-nio-9090-exec-1] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:46:53.981 [http-nio-9090-exec-1] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:55:26.769 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25340 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:55:26.769 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:55:26.769 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:55:28.300 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:55:28.890 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 2.174 seconds (process running for 566.175)
+[INFO ] 2025-08-22 18:55:28.894 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:55:28.895 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:55:28.895 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:56:47.173 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25340 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:56:47.173 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:56:47.174 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-22 18:57:12.172 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 25340 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:57:12.172 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:57:12.173 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:57:13.510 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:57:13.990 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.857 seconds (process running for 671.275)
+[INFO ] 2025-08-22 18:57:13.993 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:57:13.993 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:57:13.993 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:57:37.526 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:57:37.527 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@1cd5937c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:57:37.527 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:57:37.530 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:57:37.551 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:57:37.582 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:57:37.582 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:57:37.583 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:57:54.426 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 17776 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:57:54.438 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:57:54.439 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:57:59.724 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:58:00.932 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.178 seconds (process running for 8.505)
+[INFO ] 2025-08-22 18:58:00.937 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:58:00.937 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:58:00.937 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:58:17.876 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:58:17.877 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@25aed30e, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:58:17.877 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:58:17.885 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:58:17.898 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:58:17.985 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:58:17.985 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:58:17.985 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 18:58:56.800 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 21404 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 18:58:56.811 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 18:58:56.812 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 18:59:02.118 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 18:59:03.314 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.191 seconds (process running for 8.546)
+[INFO ] 2025-08-22 18:59:03.317 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 18:59:03.317 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 18:59:03.317 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 18:59:09.791 [http-nio-9090-exec-1] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:59:09.792 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@67a6afd8, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:59:09.793 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:59:09.797 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:59:09.804 [http-nio-9090-exec-1] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:59:09.878 [http-nio-9090-exec-1] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:59:09.879 [http-nio-9090-exec-1] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:59:09.879 [http-nio-9090-exec-1] CreditcardController - ### Message : Could not commit JPA transaction
+[DEBUG] 2025-08-22 18:59:57.504 [http-nio-9090-exec-4] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 18:59:57.504 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@36edae9d, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 18:59:57.504 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 18:59:57.507 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 18:59:57.512 [http-nio-9090-exec-4] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=4567, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10.000, dataCadastro=null)
+[DEBUG] 2025-08-22 18:59:57.516 [http-nio-9090-exec-4] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 18:59:57.516 [http-nio-9090-exec-4] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 18:59:57.516 [http-nio-9090-exec-4] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 19:00:32.850 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 21404 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 19:00:32.850 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 19:00:32.851 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 19:00:34.242 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 19:00:34.797 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.996 seconds (process running for 100.029)
+[INFO ] 2025-08-22 19:00:34.799 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 19:00:34.799 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 19:00:34.799 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 19:08:12.592 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 19:08:12.593 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@726d20c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 19:08:12.593 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 19:08:12.597 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 19:08:12.602 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=null, billingPeriodStart=0, billingPeriodEnd=-1, usedLimit=0, totalLimit=10000.00, dataCadastro=null)
+[DEBUG] 2025-08-22 19:08:12.618 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-22 19:08:12.618 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.transaction.TransactionSystemException
+[ERROR] 2025-08-22 19:08:12.618 [http-nio-9090-exec-2] CreditcardController - ### Message : Could not commit JPA transaction
+[INFO ] 2025-08-22 19:08:36.616 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 21404 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 19:08:36.616 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 19:08:36.617 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 19:08:38.002 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 19:08:38.556 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.993 seconds (process running for 583.788)
+[INFO ] 2025-08-22 19:08:38.557 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 19:08:38.557 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 19:08:38.557 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 19:08:53.518 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 19:08:53.519 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@44f83935, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 19:08:53.519 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 19:08:53.523 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 19:08:53.533 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=0, totalLimit=10000.00, dataCadastro=null)
+[ERROR] 2025-08-22 19:08:53.549 [http-nio-9090-exec-2] CreditcardController - ### Root cause: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+]
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:571) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.5.1.jar:3.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.8.jar:6.2.8]
+	at jdk.proxy8/jdk.proxy8.$Proxy207.save(Unknown Source) ~[?:?]
+	at com.thukera.creditcard.controller.CreditcardController.createCard(CreditcardController.java:74) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:268) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:196) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.8.jar:6.2.8]
+	at com.thukera.creditcard.controller.CreditcardController$$SpringCGLIB$$0.createCard(<generated>) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at com.thukera.root.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:56) ~[classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: jakarta.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.internal.ExceptionConverterImpl.convertCommitException(ExceptionConverterImpl.java:67) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
+Caused by: jakarta.validation.ConstraintViolationException: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:251) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:106) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
+[INFO ] 2025-08-22 19:11:22.605 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 21404 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 19:11:22.606 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 19:11:22.607 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-22 19:13:56.652 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9396 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-22 19:13:56.662 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-22 19:13:56.664 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-22 19:14:01.893 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-22 19:14:03.096 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.143 seconds (process running for 8.493)
+[INFO ] 2025-08-22 19:14:03.101 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-22 19:14:03.101 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-22 19:14:03.101 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-22 19:14:07.493 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-22 19:14:07.493 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@22f1bb6b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-22 19:14:07.494 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-22 19:14:07.498 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-22 19:14:07.508 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=3, doc=999.999.999-99, name=Lucy, username=lucy, email=lucy@gatinha.com, password=$2a$10$HEINBe8JyuZdfKHH/oMH2Ou82.wfnMV7LNorQCoCQUnchT/6eC18q, status=true, token=null, roles=[Role(id=1, name=ROLE_USER)], dataCadastro=2025-08-22, creditcards=[]), bank=ITAU, endnumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=0, totalLimit=10000.00, dataCadastro=null)
+[ERROR] 2025-08-22 19:14:07.575 [http-nio-9090-exec-2] CreditcardController - ### Root cause: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:571) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.5.1.jar:3.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.8.jar:6.2.8]
+	at jdk.proxy4/jdk.proxy4.$Proxy172.save(Unknown Source) ~[?:?]
+	at com.thukera.creditcard.controller.CreditcardController.createCard(CreditcardController.java:74) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:268) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:196) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.8.jar:6.2.8]
+	at com.thukera.creditcard.controller.CreditcardController$$SpringCGLIB$$0.createCard(<generated>) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at com.thukera.root.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:56) ~[classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: jakarta.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.internal.ExceptionConverterImpl.convertCommitException(ExceptionConverterImpl.java:67) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
+Caused by: jakarta.validation.ConstraintViolationException: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:251) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:106) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
