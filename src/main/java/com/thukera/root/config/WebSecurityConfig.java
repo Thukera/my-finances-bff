@@ -42,7 +42,10 @@ public class WebSecurityConfig {
     	"/swagger-ui/**",          // Swagger UI static files
     	"/swagger-ui.html",        // Optional: direct HTML access (redirects to index.html)
     	"/swagger-ui/index.html",
-        "/api/**"
+        "/api/auth/**",
+        "/api/user/**",
+        "/api/creditcard/**",
+        "/api/test/**",
     };
 
     @Bean

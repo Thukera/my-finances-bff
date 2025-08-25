@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thukera.root.model.messages.NotFoundException;
+import com.thukera.user.dto.UserDTO;
 import com.thukera.user.model.entities.Role;
 import com.thukera.user.model.entities.User;
 import com.thukera.user.model.enums.RoleName;
@@ -56,15 +57,20 @@ public class UserController {
 		this.userRepository = userRepository;
 	}
 
-	@GetMapping("/")
+	@GetMapping
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?>  listar() {
 		
-		logger.debug("######## ### FIND ALL");
+		logger.debug("######## ### FIND ALL ### ########");
 		
 		try {
 			
-			return ResponseEntity.ok(userRepository.findAll());
+			List<UserDTO> users = userRepository.findAll()
+	                .stream()
+	                .map(UserDTO::fromEntity)
+	                .toList();
+
+	        return ResponseEntity.ok(users);
 			
 		} catch (Exception e) {
 			logger.debug("## General Exception");
@@ -85,14 +91,11 @@ public class UserController {
 
 		try {
 
-			Optional<User> response = userRepository.findById(id);
+		    User user = userRepository.findById(id)
+		            .orElseThrow(() -> new NotFoundException("Recurso não encontrado"));
 
-			if (!response.isPresent()) {
-				throw new NotFoundException("Recurso não encontrado");
-			} else {
-				return ResponseEntity.ok(response.get());
-			}
-			
+		    return ResponseEntity.ok(UserDTO.fromEntity(user));
+
 		} catch (NotFoundException e) {
 			logger.debug("## NotFoundException Exception");
 			logger.error("### Exception : " + e.getClass());

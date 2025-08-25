@@ -1,6 +1,5 @@
 package com.thukera.creditcard.controller;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +46,7 @@ public class CreditcardController {
 		logger.debug("######## ### CREATE CREDIT CARD ### ########");
 
 		try {
-
+			logger.debug("### CredicardForm : " + creditcardForm.toString());
 			// 1. Recover authenticated user from SecurityContext
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			logger.debug("### Auth : " + authentication);
@@ -64,8 +63,8 @@ public class CreditcardController {
 			card.setUser(user);
 			card.setBank(creditcardForm.getBank());
 			card.setEndnumbers(creditcardForm.getEndNumbers());
-			card.setBillingPeriodStart(creditcardForm.getBillingInvoiceStart());
-			card.setBillingPeriodEnd(creditcardForm.getBillingInvoiceEnd());
+			card.setBillingPeriodStart(creditcardForm.getBillingPeriodStart());
+			card.setBillingPeriodEnd(creditcardForm.getBillingPeriodEnd());
 			card.setTotalLimit(creditcardForm.getTotalLimit());
 
 			logger.debug("### Card : " + card);

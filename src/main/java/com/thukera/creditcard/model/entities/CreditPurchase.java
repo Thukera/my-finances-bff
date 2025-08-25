@@ -39,8 +39,8 @@ public class CreditPurchase {
 	@Column
 	private Integer totalInstallments;
 
-	@OneToMany(mappedBy = "purchase", fetch = FetchType.LAZY)
-	private List<Installment> installments;
+	//@OneToMany(mappedBy = "purchase", fetch = FetchType.LAZY)
+	//private List<Installment> installments;
 
 	@ManyToOne
 	@JoinColumn(name = "tb_purchase_class")
@@ -49,12 +49,12 @@ public class CreditPurchase {
 	@Column(name = "value", precision = 16, scale = 2)
 	private BigDecimal value;
 	
-	@Column(name = "data_cadastro")
-	private LocalDateTime dataCadastro;
+	@Column(name = "purchase_date_time")
+	private LocalDateTime purchaseDateTime;
 	
 	@PrePersist
 	public void prePersist() {
-		setDataCadastro(LocalDateTime.now());
+		setPurchaseDateTime(LocalDateTime.now());
 	}
 	
 }

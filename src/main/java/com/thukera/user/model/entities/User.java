@@ -9,6 +9,7 @@ import java.util.Set;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.root.model.messages.JwtResponse;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -91,8 +92,9 @@ public class User{
     @Column(name = "data_cadastro")
 	private LocalDate dataCadastro;
     
-    @OneToMany
-    private List<CreditCard> creditcards = new ArrayList<CreditCard>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CreditCard> creditcards = new ArrayList<>();
 
 	@PrePersist
 	public void prePersist() {

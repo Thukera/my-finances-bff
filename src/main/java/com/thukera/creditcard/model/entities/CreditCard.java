@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thukera.user.model.entities.User;
 
 import jakarta.persistence.Column;
@@ -43,8 +44,9 @@ public class CreditCard {
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
-
+    
     @NotBlank
     @Size(max = 50)
     @Column(name = "bank", length = 50, nullable = false)
@@ -83,17 +85,9 @@ public class CreditCard {
         if (dataCadastro == null) dataCadastro = LocalDate.now();
     }
 
-//	@OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY)
-//	@JoinTable(name = "tb_invoice", joinColumns = @JoinColumn(name = "card_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
-//	private List<Invoice> invoices = new ArrayList<>();
-//
-//	@Query("""
-//			    SELECT p.category.name AS className, COUNT(p)
-//			    FROM CreditPurchase p
-//			    WHERE p.invoice.id = :invoiceId
-//			    GROUP BY p.category.name
-//			""")
-//	List<PurchaseClassCount> countByClass(@Param("invoiceId") Long invoiceId);
+	@OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY)
+	@JoinTable(name = "tb_invoice", joinColumns = @JoinColumn(name = "card_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
+	private List<Invoice> invoices = new ArrayList<>();
 
 	public CreditCard() {
 		super();
