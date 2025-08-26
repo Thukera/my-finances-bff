@@ -15,8 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thukera.creditcard.model.entities.CreditCard;
+import com.thukera.creditcard.model.entities.CreditPurchase;
+import com.thukera.creditcard.model.entities.Invoice;
+import com.thukera.creditcard.model.entities.PurchaseCategory;
+import com.thukera.creditcard.model.enums.PurchaseCategoryEnum;
 import com.thukera.creditcard.model.form.CreditCardForm;
+import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.repository.CreditcardRepository;
+import com.thukera.creditcard.repository.PurchaseRepository;
+import com.thukera.creditcard.repository.PurchaseCategoryRepository;
+import com.thukera.creditcard.service.InvoiceService;
 import com.thukera.root.model.messages.NotFoundException;
 import com.thukera.user.model.entities.User;
 import com.thukera.user.repository.UserRepository;
@@ -25,6 +33,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.TransactionSystemException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/creditcard")
@@ -38,6 +49,15 @@ public class CreditcardController {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private PurchaseRepository purchaseRepository;
+	
+	@Autowired
+	private PurchaseCategoryRepository purchaseCategoryRepository;
+	
+	@Autowired
+	private InvoiceService invoiceService;
 
 	@PostMapping
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
@@ -67,7 +87,7 @@ public class CreditcardController {
 			card.setBillingPeriodEnd(creditcardForm.getBillingPeriodEnd());
 			card.setTotalLimit(creditcardForm.getTotalLimit());
 
-			logger.debug("### Card : " + card);
+			logger.debug("### Card : " + card.toString());
 
 			// 4. Save
 			CreditCard saved = creditcardRepository.save(card);
@@ -99,4 +119,151 @@ public class CreditcardController {
 		}
 	}
 
+	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> getCardDetails(@PathVariable Long id) {
+
+		logger.debug("######## ### GET CREDIT CARD BY ID ### ########");
+
+		try {
+			logger.debug("### Credicard ID : " + id);
+			// 1. Recover authenticated user from SecurityContext
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			logger.debug("### Auth : " + authentication);
+			String username = authentication.getName(); // usually the "username" from your JWT
+			logger.debug("### Username From Token : " + username);
+
+			// 2. Fetch User from DB
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new NotFoundException("User not found"));
+			logger.debug("### Username From Entity : " + user.getUsername());
+
+			// 3. Build CreditCard
+			CreditCard card = creditcardRepository.findById(id)
+					.orElseThrow(() -> new NotFoundException("Cartão não encontrado"));
+			;
+
+			// 4. Check if ADMIN ROLE
+			boolean isAdmin = authentication.getAuthorities().stream()
+					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+
+			if (user.getId() != card.getUser().getId() && !isAdmin) {
+				logger.debug("### Card : " + card.toString());
+				Map<String, String> body = new HashMap<>();
+				body.put("message", "Cartão Não Pertece ao usuario");
+				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
+			} else {
+				return ResponseEntity.ok(card);
+			}
+
+		} catch (TransactionSystemException e) {
+			Throwable root = e.getRootCause();
+			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Validation / transaction error");
+			return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+
+		} catch (NotFoundException e) {
+			logger.debug("### NotFoundException Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Não encontrado");
+			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
+
+		} catch (Exception e) {
+			logger.debug("## General Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Internal Server Error");
+			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@PostMapping("/purchase")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> insertPurchase(@RequestBody CreditPurchaseForm purchaseForm) {
+
+		logger.debug("######## ### INSERT PURCHASE ### ########");
+
+		try {
+
+			// Form and User Validation
+			logger.debug("### Purchase Form : " + purchaseForm.toString());
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			logger.debug("### Auth : " + authentication);
+			String username = authentication.getName();
+			logger.debug("### Username From Token : " + username);
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new NotFoundException("User not found"));
+			logger.debug("### Username From Entity : " + user.getUsername());
+			boolean isAdmin = authentication.getAuthorities().stream()
+					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+
+
+			// Credit Card and Invoice Adjustment
+			CreditCard creditcard = creditcardRepository.findById(purchaseForm.getCreditCardId()).orElseThrow(() -> new NotFoundException("Cartão não encontrado"));
+			logger.debug("### Creditcard: {}", creditcard.toString());
+			
+			Invoice currentInvoice = invoiceService.getOrCreateCurrentInvoice(creditcard);
+			logger.debug("### Current Invoice: {}", currentInvoice);
+			
+			boolean isCardFromUser = (user.getId() == creditcard.getUser().getId());
+			
+			if (isAdmin || isCardFromUser) {
+				logger.debug("### Permitions OK");
+				
+				// Build Purchase Component
+				CreditPurchase purchaseEntity = new CreditPurchase();
+				purchaseEntity.setInvoice(currentInvoice);
+				purchaseEntity.setTotalInstallments(purchaseForm.getTotalInstallments());
+				purchaseEntity.setValue(purchaseForm.getValue());
+				
+				PurchaseCategory category = new PurchaseCategory()
+;				if(purchaseCategoryRepository.existsByName(purchaseForm.getCategory())){
+					logger.debug("### Category Found!");
+					category = purchaseCategoryRepository.getByName(purchaseForm.getCategory());
+				} else {
+					logger.debug("### Create New Category!");
+					category = new PurchaseCategory(purchaseForm.getCategory(), false);
+					category = purchaseCategoryRepository.save(category);
+				}	
+				purchaseEntity.setCategory(category);
+				logger.debug("### Purchase : " + purchaseEntity.toString());
+				CreditPurchase saved = purchaseRepository.save(purchaseEntity);
+
+				return ResponseEntity.ok(saved);
+
+			}  else {
+				Map<String, String> body = new HashMap<>();
+				body.put("message", "Não autorizado");
+				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
+			}
+
+		} catch (TransactionSystemException e) {
+			Throwable root = e.getRootCause();
+			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Validation / transaction error");
+			return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+
+		} catch (NotFoundException e) {
+			logger.debug("### NotFoundException Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Não encontrado");
+			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
+
+		} catch (Exception e) {
+			logger.debug("## General Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Internal Server Error");
+			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+	}
 }

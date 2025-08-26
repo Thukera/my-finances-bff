@@ -22,7 +22,6 @@ import lombok.Data;
 
 @Data
 @Entity
-@Builder
 @Table(name = "tb_credit_purchase")
 public class CreditPurchase {
 	
@@ -43,8 +42,8 @@ public class CreditPurchase {
 	//private List<Installment> installments;
 
 	@ManyToOne
-	@JoinColumn(name = "tb_purchase_class")
-	private PurchaseClass category;
+	@JoinColumn(name = "tb_purchase_category")
+	private PurchaseCategory category;
 	
 	@Column(name = "value", precision = 16, scale = 2)
 	private BigDecimal value;
@@ -56,5 +55,11 @@ public class CreditPurchase {
 	public void prePersist() {
 		setPurchaseDateTime(LocalDateTime.now());
 	}
+
+	public CreditPurchase() {
+		super();
+	}
+	
+	
 	
 }

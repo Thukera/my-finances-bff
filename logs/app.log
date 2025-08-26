@@ -1771,3 +1771,716 @@ List of constraint violations:[
 [INFO ] 2025-08-25 17:09:39.650 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 13584 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
 [DEBUG] 2025-08-25 17:09:39.661 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
 [INFO ] 2025-08-25 17:09:39.662 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-25 19:18:47.060 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 20684 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:18:47.071 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:18:47.072 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:18:54.139 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:18:55.392 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 8.994 seconds (process running for 17.776)
+[INFO ] 2025-08-25 19:18:55.397 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:18:55.397 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:18:55.397 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 19:18:57.032 [http-nio-9090-exec-2] AuthRestAPIs - ######## ### FIND ALL ### ########
+[DEBUG] 2025-08-25 19:19:27.811 [http-nio-9090-exec-3] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:19:27.811 [http-nio-9090-exec-3] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 19:19:27.811 [http-nio-9090-exec-3] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@33b78b54, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+[DEBUG] 2025-08-25 19:19:27.811 [http-nio-9090-exec-3] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 19:19:27.816 [http-nio-9090-exec-3] CreditcardController - ### Username From Entity : admin
+[DEBUG] 2025-08-25 19:19:48.347 [http-nio-9090-exec-4] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 19:19:53.860 [http-nio-9090-exec-5] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:19:53.866 [http-nio-9090-exec-5] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=ITAU, endNumbers=4568, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 19:19:53.866 [http-nio-9090-exec-5] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@58b9e674, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:19:53.866 [http-nio-9090-exec-5] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:19:53.869 [http-nio-9090-exec-5] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:19:53.911 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 19:20:00.341 [http-nio-9090-exec-6] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:20:00.341 [http-nio-9090-exec-6] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 19:20:00.341 [http-nio-9090-exec-6] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@4742ca5, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:20:00.341 [http-nio-9090-exec-6] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:20:00.344 [http-nio-9090-exec-6] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 19:20:12.009 [http-nio-9090-exec-7] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:20:12.009 [http-nio-9090-exec-7] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=ITAU, endNumbers=4565, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 19:20:12.009 [http-nio-9090-exec-7] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@9f25956, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:20:12.009 [http-nio-9090-exec-7] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:20:12.012 [http-nio-9090-exec-7] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:20:12.023 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 19:20:31.814 [http-nio-9090-exec-8] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:20:31.814 [http-nio-9090-exec-8] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=ITAU, endNumbers=4565, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 19:20:31.814 [http-nio-9090-exec-8] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@34ce5769, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:20:31.814 [http-nio-9090-exec-8] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:20:31.817 [http-nio-9090-exec-8] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:20:31.826 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-25 19:22:29.571 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10336 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:22:29.583 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:22:29.583 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:22:34.431 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:22:35.555 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.616 seconds (process running for 7.829)
+[INFO ] 2025-08-25 19:22:35.559 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:22:35.559 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:22:35.559 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 19:22:37.205 [http-nio-9090-exec-1] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 19:22:53.895 [http-nio-9090-exec-3] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:22:53.902 [http-nio-9090-exec-3] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=SANTANDER, endNumbers=8525, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 19:22:53.902 [http-nio-9090-exec-3] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@4cbc784b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN, ROLE_USER]]
+[DEBUG] 2025-08-25 19:22:53.902 [http-nio-9090-exec-3] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 19:22:53.905 [http-nio-9090-exec-3] CreditcardController - ### Username From Entity : admin
+[DEBUG] 2025-08-25 19:22:53.913 [http-nio-9090-exec-3] CreditcardController - ### Card : CreditCard(cardId=null, user=User(id=1, doc=123456, name=admin, username=admin, email=email@email, password=$2a$10$/BxGNN/.ng/hhsHBRArSy.Gh4OACoWrcuF3VKUUVD1Xzk1qinlxnu, status=true, token=null, roles=[Role(id=0, name=ROLE_ADMIN), Role(id=1, name=ROLE_USER)], dataCadastro=null, creditcards=[]), bank=SANTANDER, endnumbers=8525, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=0, totalLimit=10000.00, dataCadastro=null, invoices=[])
+[DEBUG] 2025-08-25 19:23:12.539 [http-nio-9090-exec-4] AuthRestAPIs - ######## ### FIND ALL ### ########
+[DEBUG] 2025-08-25 19:23:29.263 [http-nio-9090-exec-5] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:23:29.263 [http-nio-9090-exec-5] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 19:23:29.263 [http-nio-9090-exec-5] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@3f3dd0e4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN, ROLE_USER]]
+[DEBUG] 2025-08-25 19:23:29.264 [http-nio-9090-exec-5] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 19:23:29.267 [http-nio-9090-exec-5] CreditcardController - ### Username From Entity : admin
+[DEBUG] 2025-08-25 19:23:33.252 [http-nio-9090-exec-6] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:23:33.252 [http-nio-9090-exec-6] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 19:23:33.252 [http-nio-9090-exec-6] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@469d2500, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ADMIN, ROLE_USER]]
+[DEBUG] 2025-08-25 19:23:33.253 [http-nio-9090-exec-6] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 19:23:33.255 [http-nio-9090-exec-6] CreditcardController - ### Username From Entity : admin
+[DEBUG] 2025-08-25 19:23:37.087 [http-nio-9090-exec-7] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 19:23:41.112 [http-nio-9090-exec-8] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:23:41.112 [http-nio-9090-exec-8] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 19:23:41.112 [http-nio-9090-exec-8] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@497860aa, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:23:41.113 [http-nio-9090-exec-8] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:23:41.115 [http-nio-9090-exec-8] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:23:41.190 [http-nio-9090-exec-8] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 19:23:48.071 [http-nio-9090-exec-9] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:23:48.071 [http-nio-9090-exec-9] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 19:23:48.071 [http-nio-9090-exec-9] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@4742ca5, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:23:48.072 [http-nio-9090-exec-9] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:23:48.074 [http-nio-9090-exec-9] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:23:48.103 [http-nio-9090-exec-9] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 19:24:11.742 [http-nio-9090-exec-10] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:24:11.742 [http-nio-9090-exec-10] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 19:24:11.743 [http-nio-9090-exec-10] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@9f25956, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:24:11.743 [http-nio-9090-exec-10] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:24:11.745 [http-nio-9090-exec-10] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 19:24:23.717 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 19:24:23.717 [http-nio-9090-exec-2] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 19:24:23.717 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@139197a2, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:24:23.717 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:24:23.719 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[INFO ] 2025-08-25 19:24:41.326 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10336 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:24:41.327 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:24:41.327 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:24:42.482 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:24:42.915 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.629 seconds (process running for 135.188)
+[INFO ] 2025-08-25 19:24:42.917 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:24:42.917 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:24:42.917 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:24:54.839 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10336 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:24:54.840 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:24:54.840 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:24:55.937 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:24:56.335 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.534 seconds (process running for 148.609)
+[INFO ] 2025-08-25 19:24:56.337 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:24:56.337 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:24:56.337 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 19:25:27.720 [http-nio-9090-exec-2] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 19:25:27.720 [http-nio-9090-exec-2] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 19:25:27.720 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@386b4114, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:25:27.720 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:25:27.724 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:25:27.773 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 19:25:49.848 [http-nio-9090-exec-3] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 19:25:49.848 [http-nio-9090-exec-3] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 19:25:49.848 [http-nio-9090-exec-3] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@ac45cb2, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 19:25:49.848 [http-nio-9090-exec-3] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 19:25:49.850 [http-nio-9090-exec-3] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 19:25:49.888 [http-nio-9090-exec-3] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-25 19:26:14.387 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10336 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:26:14.388 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:26:14.388 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:26:15.435 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:26:15.812 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.459 seconds (process running for 228.086)
+[INFO ] 2025-08-25 19:26:15.813 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:26:15.813 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:26:15.813 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:28:51.166 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10336 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 19:28:51.167 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 19:28:51.167 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 19:28:52.264 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 19:28:52.710 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.585 seconds (process running for 384.983)
+[INFO ] 2025-08-25 19:28:52.711 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 19:28:52.711 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 19:28:52.711 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 21:57:30.774 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 31564 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 21:57:30.789 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 21:57:30.790 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-25 22:24:02.034 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 14524 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:24:02.044 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:24:02.045 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-25 22:24:53.943 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 22552 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:24:53.954 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:24:53.955 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:25:00.282 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:31:18.060 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 1764 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:31:18.071 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:31:18.072 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:31:24.332 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:33:37.177 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:33:37.190 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:33:37.191 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:33:41.701 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:33:42.771 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.224 seconds (process running for 7.438)
+[INFO ] 2025-08-25 22:33:42.775 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:33:42.775 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:33:42.775 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:35:50.027 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:35:50.031 [http-nio-9090-exec-2] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:35:50.031 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@189df91f, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:35:50.031 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:35:50.034 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 22:35:50.067 [http-nio-9090-exec-2] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:35:58.424 [http-nio-9090-exec-3] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 22:36:01.983 [http-nio-9090-exec-4] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:36:01.983 [http-nio-9090-exec-4] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:36:01.983 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@27701a2b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:36:01.983 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:36:01.985 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 22:36:01.995 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[ERROR] 2025-08-25 22:36:15.339 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:36:22.696 [http-nio-9090-exec-6] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 22:36:22.696 [http-nio-9090-exec-6] CreditcardController - ### Credicard ID : 17
+[DEBUG] 2025-08-25 22:36:22.696 [http-nio-9090-exec-6] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@1bb3d616, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:36:22.696 [http-nio-9090-exec-6] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:36:22.698 [http-nio-9090-exec-6] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 22:36:22.764 [http-nio-9090-exec-6] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:36:26.905 [http-nio-9090-exec-7] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 22:36:26.906 [http-nio-9090-exec-7] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 22:36:26.906 [http-nio-9090-exec-7] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@4d43c93c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:36:26.906 [http-nio-9090-exec-7] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:36:26.908 [http-nio-9090-exec-7] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:36:39.030 [http-nio-9090-exec-8] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 22:36:57.661 [http-nio-9090-exec-9] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:36:57.661 [http-nio-9090-exec-9] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:36:57.661 [http-nio-9090-exec-9] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@7e7e4d19, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+[DEBUG] 2025-08-25 22:36:57.661 [http-nio-9090-exec-9] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 22:36:57.663 [http-nio-9090-exec-9] CreditcardController - ### Username From Entity : admin
+[ERROR] 2025-08-25 22:36:57.673 [http-nio-9090-exec-9] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:37:10.911 [http-nio-9090-exec-10] AuthRestAPIs - ######## ### FIND ALL ### ########
+[DEBUG] 2025-08-25 22:37:26.995 [http-nio-9090-exec-1] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:37:26.995 [http-nio-9090-exec-1] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:37:26.995 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@46be62e7, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+[DEBUG] 2025-08-25 22:37:26.996 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 22:37:26.998 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : admin
+[ERROR] 2025-08-25 22:37:27.006 [http-nio-9090-exec-1] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:38:44.361 [http-nio-9090-exec-4] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:38:44.361 [http-nio-9090-exec-4] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:38:44.361 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@7c7bda81, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+[DEBUG] 2025-08-25 22:38:44.361 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 22:38:44.363 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : admin
+[ERROR] 2025-08-25 22:38:44.377 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:38:59.248 [http-nio-9090-exec-5] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:38:59.248 [http-nio-9090-exec-5] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:38:59.248 [http-nio-9090-exec-5] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@9ddc4a1, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+[DEBUG] 2025-08-25 22:38:59.248 [http-nio-9090-exec-5] CreditcardController - ### Username From Token : admin
+[DEBUG] 2025-08-25 22:38:59.250 [http-nio-9090-exec-5] CreditcardController - ### Username From Entity : admin
+[ERROR] 2025-08-25 22:38:59.257 [http-nio-9090-exec-5] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2025-08-25 22:39:08.177 [http-nio-9090-exec-6] AuthRestAPIs - ######## ### ######## ###  SIGN IN  ### ######## ### ########
+[DEBUG] 2025-08-25 22:39:11.929 [http-nio-9090-exec-7] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:39:11.929 [http-nio-9090-exec-7] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:39:11.930 [http-nio-9090-exec-7] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@22a93bbf, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:39:11.930 [http-nio-9090-exec-7] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:39:11.932 [http-nio-9090-exec-7] CreditcardController - ### Username From Entity : lucy
+[ERROR] 2025-08-25 22:39:11.940 [http-nio-9090-exec-7] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[INFO ] 2025-08-25 22:42:55.161 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:42:55.162 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:42:55.162 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:42:56.360 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:42:56.840 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.723 seconds (process running for 561.508)
+[INFO ] 2025-08-25 22:42:56.842 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:42:56.842 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:42:56.842 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:43:18.082 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:43:18.083 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:43:18.083 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:43:19.224 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:43:19.670 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.625 seconds (process running for 584.338)
+[INFO ] 2025-08-25 22:43:19.672 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:43:19.672 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:43:19.672 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:43:24.808 [http-nio-9090-exec-2] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:43:24.811 [http-nio-9090-exec-2] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=null, endNumbers=null, billingPeriodStart=0, billingPeriodEnd=0, usedLimit=null, totalLimit=null, cadastro=null)
+[DEBUG] 2025-08-25 22:43:24.812 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@410c8210, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:43:24.812 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:43:24.814 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:43:24.816 [http-nio-9090-exec-2] CreditcardController - ### Card : CreditCard{id=null, bank='null', endnumbers='null'}
+[ERROR] 2025-08-25 22:43:24.861 [http-nio-9090-exec-2] CreditcardController - ### Root cause: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=totalLimit, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=bank, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+]
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:571) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.5.1.jar:3.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.8.jar:6.2.8]
+	at jdk.proxy8/jdk.proxy8.$Proxy211.save(Unknown Source) ~[?:?]
+	at com.thukera.creditcard.controller.CreditcardController.createCard(CreditcardController.java:89) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:268) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:196) ~[spring-security-core-6.5.1.jar:6.5.1]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.8.jar:6.2.8]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.8.jar:6.2.8]
+	at com.thukera.creditcard.controller.CreditcardController$$SpringCGLIB$$0.createCard(<generated>) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.42.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at com.thukera.root.security.jwt.JwtAuthTokenFilter.doFilterInternal(JwtAuthTokenFilter.java:56) ~[classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.1.jar:6.5.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.8.jar:6.2.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: jakarta.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.internal.ExceptionConverterImpl.convertCommitException(ExceptionConverterImpl.java:67) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
+Caused by: jakarta.validation.ConstraintViolationException: Validation failed for classes [com.thukera.creditcard.model.entities.CreditCard] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodEnd, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=totalLimit, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=endnumbers, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=bank, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must be greater than or equal to 1', propertyPath=billingPeriodStart, rootBeanClass=class com.thukera.creditcard.model.entities.CreditCard, messageTemplate='{jakarta.validation.constraints.Min.message}'}
+]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:251) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:106) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.8.jar:6.2.8]
+	... 132 more
+[INFO ] 2025-08-25 22:44:43.068 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:44:43.069 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:44:43.069 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:44:44.220 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:44:44.671 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.637 seconds (process running for 669.338)
+[INFO ] 2025-08-25 22:44:44.672 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:44:44.672 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:44:44.672 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:45:59.968 [http-nio-9090-exec-2] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 22:45:59.968 [http-nio-9090-exec-2] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 22:45:59.968 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6c5403f0, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:45:59.968 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:45:59.971 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:46:06.515 [http-nio-9090-exec-3] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:46:06.519 [http-nio-9090-exec-3] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=0, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:46:06.519 [http-nio-9090-exec-3] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@62f1ee, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:46:06.519 [http-nio-9090-exec-3] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:46:06.522 [http-nio-9090-exec-3] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:46:06.524 [http-nio-9090-exec-3] CreditcardController - ### NotFoundException Exception
+[ERROR] 2025-08-25 22:46:06.524 [http-nio-9090-exec-3] CreditcardController - ### Exception : class com.thukera.root.model.messages.NotFoundException
+[ERROR] 2025-08-25 22:46:06.524 [http-nio-9090-exec-3] CreditcardController - ### Message : Cartão não encontrado
+[DEBUG] 2025-08-25 22:46:12.424 [http-nio-9090-exec-4] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:46:12.424 [http-nio-9090-exec-4] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=0, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:46:12.424 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@79642214, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:46:12.424 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:46:12.427 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:46:12.428 [http-nio-9090-exec-4] CreditcardController - ### NotFoundException Exception
+[ERROR] 2025-08-25 22:46:12.428 [http-nio-9090-exec-4] CreditcardController - ### Exception : class com.thukera.root.model.messages.NotFoundException
+[ERROR] 2025-08-25 22:46:12.428 [http-nio-9090-exec-4] CreditcardController - ### Message : Cartão não encontrado
+[DEBUG] 2025-08-25 22:46:37.618 [http-nio-9090-exec-5] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:46:37.618 [http-nio-9090-exec-5] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=17, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:46:37.618 [http-nio-9090-exec-5] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@1fc70690, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:46:37.618 [http-nio-9090-exec-5] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:46:37.620 [http-nio-9090-exec-5] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:46:37.634 [http-nio-9090-exec-5] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 22:46:37.635 [http-nio-9090-exec-5] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessResourceUsageException
+[ERROR] 2025-08-25 22:46:37.635 [http-nio-9090-exec-5] CreditcardController - ### Message : JDBC exception executing SQL [select i1_0.invoice_id,i1_0.card_id,i1_0.due_date,i1_0.end_date,i1_0.start_date,i1_0.status,i1_0.total_amount from tb_invoice i1_0 where i1_0.card_id=? and i1_0.status=? and i1_0.start_date<=? and i1_0.end_date>=?] [ERROR: operator does not exist: character varying = smallint
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Position: 169] [n/a]; SQL [n/a]
+[INFO ] 2025-08-25 22:48:27.567 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:48:27.568 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:48:27.568 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:48:28.675 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:48:29.132 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.608 seconds (process running for 893.799)
+[INFO ] 2025-08-25 22:48:29.133 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:48:29.133 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:48:29.133 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:48:31.717 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:48:31.718 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:48:31.718 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:48:32.789 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:48:33.213 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.528 seconds (process running for 897.881)
+[INFO ] 2025-08-25 22:48:33.215 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:48:33.215 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:48:33.215 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:48:53.359 [http-nio-9090-exec-2] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:48:53.362 [http-nio-9090-exec-2] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:48:53.362 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6ad3007b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:48:53.362 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:48:53.365 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:48:53.369 [http-nio-9090-exec-2] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 22:48:53.374 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 22:48:53.374 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessResourceUsageException
+[ERROR] 2025-08-25 22:48:53.374 [http-nio-9090-exec-2] CreditcardController - ### Message : JDBC exception executing SQL [select i1_0.invoice_id,i1_0.card_id,i1_0.due_date,i1_0.end_date,i1_0.start_date,i1_0.status,i1_0.total_amount from tb_invoice i1_0 where i1_0.card_id=? and i1_0.status=? and i1_0.start_date<=? and i1_0.end_date>=?] [ERROR: operator does not exist: character varying = smallint
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Position: 169] [n/a]; SQL [n/a]
+[DEBUG] 2025-08-25 22:49:49.678 [http-nio-9090-exec-4] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 22:49:49.683 [http-nio-9090-exec-4] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=BRADESCO, endNumbers=6969, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 22:49:49.683 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@716e4c2b, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:49:49.683 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:49:49.687 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:49:49.687 [http-nio-9090-exec-4] CreditcardController - ### Card : CreditCard{id=null, bank='BRADESCO', endnumbers='6969'}
+[INFO ] 2025-08-25 22:52:05.102 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:52:05.102 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:52:05.102 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:52:06.147 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:52:06.577 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.505 seconds (process running for 1111.244)
+[INFO ] 2025-08-25 22:52:06.578 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:52:06.578 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:52:06.578 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:52:20.737 [http-nio-9090-exec-2] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:52:20.738 [http-nio-9090-exec-2] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:52:20.738 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@64e4d0ce, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:52:20.738 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:52:20.741 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:52:20.744 [http-nio-9090-exec-2] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 22:52:20.747 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 22:52:20.747 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessResourceUsageException
+[ERROR] 2025-08-25 22:52:20.747 [http-nio-9090-exec-2] CreditcardController - ### Message : JDBC exception executing SQL [select i1_0.invoice_id,i1_0.card_id,i1_0.due_date,i1_0.end_date,i1_0.start_date,i1_0.status,i1_0.total_amount from tb_invoice i1_0 where i1_0.card_id=? and i1_0.status=? and i1_0.start_date<=? and i1_0.end_date>=?] [ERROR: operator does not exist: character varying = smallint
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Position: 169] [n/a]; SQL [n/a]
+[INFO ] 2025-08-25 22:54:51.937 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:54:51.937 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:54:51.937 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:54:53.000 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:54:53.422 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.521 seconds (process running for 1278.09)
+[INFO ] 2025-08-25 22:54:53.424 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:54:53.424 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:54:53.424 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 22:55:06.004 [http-nio-9090-exec-2] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 22:55:06.004 [http-nio-9090-exec-2] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 22:55:06.005 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@e056998, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 22:55:06.005 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 22:55:06.008 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 22:55:06.013 [http-nio-9090-exec-2] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 22:55:06.018 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 22:55:06.018 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessResourceUsageException
+[ERROR] 2025-08-25 22:55:06.018 [http-nio-9090-exec-2] CreditcardController - ### Message : JDBC exception executing SQL [select i1_0.invoice_id,i1_0.card_id,i1_0.due_date,i1_0.end_date,i1_0.start_date,i1_0.status,i1_0.total_amount from tb_invoice i1_0 where i1_0.card_id=? and i1_0.status=? and i1_0.start_date<=? and i1_0.end_date>=?] [ERROR: operator does not exist: character varying = smallint
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Position: 169] [n/a]; SQL [n/a]
+[INFO ] 2025-08-25 22:56:16.797 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 9972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:56:16.798 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:56:16.798 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 22:56:17.864 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 22:56:18.286 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.526 seconds (process running for 1362.954)
+[INFO ] 2025-08-25 22:56:18.287 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:56:18.287 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 22:56:18.287 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 22:59:58.301 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 2568 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 22:59:58.312 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 22:59:58.313 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:00:02.831 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:00:03.904 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.211 seconds (process running for 7.408)
+[INFO ] 2025-08-25 23:00:03.907 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:00:03.907 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:00:03.907 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 23:00:09.623 [http-nio-9090-exec-2] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:00:09.627 [http-nio-9090-exec-2] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:00:09.627 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6cefb432, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:00:09.627 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:00:09.630 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:00:09.649 [http-nio-9090-exec-2] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:00:09.649 [http-nio-9090-exec-2] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:00:09.650 [http-nio-9090-exec-2] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:00:09.666 [http-nio-9090-exec-2] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 23:00:09.666 [http-nio-9090-exec-2] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessResourceUsageException
+[ERROR] 2025-08-25 23:00:09.666 [http-nio-9090-exec-2] CreditcardController - ### Message : JDBC exception executing SQL [select i1_0.invoice_id,i1_0.card_id,i1_0.due_date,i1_0.end_date,i1_0.start_date,i1_0.status,i1_0.total_amount from tb_invoice i1_0 where i1_0.card_id=? and i1_0.status=? and i1_0.start_date<=? and i1_0.end_date>=?] [ERROR: operator does not exist: character varying = smallint
+  Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
+  Position: 169] [n/a]; SQL [n/a]
+[INFO ] 2025-08-25 23:04:11.522 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 11952 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:04:11.532 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:04:11.532 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:04:16.045 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:04:17.111 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.202 seconds (process running for 7.406)
+[INFO ] 2025-08-25 23:04:17.114 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:04:17.114 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:04:17.114 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 23:04:21.341 [http-nio-9090-exec-1] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:04:21.345 [http-nio-9090-exec-1] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:04:21.346 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@24c2ed79, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:04:21.346 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:04:21.348 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:04:21.367 [http-nio-9090-exec-1] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:04:21.367 [http-nio-9090-exec-1] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:04:21.367 [http-nio-9090-exec-1] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:04:21.377 [http-nio-9090-exec-1] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:04:21.380 [http-nio-9090-exec-1] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:04:21.380 [http-nio-9090-exec-1] InvoiceService - ## New Invoice : Invoice(invoiceId=null, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-31, dueDate=null, status=OPEN) 
+[DEBUG] 2025-08-25 23:04:21.522 [http-nio-9090-exec-1] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 23:04:21.522 [http-nio-9090-exec-1] CreditcardController - ### Exception : class org.springframework.dao.DataIntegrityViolationException
+[ERROR] 2025-08-25 23:04:21.522 [http-nio-9090-exec-1] CreditcardController - ### Message : could not execute statement [ERROR: null value in column "due_date" of relation "tb_invoice" violates not-null constraint
+  Detail: Failing row contains (1, null, null, null, 2025-08-31, 2025-08-01, OPEN).] [insert into tb_invoice (due_date,end_date,start_date,status,total_amount,invoice_id) values (?,?,?,?,?,?)]; SQL [insert into tb_invoice (due_date,end_date,start_date,status,total_amount,invoice_id) values (?,?,?,?,?,?)]; constraint [due_date" of relation "tb_invoice]
+[INFO ] 2025-08-25 23:05:42.449 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 11952 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:05:42.450 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:05:42.450 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:05:43.616 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:13:43.770 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10972 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:13:43.782 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:13:43.783 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2025-08-25 23:14:27.934 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10292 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:14:27.944 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:14:27.945 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:14:32.756 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:14:33.821 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.484 seconds (process running for 7.679)
+[INFO ] 2025-08-25 23:14:33.824 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:14:33.824 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:14:33.824 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 23:14:38.775 [http-nio-9090-exec-1] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:14:38.779 [http-nio-9090-exec-1] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:14:38.779 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@19443850, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:14:38.779 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:14:38.783 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:14:38.801 [http-nio-9090-exec-1] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:14:38.801 [http-nio-9090-exec-1] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:14:38.801 [http-nio-9090-exec-1] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:14:38.812 [http-nio-9090-exec-1] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:14:38.815 [http-nio-9090-exec-1] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:14:38.815 [http-nio-9090-exec-1] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 23:14:38.815 [http-nio-9090-exec-1] CreditcardController - ### Exception : class java.lang.NullPointerException
+[ERROR] 2025-08-25 23:14:38.826 [http-nio-9090-exec-1] CreditcardController - ### Message : Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.thukera.creditcard.model.entities.CreditCard.getDueDate()" is null
+[DEBUG] 2025-08-25 23:15:20.456 [http-nio-9090-exec-4] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:15:20.456 [http-nio-9090-exec-4] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:15:20.456 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@4c300d79, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:15:20.457 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:15:20.459 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:15:20.462 [http-nio-9090-exec-4] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:15:20.462 [http-nio-9090-exec-4] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:15:20.462 [http-nio-9090-exec-4] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:15:20.465 [http-nio-9090-exec-4] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:15:20.469 [http-nio-9090-exec-4] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:15:20.469 [http-nio-9090-exec-4] InvoiceService - ## New Invoice : Invoice(invoiceId=null, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN) 
+[DEBUG] 2025-08-25 23:15:20.499 [http-nio-9090-exec-4] CreditcardController - ### Current Invoice: Invoice(invoiceId=2, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN)
+[DEBUG] 2025-08-25 23:15:20.499 [http-nio-9090-exec-4] CreditcardController - ### Permitions OK
+[DEBUG] 2025-08-25 23:15:20.502 [http-nio-9090-exec-4] CreditcardController - ### Purchase : CreditPurchase(purchaseId=null, invoice=Invoice(invoiceId=2, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN), totalInstallments=1, category=PurchaseCategory(purchaseClassId=null, name=Mercado, editable=false), value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:15:20.620 [http-nio-9090-exec-4] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 23:15:20.620 [http-nio-9090-exec-4] CreditcardController - ### Exception : class org.springframework.dao.InvalidDataAccessApiUsageException
+[ERROR] 2025-08-25 23:15:20.620 [http-nio-9090-exec-4] CreditcardController - ### Message : org.hibernate.TransientObjectException: persistent instance references an unsaved transient instance of 'com.thukera.creditcard.model.entities.PurchaseCategory' (save the transient instance before flushing)
+[INFO ] 2025-08-25 23:28:11.677 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 10292 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:28:11.678 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:28:11.678 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:28:12.907 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:28:13.381 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.758 seconds (process running for 827.239)
+[INFO ] 2025-08-25 23:28:13.383 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:28:13.383 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:28:13.383 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:38:37.366 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 33732 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:38:37.377 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:38:37.378 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:38:41.997 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:38:43.090 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.33 seconds (process running for 7.512)
+[INFO ] 2025-08-25 23:38:43.093 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:38:43.094 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:38:43.094 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 23:38:46.079 [http-nio-9090-exec-1] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:38:46.084 [http-nio-9090-exec-1] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:38:46.084 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6c0cb5cd, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:38:46.085 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:38:46.088 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:38:46.106 [http-nio-9090-exec-1] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:38:46.106 [http-nio-9090-exec-1] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:38:46.106 [http-nio-9090-exec-1] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:38:46.116 [http-nio-9090-exec-1] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:38:46.118 [http-nio-9090-exec-1] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:38:46.119 [http-nio-9090-exec-1] InvoiceService - ## New Invoice : Invoice(invoiceId=null, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN) 
+[DEBUG] 2025-08-25 23:38:46.155 [http-nio-9090-exec-1] CreditcardController - ### Current Invoice: Invoice(invoiceId=52, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN)
+[DEBUG] 2025-08-25 23:38:46.155 [http-nio-9090-exec-1] CreditcardController - ### Permitions OK
+[DEBUG] 2025-08-25 23:38:46.169 [http-nio-9090-exec-1] CreditcardController - ### Create New Category!
+[DEBUG] 2025-08-25 23:38:46.267 [http-nio-9090-exec-1] CreditcardController - ### Purchase : CreditPurchase(purchaseId=null, invoice=Invoice(invoiceId=52, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN), totalInstallments=1, category=PurchaseCategory(purchaseClassId=1, name=Mercado, editable=false), value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:38:46.282 [http-nio-9090-exec-1] CreditcardController - ## General Exception
+[ERROR] 2025-08-25 23:38:46.283 [http-nio-9090-exec-1] CreditcardController - ### Exception : class org.springframework.dao.DataIntegrityViolationException
+[ERROR] 2025-08-25 23:38:46.283 [http-nio-9090-exec-1] CreditcardController - ### Message : could not execute statement [ERROR: insert or update on table "tb_credit_purchase" violates foreign key constraint "fkr7revrvmr7j7uuwjiilxybrb6"
+  Detail: Key (tb_purchase_class)=(1) is not present in table "tb_purchase_class".] [insert into tb_credit_purchase (tb_purchase_class,invoice_id,purchase_date_time,total_installments,value,purchase_id) values (?,?,?,?,?,?)]; SQL [insert into tb_credit_purchase (tb_purchase_class,invoice_id,purchase_date_time,total_installments,value,purchase_id) values (?,?,?,?,?,?)]; constraint [fkr7revrvmr7j7uuwjiilxybrb6]
+[INFO ] 2025-08-25 23:40:20.679 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 27164 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2025-08-25 23:40:20.687 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2025-08-25 23:40:20.688 [restartedMain] MyFinancesBffApplication - No active profile set, falling back to 1 default profile: "default"
+[DEBUG] 2025-08-25 23:40:25.234 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2025-08-25 23:40:26.324 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.251 seconds (process running for 7.465)
+[INFO ] 2025-08-25 23:40:26.328 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2025-08-25 23:40:26.328 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2025-08-25 23:40:26.328 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[DEBUG] 2025-08-25 23:40:29.998 [http-nio-9090-exec-2] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:40:30.002 [http-nio-9090-exec-2] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:40:30.002 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@6c6e0c46, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:40:30.003 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:40:30.005 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:40:30.034 [http-nio-9090-exec-2] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:40:30.034 [http-nio-9090-exec-2] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:40:30.034 [http-nio-9090-exec-2] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:40:30.044 [http-nio-9090-exec-2] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:40:30.047 [http-nio-9090-exec-2] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:40:30.047 [http-nio-9090-exec-2] InvoiceService - ## New Invoice : Invoice(invoiceId=null, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN) 
+[DEBUG] 2025-08-25 23:40:30.075 [http-nio-9090-exec-2] CreditcardController - ### Current Invoice: Invoice(invoiceId=102, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN)
+[DEBUG] 2025-08-25 23:40:30.075 [http-nio-9090-exec-2] CreditcardController - ### Permitions OK
+[DEBUG] 2025-08-25 23:40:30.080 [http-nio-9090-exec-2] CreditcardController - ### Category Found!
+[DEBUG] 2025-08-25 23:40:30.086 [http-nio-9090-exec-2] CreditcardController - ### Purchase : CreditPurchase(purchaseId=null, invoice=Invoice(invoiceId=102, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN), totalInstallments=1, category=PurchaseCategory(purchaseClassId=1, name=Mercado, editable=false), value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:41:10.749 [http-nio-9090-exec-3] CreditcardController - ######## ### CREATE CREDIT CARD ### ########
+[DEBUG] 2025-08-25 23:41:10.753 [http-nio-9090-exec-3] CreditcardController - ### CredicardForm : CreditCardForm(cardId=0, user=null, bank=BRADESCO, endNumbers=6969, billingPeriodStart=10, billingPeriodEnd=9, usedLimit=null, totalLimit=10000.00, cadastro=null)
+[DEBUG] 2025-08-25 23:41:10.753 [http-nio-9090-exec-3] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@18828834, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:41:10.753 [http-nio-9090-exec-3] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:41:10.756 [http-nio-9090-exec-3] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:41:10.757 [http-nio-9090-exec-3] CreditcardController - ### Card : CreditCard{id=null, bank='BRADESCO', endnumbers='6969'}
+[DEBUG] 2025-08-25 23:41:23.970 [http-nio-9090-exec-4] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 23:41:23.970 [http-nio-9090-exec-4] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 23:41:23.970 [http-nio-9090-exec-4] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@1150571c, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:41:23.970 [http-nio-9090-exec-4] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:41:23.973 [http-nio-9090-exec-4] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:42:24.855 [http-nio-9090-exec-7] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 23:42:24.855 [http-nio-9090-exec-7] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 23:42:24.855 [http-nio-9090-exec-7] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@78fba546, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:42:24.855 [http-nio-9090-exec-7] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:42:24.858 [http-nio-9090-exec-7] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:46:51.439 [http-nio-9090-exec-10] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 23:46:51.439 [http-nio-9090-exec-10] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 23:46:51.439 [http-nio-9090-exec-10] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@5ed42bf8, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:46:51.439 [http-nio-9090-exec-10] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:46:51.442 [http-nio-9090-exec-10] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:47:04.360 [http-nio-9090-exec-1] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2025-08-25 23:47:04.360 [http-nio-9090-exec-1] CreditcardController - ### Purchase Form : CreditPurchaseForm(puchaseID=0, creditCardId=16, invoiceId=0, totalInstallments=1, category=Mercado, value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:47:04.360 [http-nio-9090-exec-1] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@2ac49beb, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:47:04.361 [http-nio-9090-exec-1] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:47:04.363 [http-nio-9090-exec-1] CreditcardController - ### Username From Entity : lucy
+[DEBUG] 2025-08-25 23:47:04.366 [http-nio-9090-exec-1] CreditcardController - ### Creditcard: CreditCard{id=16, bank='ITAU', endnumbers='4568'}
+[DEBUG] 2025-08-25 23:47:04.366 [http-nio-9090-exec-1] InvoiceService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2025-08-25 23:47:04.366 [http-nio-9090-exec-1] InvoiceService - ## Today 2025-08-25
+[DEBUG] 2025-08-25 23:47:04.369 [http-nio-9090-exec-1] InvoiceService - ## Invoice not Present ! 
+[DEBUG] 2025-08-25 23:47:04.371 [http-nio-9090-exec-1] InvoiceService - ## Create Invoice! 
+[DEBUG] 2025-08-25 23:47:04.371 [http-nio-9090-exec-1] InvoiceService - ## New Invoice : Invoice(invoiceId=null, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN) 
+[DEBUG] 2025-08-25 23:47:05.923 [http-nio-9090-exec-1] CreditcardController - ### Current Invoice: Invoice(invoiceId=103, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN)
+[DEBUG] 2025-08-25 23:47:05.923 [http-nio-9090-exec-1] CreditcardController - ### Permitions OK
+[DEBUG] 2025-08-25 23:47:05.925 [http-nio-9090-exec-1] CreditcardController - ### Category Found!
+[DEBUG] 2025-08-25 23:47:05.927 [http-nio-9090-exec-1] CreditcardController - ### Purchase : CreditPurchase(purchaseId=null, invoice=Invoice(invoiceId=103, creditCard=CreditCard{id=16, bank='ITAU', endnumbers='4568'}, totalAmount=null, startDate=2025-08-01, endDate=2025-08-09, dueDate=2025-08-05, status=OPEN), totalInstallments=1, category=PurchaseCategory(purchaseClassId=1, name=Mercado, editable=false), value=150.99, purchaseDateTime=null)
+[DEBUG] 2025-08-25 23:47:14.801 [http-nio-9090-exec-2] CreditcardController - ######## ### GET CREDIT CARD BY ID ### ########
+[DEBUG] 2025-08-25 23:47:14.802 [http-nio-9090-exec-2] CreditcardController - ### Credicard ID : 16
+[DEBUG] 2025-08-25 23:47:14.802 [http-nio-9090-exec-2] CreditcardController - ### Auth : UsernamePasswordAuthenticationToken [Principal=com.thukera.user.security.service.UserPrinciple@48e4b6a0, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]
+[DEBUG] 2025-08-25 23:47:14.802 [http-nio-9090-exec-2] CreditcardController - ### Username From Token : lucy
+[DEBUG] 2025-08-25 23:47:14.804 [http-nio-9090-exec-2] CreditcardController - ### Username From Entity : lucy

@@ -8,6 +8,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thukera.user.model.entities.User;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,19 +16,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -66,6 +63,11 @@ public class CreditCard {
     @Max(31)
     @Column(name = "billing_period_end")
     private Integer billingPeriodEnd;
+    
+    @Min(1)
+    @Max(31)
+    @Column(name = "billing_due_date")
+    private Integer dueDate;
 
     @Column(name = "used_limit", precision = 16, scale = 2)
     private BigDecimal usedLimit = BigDecimal.ZERO;
@@ -85,9 +87,8 @@ public class CreditCard {
         if (dataCadastro == null) dataCadastro = LocalDate.now();
     }
 
-	@OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY)
-	@JoinTable(name = "tb_invoice", joinColumns = @JoinColumn(name = "card_id"), inverseJoinColumns = @JoinColumn(name = "invoice_id"))
-	private List<Invoice> invoices = new ArrayList<>();
+    @OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Invoice> invoices = new ArrayList<>();
 
 	public CreditCard() {
 		super();
@@ -121,6 +122,15 @@ public class CreditCard {
 		this.usedLimit = usedLimit;
 		this.totalLimit = totalLimit;
 		this.dataCadastro = dataCadastro;
+	}
+	
+	@Override
+	public String toString() {
+	    return "CreditCard{" +
+	            "id=" + cardId +
+	            ", bank='" + bank + '\'' +
+	            ", endnumbers='" + endnumbers + '\'' +
+	            '}';
 	}
 
 }

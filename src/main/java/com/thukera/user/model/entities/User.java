@@ -124,4 +124,12 @@ public class User{
         this.status = status;
         this.dataCadastro = dataCadastro;
     }
+    
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }
