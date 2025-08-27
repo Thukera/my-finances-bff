@@ -46,6 +46,7 @@ public class WebSecurityConfig {
         "/api/user/**",
         "/api/creditcard/**",
         "/api/test/**",
+        "/api/**"
     };
 
     @Bean

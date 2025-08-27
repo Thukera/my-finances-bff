@@ -22,6 +22,7 @@ import com.thukera.creditcard.model.enums.PurchaseCategoryEnum;
 import com.thukera.creditcard.model.form.CreditCardForm;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.repository.CreditcardRepository;
+import com.thukera.creditcard.repository.InvoiceRepository;
 import com.thukera.creditcard.repository.PurchaseRepository;
 import com.thukera.creditcard.repository.PurchaseCategoryRepository;
 import com.thukera.creditcard.service.InvoiceService;
@@ -52,6 +53,9 @@ public class CreditcardController {
 	
 	@Autowired
 	private PurchaseRepository purchaseRepository;
+	
+	@Autowired
+	private InvoiceRepository invoiceRepository;
 	
 	@Autowired
 	private PurchaseCategoryRepository purchaseCategoryRepository;
@@ -220,8 +224,8 @@ public class CreditcardController {
 				purchaseEntity.setTotalInstallments(purchaseForm.getTotalInstallments());
 				purchaseEntity.setValue(purchaseForm.getValue());
 				
-				PurchaseCategory category = new PurchaseCategory()
-;				if(purchaseCategoryRepository.existsByName(purchaseForm.getCategory())){
+				PurchaseCategory category = new PurchaseCategory();
+				if(purchaseCategoryRepository.existsByName(purchaseForm.getCategory())){
 					logger.debug("### Category Found!");
 					category = purchaseCategoryRepository.getByName(purchaseForm.getCategory());
 				} else {
@@ -266,4 +270,123 @@ public class CreditcardController {
 		}
 
 	}
+	
+	@GetMapping("/purchase/{purchaseId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> gettPurchaseDetails(@PathVariable Long purchaseId) {
+		
+		logger.debug("######## ### GET PURCHASE BY ID ### ########");
+
+		try {
+			
+			logger.debug("### Purchase ID : " + purchaseId);
+			
+			// 1. Recover authenticated user from SecurityContext
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			logger.debug("### Auth : " + authentication);
+			String username = authentication.getName(); // usually the "username" from your JWT
+			logger.debug("### Username From Token : " + username);
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new NotFoundException("User not found"));
+			logger.debug("### Username From Entity : " + user.getUsername());
+			boolean isAdmin = authentication.getAuthorities().stream()
+					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+			
+			CreditPurchase purchase = purchaseRepository.findById(purchaseId).orElseThrow(() -> new NotFoundException("Purchase not found"));;
+			
+			boolean isPurchaseFromUser = (user.getId() == purchase.getInvoice().getCreditCard().getUser().getId());
+			
+			if (isAdmin || isPurchaseFromUser) {
+				logger.debug("### Permitions OK");
+				return ResponseEntity.ok(purchase);		
+			} else {
+				Map<String, String> body = new HashMap<>();
+				body.put("message", "Não autorizado");
+				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
+			}
+		
+		} catch (TransactionSystemException e) {
+			Throwable root = e.getRootCause();
+			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Validation / transaction error");
+			return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+
+		} catch (NotFoundException e) {
+			logger.debug("### NotFoundException Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Não encontrado");
+			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
+
+		} catch (Exception e) {
+			logger.debug("## General Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Internal Server Error");
+			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@GetMapping("/invoice/{invoiceId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<?> gettInvoiceDetails(@PathVariable Long invoiceId) {
+		
+		logger.debug("######## ### GET INVOICE BY ID ### ########");
+
+		try {
+			
+			logger.debug("### Invoice ID : " + invoiceId);
+			
+			// 1. Recover authenticated user from SecurityContext
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			logger.debug("### Auth : " + authentication);
+			String username = authentication.getName(); // usually the "username" from your JWT
+			logger.debug("### Username From Token : " + username);
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new NotFoundException("User not found"));
+			logger.debug("### Username From Entity : " + user.getUsername());
+			boolean isAdmin = authentication.getAuthorities().stream()
+					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+			
+			Invoice invoice = invoiceRepository.findById(invoiceId).orElseThrow(() -> new NotFoundException("Invoice not found"));;
+			
+			boolean isInvoiceFromUser = (user.getId() == invoice.getCreditCard().getUser().getId());
+			
+			if (isAdmin || isInvoiceFromUser) {
+				logger.debug("### Permitions OK");
+				return ResponseEntity.ok(invoice);		
+			} else {
+				Map<String, String> body = new HashMap<>();
+				body.put("message", "Não autorizado");
+				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
+			}		
+			
+		} catch (TransactionSystemException e) {
+			Throwable root = e.getRootCause();
+			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Validation / transaction error");
+			return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+
+		} catch (NotFoundException e) {
+			logger.debug("### NotFoundException Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Não encontrado");
+			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
+
+		} catch (Exception e) {
+			logger.debug("## General Exception");
+			logger.error("### Exception : " + e.getClass());
+			logger.error("### Message : " + e.getMessage());
+			Map<String, String> body = new HashMap<>();
+			body.put("message", "Internal Server Error");
+			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+		}	
+	}
+	
 }
