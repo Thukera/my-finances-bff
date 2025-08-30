@@ -35,6 +35,9 @@ public class CreditPurchase {
 	@JoinColumn(name = "invoice_id")
 	private Invoice invoice;
 	
+	@Column(name = "descricao", length = 255)
+	private String descricao;
+	
 	@Column
 	private Integer totalInstallments;
 

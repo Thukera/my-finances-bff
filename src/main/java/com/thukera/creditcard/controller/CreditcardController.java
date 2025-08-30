@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Invoice;
@@ -86,7 +87,9 @@ public class CreditcardController {
 			CreditCard card = new CreditCard();
 			card.setUser(user);
 			card.setBank(creditcardForm.getBank());
+			card.setNickname(creditcardForm.getNickname());
 			card.setEndnumbers(creditcardForm.getEndNumbers());
+			card.setDueDate(creditcardForm.getDueDate());
 			card.setBillingPeriodStart(creditcardForm.getBillingPeriodStart());
 			card.setBillingPeriodEnd(creditcardForm.getBillingPeriodEnd());
 			card.setTotalLimit(creditcardForm.getTotalLimit());
@@ -95,8 +98,10 @@ public class CreditcardController {
 
 			// 4. Save
 			CreditCard saved = creditcardRepository.save(card);
+			
+			CreditCardForm savedForm = new CreditCardForm().fromModel(saved);
 
-			return ResponseEntity.ok(saved);
+			return ResponseEntity.ok(savedForm);
 
 		} catch (TransactionSystemException e) {
 			Throwable root = e.getRootCause();
@@ -157,7 +162,9 @@ public class CreditcardController {
 				body.put("message", "Cartão Não Pertece ao usuario");
 				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
 			} else {
-				return ResponseEntity.ok(card);
+				CreditCardForm savedForm = new CreditCardForm().fromModel(card);
+
+				return ResponseEntity.ok(savedForm);
 			}
 
 		} catch (TransactionSystemException e) {
@@ -199,11 +206,9 @@ public class CreditcardController {
 			logger.debug("### Auth : " + authentication);
 			String username = authentication.getName();
 			logger.debug("### Username From Token : " + username);
-			User user = userRepository.findByUsername(username)
-					.orElseThrow(() -> new NotFoundException("User not found"));
+			User user = userRepository.findByUsername(username).orElseThrow(() -> new NotFoundException("User not found"));
 			logger.debug("### Username From Entity : " + user.getUsername());
-			boolean isAdmin = authentication.getAuthorities().stream()
-					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
+			boolean isAdmin = authentication.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
 
 
 			// Credit Card and Invoice Adjustment
@@ -223,6 +228,7 @@ public class CreditcardController {
 				purchaseEntity.setInvoice(currentInvoice);
 				purchaseEntity.setTotalInstallments(purchaseForm.getTotalInstallments());
 				purchaseEntity.setValue(purchaseForm.getValue());
+				purchaseEntity.setDescricao(purchaseForm.getDescricao());
 				
 				PurchaseCategory category = new PurchaseCategory();
 				if(purchaseCategoryRepository.existsByName(purchaseForm.getCategory())){
@@ -357,7 +363,10 @@ public class CreditcardController {
 			
 			if (isAdmin || isInvoiceFromUser) {
 				logger.debug("### Permitions OK");
-				return ResponseEntity.ok(invoice);		
+				
+				InvoiceDTO invoiceDTO = InvoiceDTO.fromEntity(invoice);
+				
+				return ResponseEntity.ok(invoiceDTO);		
 			} else {
 				Map<String, String> body = new HashMap<>();
 				body.put("message", "Não autorizado");

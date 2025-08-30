@@ -53,6 +53,11 @@ public class CreditCard {
     @Column(name = "end_numbers", length = 4)
     @Size(max = 4, min = 4)  // exactly 4 digits
     private String endnumbers;
+    
+    @NotBlank
+    @Size(max = 50)
+    @Column(name = "nickname", length = 50, nullable = false)
+    private String nickname;
 
     @Min(1)
     @Max(31)
@@ -87,20 +92,22 @@ public class CreditCard {
         if (dataCadastro == null) dataCadastro = LocalDate.now();
     }
 
-    @OneToMany(mappedBy = "creditCard", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "creditCard", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Invoice> invoices = new ArrayList<>();
+    
 
 	public CreditCard() {
 		super();
 	}
 
-	public CreditCard(User user, @NotBlank @Size(max = 50) String bank, @NotBlank @Size(max = 4) String endnumbers,
+	public CreditCard(User user, @NotBlank @Size(max = 50) String bank, @NotBlank @Size(max = 4) String endnumbers, @Size(max = 50) String nickname,
 			@NotBlank int billingPeriodStart, @NotBlank int billingPeriodEnd, BigDecimal usedLimit,
 			@NotBlank BigDecimal totalLimit, @NotBlank LocalDate dataCadastro) {
 		super();
 		this.user = user;
 		this.bank = bank;
 		this.endnumbers = endnumbers;
+		this.nickname = nickname;
 		this.billingPeriodStart = billingPeriodStart;
 		this.billingPeriodEnd = billingPeriodEnd;
 		this.usedLimit = usedLimit;
@@ -108,7 +115,7 @@ public class CreditCard {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public CreditCard(Long cardId, User user, @NotBlank @Size(max = 50) String bank,
+	public CreditCard(Long cardId, User user, @NotBlank @Size(max = 50) String bank, String nickname,
 			@NotBlank @Size(max = 4) String endnumbers, @NotBlank int billingPeriodStart,
 			@NotBlank int billingPeriodEnd, BigDecimal usedLimit, @NotBlank BigDecimal totalLimit,
 			LocalDate dataCadastro) {
@@ -116,6 +123,7 @@ public class CreditCard {
 		this.cardId = cardId;
 		this.user = user;
 		this.bank = bank;
+		this.nickname = nickname;
 		this.endnumbers = endnumbers;
 		this.billingPeriodStart = billingPeriodStart;
 		this.billingPeriodEnd = billingPeriodEnd;
@@ -124,13 +132,13 @@ public class CreditCard {
 		this.dataCadastro = dataCadastro;
 	}
 	
-	@Override
-	public String toString() {
-	    return "CreditCard{" +
-	            "id=" + cardId +
-	            ", bank='" + bank + '\'' +
-	            ", endnumbers='" + endnumbers + '\'' +
-	            '}';
-	}
+//	@Override
+//	public String toString() {
+//	    return "CreditCard{" +
+//	            "id=" + cardId +
+//	            ", bank='" + bank + '\'' +
+//	            ", endnumbers='" + endnumbers + '\'' +
+//	            '}';
+//	}
 
 }

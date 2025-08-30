@@ -13,6 +13,7 @@ import lombok.Data;
 public class CreditPurchaseForm {
 	
 	private long puchaseID;
+	private String descricao;
 	private long creditCardId;
 	private long invoiceId;
 	private int totalInstallments;

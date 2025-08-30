@@ -12,8 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreditCardDTO {
+public class CreditCardUserDTO {
     private Long id;
+    private String nickname;
     private String bank;
     private String endnumbers;
     private Integer billingPeriodStart;
@@ -21,9 +22,10 @@ public class CreditCardDTO {
     private BigDecimal totalLimit;
     private LocalDate dataCadastro;
 
-    public static CreditCardDTO fromEntity(CreditCard card) {
-        return new CreditCardDTO(
+    public static CreditCardUserDTO fromEntity(CreditCard card) {
+        return new CreditCardUserDTO(
             card.getCardId(),
+            card.getNickname(),
             card.getBank(),
             card.getEndnumbers(),
             card.getBillingPeriodStart(),

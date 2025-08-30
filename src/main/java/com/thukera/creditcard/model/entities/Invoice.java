@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thukera.creditcard.model.enums.InvoiceStatus;
+import com.thukera.user.model.entities.User;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,8 +33,8 @@ public class Invoice {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "invoice_seq")
     private Long invoiceId;
 	
-	@ManyToOne
-	@JoinColumn(name = "card_id", insertable = false, updatable = false)
+	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@JoinColumn(name = "card_id", nullable = false)
 	private CreditCard creditCard;
 	
 //	@OneToMany(mappedBy = "invoice", fetch = FetchType.LAZY)

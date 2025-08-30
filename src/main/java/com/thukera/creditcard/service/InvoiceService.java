@@ -1,5 +1,6 @@
 package com.thukera.creditcard.service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -31,16 +32,25 @@ public class InvoiceService {
         logger.debug("## Today {}", today);
 
         // 1) Check for current OPEN invoice
-        Optional<Invoice> openInvoice = invoiceRepository.findByCreditCardAndStatusAndStartDateLessThanEqualAndEndDateGreaterThanEqual(creditCard, InvoiceStatus.OPEN, today, today);
+        Optional<Invoice> openInvoice = invoiceRepository.findByCreditCardAndStatus(creditCard, InvoiceStatus.OPEN);
         if (openInvoice.isPresent()) {
         	logger.debug("## Opened Invoice is Present : {}", openInvoice.toString());
-            return openInvoice.get();
+        	
+        	if (openInvoice.get().getEndDate().isBefore(today)) {
+        		logger.debug("## Opened Invoice Must Close");
+        		openInvoice.get().setStatus(InvoiceStatus.CLOSED);
+        		invoiceRepository.save(openInvoice.get());	
+        	} else {
+        		return openInvoice.get();
+        	}       
         }
-
-        logger.debug("## Invoice not Present ! ");
+        logger.debug("## Open Invoice not Present !");    
+        
+        
         // 2) Check for a PENDING invoice that should be opened now
-        Optional<Invoice> pendingInvoice = invoiceRepository.findByCreditCardAndStatus(creditCard, InvoiceStatus.PENDING);
-
+        Optional<Invoice> pendingInvoice = invoiceRepository.findFirstByCreditCardAndStatusOrderByStartDateAsc(creditCard,InvoiceStatus.PENDING);
+        
+        
         if (pendingInvoice.isPresent()) {
         	logger.debug("## Pending Invoice is Present : {}", openInvoice.toString());
             Invoice invoice = pendingInvoice.get();
@@ -51,12 +61,14 @@ public class InvoiceService {
         }
 
         logger.debug("## Create Invoice! ");
+        
         // 3) Create new invoice
         Invoice newInvoice = new Invoice();
         newInvoice.setCreditCard(creditCard);
         newInvoice.setDueDate(calculateDueDate(today, creditCard.getDueDate()));
         newInvoice.setStartDate(calculateStartDate(today, creditCard.getBillingPeriodStart()));
         newInvoice.setEndDate(calculateEndDate(today, creditCard.getBillingPeriodEnd()));
+        newInvoice.setTotalAmount(BigDecimal.ZERO);
         newInvoice.setStatus(InvoiceStatus.OPEN);
         
         logger.debug("## New Invoice : {} ",newInvoice.toString());
@@ -65,17 +77,21 @@ public class InvoiceService {
 
     private LocalDate calculateStartDate(LocalDate today, int startDate) {
         // e.g., start today or card’s billing cycle
-        return today.withDayOfMonth(1);
+        return today.withDayOfMonth(startDate);
     }
 
     private LocalDate calculateEndDate(LocalDate today, int endDate) {
+    	LocalDate invoiceEndDate = today.withDayOfMonth(endDate);
+    	invoiceEndDate = invoiceEndDate.plusMonths(1);
         // example: end of month
-        return today.withDayOfMonth(endDate);
+        return invoiceEndDate;
     }
     
     private LocalDate calculateDueDate(LocalDate today , int dueDate) {
+    	LocalDate invoiceDueDate = today.withDayOfMonth(dueDate);
+    	invoiceDueDate = invoiceDueDate.plusMonths(1);
         // example: end of month
-        return today.withDayOfMonth(dueDate);
+        return invoiceDueDate;
     }
 }
 
