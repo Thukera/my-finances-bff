@@ -27,6 +27,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
@@ -92,8 +93,13 @@ public class CreditCard {
         if (dataCadastro == null) dataCadastro = LocalDate.now();
     }
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "creditCard", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Invoice> invoices = new ArrayList<>();
+    
+    @ToString.Exclude
+    @OneToMany(mappedBy = "creditCard", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CreditPurchase> purchases = new ArrayList<>();
     
 
 	public CreditCard() {
@@ -132,13 +138,5 @@ public class CreditCard {
 		this.dataCadastro = dataCadastro;
 	}
 	
-//	@Override
-//	public String toString() {
-//	    return "CreditCard{" +
-//	            "id=" + cardId +
-//	            ", bank='" + bank + '\'' +
-//	            ", endnumbers='" + endnumbers + '\'' +
-//	            '}';
-//	}
 
 }

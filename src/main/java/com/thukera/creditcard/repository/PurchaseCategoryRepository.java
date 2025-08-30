@@ -1,8 +1,11 @@
 package com.thukera.creditcard.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.thukera.creditcard.model.entities.Invoice;
 import com.thukera.creditcard.model.entities.PurchaseCategory;
 
 @Repository
@@ -10,5 +13,6 @@ public interface PurchaseCategoryRepository extends JpaRepository<PurchaseCatego
 	
 	boolean existsByName(String name);
 	PurchaseCategory getByName(String category);
+	Optional<PurchaseCategory> findByName(String category);
 
 }

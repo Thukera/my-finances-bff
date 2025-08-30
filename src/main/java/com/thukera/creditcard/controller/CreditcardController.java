@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thukera.creditcard.model.dto.InvoiceDTO;
+import com.thukera.creditcard.model.dto.PurchaseDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Invoice;
@@ -24,7 +25,7 @@ import com.thukera.creditcard.model.form.CreditCardForm;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.repository.CreditcardRepository;
 import com.thukera.creditcard.repository.InvoiceRepository;
-import com.thukera.creditcard.repository.PurchaseRepository;
+import com.thukera.creditcard.repository.CreditPurchaseRepository;
 import com.thukera.creditcard.repository.PurchaseCategoryRepository;
 import com.thukera.creditcard.service.InvoiceService;
 import com.thukera.root.model.messages.NotFoundException;
@@ -53,7 +54,7 @@ public class CreditcardController {
 	private UserRepository userRepository;
 	
 	@Autowired
-	private PurchaseRepository purchaseRepository;
+	private CreditPurchaseRepository purchaseRepository;
 	
 	@Autowired
 	private InvoiceRepository invoiceRepository;
@@ -220,36 +221,19 @@ public class CreditcardController {
 			
 			boolean isCardFromUser = (user.getId() == creditcard.getUser().getId());
 			
-			if (isAdmin || isCardFromUser) {
-				logger.debug("### Permitions OK");
-				
-				// Build Purchase Component
-				CreditPurchase purchaseEntity = new CreditPurchase();
-				purchaseEntity.setInvoice(currentInvoice);
-				purchaseEntity.setTotalInstallments(purchaseForm.getTotalInstallments());
-				purchaseEntity.setValue(purchaseForm.getValue());
-				purchaseEntity.setDescricao(purchaseForm.getDescricao());
-				
-				PurchaseCategory category = new PurchaseCategory();
-				if(purchaseCategoryRepository.existsByName(purchaseForm.getCategory())){
-					logger.debug("### Category Found!");
-					category = purchaseCategoryRepository.getByName(purchaseForm.getCategory());
-				} else {
-					logger.debug("### Create New Category!");
-					category = new PurchaseCategory(purchaseForm.getCategory(), false);
-					category = purchaseCategoryRepository.save(category);
-				}	
-				purchaseEntity.setCategory(category);
-				logger.debug("### Purchase : " + purchaseEntity.toString());
-				CreditPurchase saved = purchaseRepository.save(purchaseEntity);
+			if (!isAdmin && !isCardFromUser) {
+	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+	                    .body(Map.of("message", "Não autorizado"));
+	        }
 
-				return ResponseEntity.ok(saved);
+	        // Delegate to service
+	        CreditPurchase savedPurchase = invoiceService.createPurchase(
+	                purchaseForm,
+	                creditcard
+	        );
 
-			}  else {
-				Map<String, String> body = new HashMap<>();
-				body.put("message", "Não autorizado");
-				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
-			}
+	        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(savedPurchase);
+	        return ResponseEntity.ok(purchaseDTO);
 
 		} catch (TransactionSystemException e) {
 			Throwable root = e.getRootCause();
@@ -267,6 +251,7 @@ public class CreditcardController {
 			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
 
 		} catch (Exception e) {
+			logger.error("### Error inserting purchase", e);
 			logger.debug("## General Exception");
 			logger.error("### Exception : " + e.getClass());
 			logger.error("### Message : " + e.getMessage());
@@ -304,7 +289,10 @@ public class CreditcardController {
 			
 			if (isAdmin || isPurchaseFromUser) {
 				logger.debug("### Permitions OK");
-				return ResponseEntity.ok(purchase);		
+				
+				// DTO Purchase
+				PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(purchase);
+				return ResponseEntity.ok(purchaseDTO);		
 			} else {
 				Map<String, String> body = new HashMap<>();
 				body.put("message", "Não autorizado");

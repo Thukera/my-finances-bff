@@ -14,10 +14,10 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Builder;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
-@Builder
 @Table(name = "tb_installment")
 public class Installment {
 
@@ -29,6 +29,7 @@ public class Installment {
 	
 	@ManyToOne
 	@JoinColumn(name = "purchase_id")
+	 @ToString.Exclude
 	private CreditPurchase purchase;
 
 	@Column(name = "installment_number")
@@ -38,6 +39,17 @@ public class Installment {
 	private LocalDate dueDate;
 
 	@Column(name = "amount", precision = 16, scale = 2)
-	private BigDecimal amount;
+	private BigDecimal value;
+	
+	@ManyToOne
+	@JoinColumn(name = "invoice_id")
+	private Invoice invoice;
+
+	public Installment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }

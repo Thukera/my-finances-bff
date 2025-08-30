@@ -18,4 +18,7 @@ public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     
 	Optional<Invoice> findFirstByCreditCardAndStatusOrderByStartDateAsc(CreditCard creditCard, InvoiceStatus pending);
 
+
+	Optional<Invoice> findByCreditCardAndStartDateAndEndDate(CreditCard card, LocalDate startDate, LocalDate endDate);
+
 }

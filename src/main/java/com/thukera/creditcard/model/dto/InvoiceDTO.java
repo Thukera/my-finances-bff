@@ -2,20 +2,12 @@ package com.thukera.creditcard.model.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import com.thukera.creditcard.model.entities.CreditCard;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.thukera.creditcard.model.entities.Invoice;
 import com.thukera.creditcard.model.enums.InvoiceStatus;
-import com.thukera.user.dto.UserDTO;
-import com.thukera.user.model.entities.User;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,23 +18,29 @@ import lombok.NoArgsConstructor;
 public class InvoiceDTO {
 
 	private Long invoiceId;
-	private InvoiceCreditCardDTO creditCardDto;
-	private BigDecimal totalAmount;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate startDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate endDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dueDate;
 	private InvoiceStatus status;
-//	private List<CreditPurchase> purchases;
+	private BigDecimal totalAmount;
+	private InvoiceCreditCardDTO creditcard;
+	private List<InvoicePurchaseDTO> purchases;
 	
 	public static InvoiceDTO fromEntity(Invoice invoice) {
 	    return new InvoiceDTO(
 	        invoice.getInvoiceId(),
-	        InvoiceCreditCardDTO.fromEntity(invoice.getCreditCard()), // no stream
-	        invoice.getTotalAmount(),
 	        invoice.getStartDate(),
 	        invoice.getEndDate(),
 	        invoice.getDueDate(),
-	        invoice.getStatus()
+	        invoice.getStatus(),
+	        invoice.getTotalAmount(),
+	        InvoiceCreditCardDTO.fromEntity(invoice.getCreditCard()),
+	        invoice.getPurchases().stream()
+            .map(InvoicePurchaseDTO::fromEntity)
+            .collect(Collectors.toList())
 	    );
 	}
 }

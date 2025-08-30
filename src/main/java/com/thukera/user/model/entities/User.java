@@ -31,6 +31,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.ToString;
 
 
 @Entity
@@ -93,6 +94,7 @@ public class User{
 	private LocalDate dataCadastro;
     
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CreditCard> creditcards = new ArrayList<>();
 
