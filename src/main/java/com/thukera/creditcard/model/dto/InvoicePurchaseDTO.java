@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.thukera.creditcard.model.entities.CreditPurchase;
@@ -20,21 +21,19 @@ public class InvoicePurchaseDTO {
 
 	private Long purchaseId;
 	private String descricao;
-	private Integer totalInstallments;
-	private Integer currentInstallment;
 	private BigDecimal value;
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
+	private List<PurchaseInstallmentDTO> installments;
 
 	
 	public static InvoicePurchaseDTO fromEntity(CreditPurchase purchase) {
 	    return new InvoicePurchaseDTO(
-	    		purchase.getPurchaseId(),
-	    		purchase.getDescricao(),
-	    		purchase.getTotalInstallments(),
-	    		1,
-	    		purchase.getValue(),
-	    		purchase.getPurchaseDateTime()
+	    	purchase.getPurchaseId(),
+	    	purchase.getDescricao(),
+	    	purchase.getValue(),
+	    	purchase.getPurchaseDateTime(),
+	    	purchase.getInstallments().stream().map(PurchaseInstallmentDTO::fromEntity).collect(Collectors.toList())
 	    );
 	}
 }

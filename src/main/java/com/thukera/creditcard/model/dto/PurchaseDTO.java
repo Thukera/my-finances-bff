@@ -19,7 +19,7 @@ public class PurchaseDTO {
 	
 	private Long purchaseId;
 	private String descricao;
-	private Integer totalInstallments;
+	private boolean hasIinstallment;
 	private BigDecimal value;
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
@@ -30,11 +30,11 @@ public class PurchaseDTO {
         return new PurchaseDTO(
         	purchase.getPurchaseId(),
         	purchase.getDescricao(),
-        	purchase.getTotalInstallments(),	
+        	purchase.isHasInstallments(),	
         	purchase.getValue(),
         	purchase.getPurchaseDateTime(),
         	purchase.getCategory(),
-        	purchase.getInvoices().stream().map(PurchaseInvoiceDTO::fromEntity).collect(Collectors.toList())        );
+        	purchase.getInvoices().stream().map(PurchaseInvoiceDTO::fromEntity).collect(Collectors.toList()));
     }
 }
 

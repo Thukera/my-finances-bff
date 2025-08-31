@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringExclude;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -39,11 +40,7 @@ public class CreditPurchase {
 	private String descricao;
 
 	@Column
-	private Integer totalInstallments;
-
-	@ToString.Exclude
-	@OneToMany(mappedBy = "purchase", fetch = FetchType.LAZY)
-	private List<Installment> installments;
+	private boolean hasInstallments;
 
 	@ManyToOne
 	@JoinColumn(name = "tb_purchase_category")
@@ -63,6 +60,10 @@ public class CreditPurchase {
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "card_id", nullable = false)
 	private CreditCard creditCard;
+	
+	@ToString.Exclude
+	@OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Installment> installments = new ArrayList<>();
 
 	@PrePersist
 	public void prePersist() {
@@ -72,5 +73,11 @@ public class CreditPurchase {
 	public CreditPurchase() {
 		this.purchaseDateTime = LocalDateTime.now();
 	}
+	
+    // helper method to keep both sides in sync
+    public void addInstallment(Installment installment) {
+        installments.add(installment);
+        installment.setPurchase(this);
+    }
 
 }

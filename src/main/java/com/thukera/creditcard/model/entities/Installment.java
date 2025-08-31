@@ -24,28 +24,36 @@ public class Installment {
 	@Id
 	@SequenceGenerator(name = "installment_seq", sequenceName = "seq_installment", allocationSize = 1)
 	@Column(name = "installment_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "installment_seq")
-    private Long installmentId;
-	
-	@ManyToOne
-	@JoinColumn(name = "purchase_id")
-	 @ToString.Exclude
-	private CreditPurchase purchase;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "installment_seq")
+	private Long installmentId;
 
 	@Column(name = "installment_number")
-	private int number;
+	private int currentInstallment;
 
-	@Column(name = "due_date")
-	private LocalDate dueDate;
+	@Column(name = "installment_total")
+	private int totalInstallment;
 
 	@Column(name = "amount", precision = 16, scale = 2)
 	private BigDecimal value;
+
+	@ToString.Exclude
+	@ManyToOne
+	@JoinColumn(name = "credit_purchase_id")
+	private CreditPurchase purchase;
 
 	public Installment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	public Installment(int currentInstallment, int totalInstallment, BigDecimal value, CreditPurchase purchase) {
+		super();
+		this.currentInstallment = currentInstallment;
+		this.totalInstallment = totalInstallment;
+		this.value = value;
+		this.purchase = purchase;
+	}
 	
 	
-	
+
 }

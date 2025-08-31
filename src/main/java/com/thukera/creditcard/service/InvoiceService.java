@@ -143,7 +143,8 @@ public class InvoiceService {
         CreditPurchase purchase = new CreditPurchase();
         purchase.setDescricao(purchaseForm.getDescricao());
         purchase.setValue(purchaseForm.getValue());
-        purchase.setTotalInstallments(purchaseForm.getTotalInstallments());
+        // purchase.setHasInstallments((purchaseForm.getTotalInstallments() > 1) ? true : false); // same as bellow
+        purchase.setHasInstallments((purchaseForm.getTotalInstallments() > 1));
         purchase.setCategory(category);
         purchase.setCreditCard(creditCard);
 
@@ -156,10 +157,10 @@ public class InvoiceService {
   
             return purchase;
 
-        // For Multiple Invoice
+        // For Multiple Installment/Invoices
         } else {
   
-        	// calculate Instalment
+        	// calculate Installment
             BigDecimal installmentValue = purchase.getValue().divide(BigDecimal.valueOf(purchaseForm.getTotalInstallments()), 2, RoundingMode.HALF_UP);                       
             
             // Find or create current invoice
@@ -171,11 +172,13 @@ public class InvoiceService {
             LocalDate nextStartDate = currentInvoice.getStartDate();
             LocalDate nextEndDate   = currentInvoice.getEndDate();
             LocalDate nextdueDate   = currentInvoice.getDueDate();
- 
-            // find or create next Invoices ; generate installments child
+            
+            // Find or create next Invoices ; generate installments child
             ArrayList<Invoice> invoiceList = new ArrayList<Invoice>();
+            ArrayList<Installment> installmentList = new ArrayList<Installment>();
             for (int i = 1; i < purchaseForm.getTotalInstallments(); i++) {
 	
+            	// Child Invoices Handler
                 nextStartDate = nextStartDate.plusMonths(1);
                 nextEndDate   = nextEndDate.plusMonths(1);
                 nextdueDate   = nextdueDate.plusMonths(1);
@@ -184,10 +187,14 @@ public class InvoiceService {
                 nextInvoice.getPurchases().add(purchase);
                 invoiceList.add(nextInvoice);
   	
+                // Child Installment Handler
+                Installment installment = new Installment(i, purchaseForm.getTotalInstallments(), installmentValue, purchase);
+                installmentList.add(installment);
             }
-
+            
             purchase.getInvoices().addAll(invoiceList);
-            return purchase; // or return the first installment if needed
+            purchase.getInstallments().addAll(installmentList);
+            return purchase; 
         }
     }
 
