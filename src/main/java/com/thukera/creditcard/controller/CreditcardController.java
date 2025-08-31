@@ -227,12 +227,10 @@ public class CreditcardController {
 	        }
 
 	        // Delegate to service
-	        CreditPurchase savedPurchase = invoiceService.createPurchase(
-	                purchaseForm,
-	                creditcard
-	        );
-
-	        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(savedPurchase);
+	        CreditPurchase newPurchase = invoiceService.createPurchase( purchaseForm, creditcard);
+	        purchaseRepository.save(newPurchase);
+	        
+	        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(newPurchase);
 	        return ResponseEntity.ok(purchaseDTO);
 
 		} catch (TransactionSystemException e) {
@@ -285,7 +283,7 @@ public class CreditcardController {
 			
 			CreditPurchase purchase = purchaseRepository.findById(purchaseId).orElseThrow(() -> new NotFoundException("Purchase not found"));;
 			
-			boolean isPurchaseFromUser = (user.getId() == purchase.getInvoice().getCreditCard().getUser().getId());
+			boolean isPurchaseFromUser = (user.getId() == purchase.getInvoices().get(1).getCreditCard().getUser().getId());
 			
 			if (isAdmin || isPurchaseFromUser) {
 				logger.debug("### Permitions OK");

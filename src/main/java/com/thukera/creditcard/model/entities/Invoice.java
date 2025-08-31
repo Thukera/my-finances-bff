@@ -2,6 +2,7 @@ package com.thukera.creditcard.model.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,6 +19,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -56,9 +59,9 @@ public class Invoice {
 	@Column(name = "status", nullable = false)
 	private InvoiceStatus status;
 
-	@ToString.Exclude
-	@OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<CreditPurchase> purchases;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "tb_invoice_purchase", joinColumns = @JoinColumn(name = "invoice_id"), inverseJoinColumns = @JoinColumn(name = "purchase_id"))
+	private List<CreditPurchase> purchases = new ArrayList<>();
 
 	public Invoice() {
 		super();

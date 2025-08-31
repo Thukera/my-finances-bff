@@ -2,6 +2,7 @@ package com.thukera.creditcard.model.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringExclude;
@@ -13,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
@@ -53,14 +55,13 @@ public class CreditPurchase {
 	@Column(name = "purchase_date_time")
 	private LocalDateTime purchaseDateTime;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "invoice_id")
 	@ToString.Exclude
-	private Invoice invoice; // null until invoice is generated
-
+	@ManyToMany(mappedBy = "purchases") 
+    private List<Invoice> invoices = new ArrayList<>();
+	
+	@ToString.Exclude
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "card_id", nullable = false)
-	@ToString.Exclude
 	private CreditCard creditCard;
 
 	@PrePersist

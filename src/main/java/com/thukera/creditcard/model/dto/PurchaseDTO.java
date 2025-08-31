@@ -2,6 +2,8 @@ package com.thukera.creditcard.model.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.thukera.creditcard.model.entities.CreditPurchase;
@@ -22,7 +24,7 @@ public class PurchaseDTO {
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
 	private PurchaseCategory category;
-	private PurchaseInvoiceDTO invoice;
+	private List<PurchaseInvoiceDTO> invoices;
 	
 	public static PurchaseDTO fromEntity(CreditPurchase purchase) {
         return new PurchaseDTO(
@@ -32,8 +34,7 @@ public class PurchaseDTO {
         	purchase.getValue(),
         	purchase.getPurchaseDateTime(),
         	purchase.getCategory(),
-        	PurchaseInvoiceDTO.fromEntity(purchase.getInvoice())
-        );
+        	purchase.getInvoices().stream().map(PurchaseInvoiceDTO::fromEntity).collect(Collectors.toList())        );
     }
 }
 

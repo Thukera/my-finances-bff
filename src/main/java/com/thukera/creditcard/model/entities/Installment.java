@@ -40,10 +40,6 @@ public class Installment {
 
 	@Column(name = "amount", precision = 16, scale = 2)
 	private BigDecimal value;
-	
-	@ManyToOne
-	@JoinColumn(name = "invoice_id")
-	private Invoice invoice;
 
 	public Installment() {
 		super();
