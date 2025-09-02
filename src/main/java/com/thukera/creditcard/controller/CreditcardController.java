@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.dto.PurchaseDTO;
+import com.thukera.creditcard.model.dto.PurchaseSingleInstallmentDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Invoice;
@@ -213,12 +214,12 @@ public class CreditcardController {
 			CreditCard creditcard = creditcardRepository.findById(purchaseForm.getCreditCardId()).orElseThrow(() -> new NotFoundException("Cartão não encontrado"));
 			logger.debug("### Creditcard: {}", creditcard.toString());
 			
-			Invoice currentInvoice = invoiceService.getOrCreateCurrentInvoice(creditcard);
-			logger.debug("### Current Invoice: {}", currentInvoice);
-			
 			boolean isCardFromUser = (user.getId() == creditcard.getUser().getId());
-			
+
 			if (!isAdmin && !isCardFromUser) {
+				Invoice currentInvoice = invoiceService.getOrCreateCurrentInvoice(creditcard);
+				logger.debug("### Current Invoice: {}", currentInvoice);
+	
 	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
 	                    .body(Map.of("message", "Não autorizado"));
 	        }
@@ -282,16 +283,25 @@ public class CreditcardController {
 			boolean isAdmin = authentication.getAuthorities().stream()
 					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
 			
-			CreditPurchase purchase = purchaseRepository.findById(purchaseId).orElseThrow(() -> new NotFoundException("Purchase not found"));
-			
-			boolean isPurchaseFromUser = (user.getId() == purchase.getInvoices().get(1).getCreditCard().getUser().getId());
+			CreditPurchase purchase = purchaseRepository.findById(purchaseId)
+			        .orElseThrow(() -> new NotFoundException("Purchase not found"));
+
+			// safely get the first invoice (if any)
+			Invoice invoice = purchase.getInvoices().stream().findFirst()
+			        .orElseThrow(() -> new NotFoundException("No invoice linked to this purchase"));
+
+			// validate the user
+			boolean isPurchaseFromUser = user.getId().equals(invoice.getCreditCard().getUser().getId());
 			
 			if (isAdmin || isPurchaseFromUser) {
 				logger.debug("### Permitions OK");
 				
 				// DTO Purchase
-				PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(purchase);
-				return ResponseEntity.ok(purchaseDTO);		
+				if(purchase.isHasInstallments()) {
+					return ResponseEntity.ok(PurchaseDTO.fromEntity(purchase));
+				} else {
+					return ResponseEntity.ok(PurchaseSingleInstallmentDTO.fromEntity(purchase));
+				}		
 			} else {
 				Map<String, String> body = new HashMap<>();
 				body.put("message", "Não autorizado");

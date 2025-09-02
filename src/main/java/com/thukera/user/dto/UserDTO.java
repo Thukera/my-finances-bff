@@ -3,7 +3,7 @@ package com.thukera.user.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.thukera.creditcard.model.dto.CreditCardUserDTO;
+import com.thukera.creditcard.model.dto.CreditCardDTOFromUser;
 import com.thukera.user.model.entities.User;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class UserDTO {
     private String username;
     private String email;
 
-    private List<CreditCardUserDTO> creditcards;
+    private List<CreditCardDTOFromUser> creditcards;
 
     public static UserDTO fromEntity(User user) {
         return new UserDTO(
@@ -26,7 +26,7 @@ public class UserDTO {
             user.getUsername(),
             user.getEmail(),
             user.getCreditcards().stream()
-                .map(CreditCardUserDTO::fromEntity)
+                .map(CreditCardDTOFromUser::fromEntity)
                 .collect(Collectors.toList())
         );
     }

@@ -1,0 +1,38 @@
+package com.thukera.creditcard.model.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import com.thukera.creditcard.model.entities.CreditCard;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CreditCardDTOFromUser {
+    private Long id;
+    private String nickname;
+    private String bank;
+    private String endnumbers;
+    private Integer billingPeriodStart;
+    private Integer billingPeriodEnd;
+    private BigDecimal totalLimit;
+    private LocalDate dataCadastro;
+
+    public static CreditCardDTOFromUser fromEntity(CreditCard card) {
+        return new CreditCardDTOFromUser(
+            card.getCardId(),
+            card.getNickname(),
+            card.getBank(),
+            card.getEndnumbers(),
+            card.getBillingPeriodStart(),
+            card.getBillingPeriodEnd(),
+            card.getTotalLimit(),
+            card.getDataCadastro()
+        );
+    }
+}
+

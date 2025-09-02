@@ -26,8 +26,8 @@ public class InvoiceDTO {
 	private LocalDate dueDate;
 	private InvoiceStatus status;
 	private BigDecimal totalAmount;
-	private InvoiceCreditCardDTO creditcard;
-	private List<InvoicePurchaseDTO> purchases;
+	private CreditCardDTOFromInvoice creditcard;
+	private List<PurchaseDTOFromInvoice> purchases;
 	
 	public static InvoiceDTO fromEntity(Invoice invoice) {
 	    return new InvoiceDTO(
@@ -37,9 +37,9 @@ public class InvoiceDTO {
 	        invoice.getDueDate(),
 	        invoice.getStatus(),
 	        invoice.getTotalAmount(),
-	        InvoiceCreditCardDTO.fromEntity(invoice.getCreditCard()),
+	        CreditCardDTOFromInvoice.fromEntity(invoice.getCreditCard()),
 	        invoice.getPurchases().stream()
-            .map(InvoicePurchaseDTO::fromEntity)
+            .map(purchase -> PurchaseDTOFromInvoice.fromEntity(purchase, invoice))
             .collect(Collectors.toList())
 	    );
 	}

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.thukera.creditcard.controller.CreditcardController;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Installment;
@@ -20,7 +20,6 @@ import com.thukera.creditcard.model.entities.PurchaseCategory;
 import com.thukera.creditcard.model.enums.InvoiceStatus;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.repository.CreditPurchaseRepository;
-import com.thukera.creditcard.repository.InstallmentRepository;
 import com.thukera.creditcard.repository.InvoiceRepository;
 import com.thukera.creditcard.repository.PurchaseCategoryRepository;
 
@@ -36,10 +35,7 @@ public class InvoiceService {
     private InvoiceRepository invoiceRepository;
     
     @Autowired
-    private InstallmentRepository installmentRepository;
-    
-    @Autowired
-	private CreditPurchaseRepository purchaseRepository;
+    private CreditPurchaseRepository creditPurchaseRepository;
     
     @Autowired
     private PurchaseCategoryRepository purchaseCategoryRepository;
@@ -99,13 +95,25 @@ public class InvoiceService {
         return invoiceRepository
                 .findByCreditCardAndStartDateAndEndDate(card, startDate, endDate)
                 .orElseGet(() -> {
+                	
+                	// INVOICE 
                     Invoice invoice = new Invoice();
                     invoice.setCreditCard(card);
                     invoice.setStartDate(startDate);
                     invoice.setEndDate(endDate);
                     invoice.setDueDate(dueDate);
                     invoice.setStatus(InvoiceStatus.PENDING);
-                    invoice.setTotalAmount(BigDecimal.ZERO);
+                    invoice.setTotalAmount(BigDecimal.ZERO);           
+                    
+                	// FIND SIGNATURES ON CREDIT CARD
+                	if(creditPurchaseRepository.existsRepeatsOnLastInvoice(card)) {
+                		logger.debug("## Repeat exists on credit card");
+                		List<CreditPurchase> repeatPurchases = creditPurchaseRepository.findRepeatsOnLastInvoice(card);
+                		invoice.getPurchases().addAll(repeatPurchases);		
+                		for (CreditPurchase creditPurchase : repeatPurchases) {
+							invoice.getTotalAmount().add(creditPurchase.getValue());
+						}
+                	}               	
                     return invoiceRepository.save(invoice);
                 });
     }
@@ -152,13 +160,10 @@ public class InvoiceService {
         if (purchaseForm.getTotalInstallments() == 1) {
 	
         	Invoice currentInvoice = getOrCreateCurrentInvoice(creditCard);
-        	
-        	BigDecimal updatedValue = currentInvoice.getTotalAmount().add(purchase.getValue());
-        	currentInvoice.setTotalAmount(updatedValue);
+        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(purchase.getValue()));
             currentInvoice.getPurchases().add(purchase);            
             // check if is necessary according cascate structure
             //invoiceRepository.save(currentInvoice);
-  
             purchase.getInvoices().add(currentInvoice);
             
             return purchase;
@@ -171,8 +176,7 @@ public class InvoiceService {
             
             // Find or create current invoice
             Invoice currentInvoice = getOrCreateCurrentInvoice(creditCard);
-            BigDecimal updatedValue = currentInvoice.getTotalAmount().add(installmentValue);
-        	currentInvoice.setTotalAmount(updatedValue);
+        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(installmentValue));
             currentInvoice.getPurchases().add(purchase);      
             
             purchase.getInvoices().add(currentInvoice);
@@ -197,12 +201,11 @@ public class InvoiceService {
                 nextdueDate   = nextdueDate.plusMonths(1);
 
                 Invoice nextInvoice = findOrCreateInvoice(creditCard, nextStartDate, nextEndDate, nextdueDate);
-                BigDecimal nextInvoiceValue = nextInvoice.getTotalAmount().add(installmentValue);
-                nextInvoice.setTotalAmount(nextInvoiceValue); 	
+                nextInvoice.setTotalAmount(nextInvoice.getTotalAmount().add(installmentValue));
                 nextInvoice.getPurchases().add(purchase);
                 
                 // check if is necessary according cascate structure
-                //invoiceRepository.save(nextInvoice);
+                invoiceRepository.save(nextInvoice);
                 
                 invoiceList.add(nextInvoice);
   	
