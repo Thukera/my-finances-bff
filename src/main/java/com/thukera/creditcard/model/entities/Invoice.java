@@ -62,6 +62,10 @@ public class Invoice {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "tb_invoice_purchase", joinColumns = @JoinColumn(name = "invoice_id"), inverseJoinColumns = @JoinColumn(name = "purchase_id"))
 	private List<CreditPurchase> purchases = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "tb_installment", joinColumns = @JoinColumn(name = "invoice_id"), inverseJoinColumns = @JoinColumn(name = "installment_id"))
+	private List<Installment> installments = new ArrayList<>();
 
 	public Invoice() {
 		super();

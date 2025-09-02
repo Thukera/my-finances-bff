@@ -24,6 +24,7 @@ public class PurchaseDTO {
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
 	private PurchaseCategory category;
+	private List<PurchaseInstallmentDTO> installments;
 	private List<PurchaseInvoiceDTO> invoices;
 	
 	public static PurchaseDTO fromEntity(CreditPurchase purchase) {
@@ -34,6 +35,7 @@ public class PurchaseDTO {
         	purchase.getValue(),
         	purchase.getPurchaseDateTime(),
         	purchase.getCategory(),
+        	purchase.getInstallments().stream().map(PurchaseInstallmentDTO::fromEntity).collect(Collectors.toList()),
         	purchase.getInvoices().stream().map(PurchaseInvoiceDTO::fromEntity).collect(Collectors.toList()));
     }
 }

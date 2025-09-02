@@ -60,9 +60,6 @@ public class CreditcardController {
 	private InvoiceRepository invoiceRepository;
 	
 	@Autowired
-	private PurchaseCategoryRepository purchaseCategoryRepository;
-	
-	@Autowired
 	private InvoiceService invoiceService;
 
 	@PostMapping
@@ -230,6 +227,10 @@ public class CreditcardController {
 	        CreditPurchase newPurchase = invoiceService.createPurchase( purchaseForm, creditcard);
 	        purchaseRepository.save(newPurchase);
 	        
+	        
+	        creditcard.getUsedLimit().add(newPurchase.getValue());
+	        creditcardRepository.save(creditcard);
+	        
 	        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(newPurchase);
 	        return ResponseEntity.ok(purchaseDTO);
 
@@ -273,7 +274,7 @@ public class CreditcardController {
 			// 1. Recover authenticated user from SecurityContext
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			logger.debug("### Auth : " + authentication);
-			String username = authentication.getName(); // usually the "username" from your JWT
+			String username = authentication.getName(); 
 			logger.debug("### Username From Token : " + username);
 			User user = userRepository.findByUsername(username)
 					.orElseThrow(() -> new NotFoundException("User not found"));
@@ -281,7 +282,7 @@ public class CreditcardController {
 			boolean isAdmin = authentication.getAuthorities().stream()
 					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
 			
-			CreditPurchase purchase = purchaseRepository.findById(purchaseId).orElseThrow(() -> new NotFoundException("Purchase not found"));;
+			CreditPurchase purchase = purchaseRepository.findById(purchaseId).orElseThrow(() -> new NotFoundException("Purchase not found"));
 			
 			boolean isPurchaseFromUser = (user.getId() == purchase.getInvoices().get(1).getCreditCard().getUser().getId());
 			

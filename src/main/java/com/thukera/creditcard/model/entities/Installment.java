@@ -2,6 +2,8 @@ package com.thukera.creditcard.model.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,7 +11,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Builder;
@@ -38,6 +42,11 @@ public class Installment {
 
 	@ToString.Exclude
 	@ManyToOne
+	@JoinColumn(name = "invoice_id")
+    private Invoice invoice;
+	
+	@ToString.Exclude
+	@ManyToOne
 	@JoinColumn(name = "credit_purchase_id")
 	private CreditPurchase purchase;
 
@@ -46,12 +55,13 @@ public class Installment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Installment(int currentInstallment, int totalInstallment, BigDecimal value, CreditPurchase purchase) {
+	public Installment(int currentInstallment, int totalInstallment, BigDecimal value, CreditPurchase purchase, Invoice invoice) {
 		super();
 		this.currentInstallment = currentInstallment;
 		this.totalInstallment = totalInstallment;
 		this.value = value;
 		this.purchase = purchase;
+		this.invoice = invoice;
 	}
 	
 	

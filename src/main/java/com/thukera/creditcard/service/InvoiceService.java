@@ -137,7 +137,7 @@ public class InvoiceService {
         // Lookup or create category
         PurchaseCategory category = purchaseCategoryRepository
                 .findByName(purchaseForm.getCategory())
-                .orElseGet(() -> purchaseCategoryRepository.save(new PurchaseCategory(purchaseForm.getCategory(), false)));
+                .orElseGet(() -> purchaseCategoryRepository.save(new PurchaseCategory(purchaseForm.getCategory(), false,false)));
 
         // Build purchase entity
         CreditPurchase purchase = new CreditPurchase();
@@ -152,9 +152,15 @@ public class InvoiceService {
         if (purchaseForm.getTotalInstallments() == 1) {
 	
         	Invoice currentInvoice = getOrCreateCurrentInvoice(creditCard);
-            currentInvoice.getPurchases().add(purchase);
-            purchase.getInvoices().add(currentInvoice);
+        	
+        	BigDecimal updatedValue = currentInvoice.getTotalAmount().add(purchase.getValue());
+        	currentInvoice.setTotalAmount(updatedValue);
+            currentInvoice.getPurchases().add(purchase);            
+            // check if is necessary according cascate structure
+            //invoiceRepository.save(currentInvoice);
   
+            purchase.getInvoices().add(currentInvoice);
+            
             return purchase;
 
         // For Multiple Installment/Invoices
@@ -165,10 +171,12 @@ public class InvoiceService {
             
             // Find or create current invoice
             Invoice currentInvoice = getOrCreateCurrentInvoice(creditCard);
-            currentInvoice.getPurchases().add(purchase);
+            BigDecimal updatedValue = currentInvoice.getTotalAmount().add(installmentValue);
+        	currentInvoice.setTotalAmount(updatedValue);
+            currentInvoice.getPurchases().add(purchase);      
+            
             purchase.getInvoices().add(currentInvoice);
-            currentInvoice.getPurchases().add(purchase);
-
+            
             LocalDate nextStartDate = currentInvoice.getStartDate();
             LocalDate nextEndDate   = currentInvoice.getEndDate();
             LocalDate nextdueDate   = currentInvoice.getDueDate();
@@ -176,6 +184,11 @@ public class InvoiceService {
             // Find or create next Invoices ; generate installments child
             ArrayList<Invoice> invoiceList = new ArrayList<Invoice>();
             ArrayList<Installment> installmentList = new ArrayList<Installment>();
+            
+            // Child Installment Handler
+            Installment installment = new Installment(1, purchaseForm.getTotalInstallments(), installmentValue, purchase,currentInvoice);
+            installmentList.add(installment);
+            
             for (int i = 1; i < purchaseForm.getTotalInstallments(); i++) {
 	
             	// Child Invoices Handler
@@ -184,12 +197,18 @@ public class InvoiceService {
                 nextdueDate   = nextdueDate.plusMonths(1);
 
                 Invoice nextInvoice = findOrCreateInvoice(creditCard, nextStartDate, nextEndDate, nextdueDate);
+                BigDecimal nextInvoiceValue = nextInvoice.getTotalAmount().add(installmentValue);
+                nextInvoice.setTotalAmount(nextInvoiceValue); 	
                 nextInvoice.getPurchases().add(purchase);
+                
+                // check if is necessary according cascate structure
+                //invoiceRepository.save(nextInvoice);
+                
                 invoiceList.add(nextInvoice);
   	
                 // Child Installment Handler
-                Installment installment = new Installment(i, purchaseForm.getTotalInstallments(), installmentValue, purchase);
-                installmentList.add(installment);
+                Installment nextInstallment = new Installment(i+1, purchaseForm.getTotalInstallments(), installmentValue, purchase,nextInvoice);
+                installmentList.add(nextInstallment);
             }
             
             purchase.getInvoices().addAll(invoiceList);
