@@ -29,14 +29,14 @@ Configuration:
           - ref: LogToRollingFile
 
       - name: org.hibernate.SQL
-        level: debug
+        level: info
         additivity: false
         AppenderRef:
           - ref: LogToConsole
           - ref: LogToRollingFile
 
       - name: org.hibernate.type.descriptor.sql
-        level: trace
+        level: info
         additivity: false
         AppenderRef:
           - ref: LogToConsole

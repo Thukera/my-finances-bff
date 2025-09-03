@@ -53,13 +53,13 @@ public class CreditcardController {
 
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private CreditPurchaseRepository purchaseRepository;
-	
+
 	@Autowired
 	private InvoiceRepository invoiceRepository;
-	
+
 	@Autowired
 	private InvoiceService invoiceService;
 
@@ -97,7 +97,7 @@ public class CreditcardController {
 
 			// 4. Save
 			CreditCard saved = creditcardRepository.save(card);
-			
+
 			CreditCardForm savedForm = new CreditCardForm().fromModel(saved);
 
 			return ResponseEntity.ok(savedForm);
@@ -205,35 +205,35 @@ public class CreditcardController {
 			logger.debug("### Auth : " + authentication);
 			String username = authentication.getName();
 			logger.debug("### Username From Token : " + username);
-			User user = userRepository.findByUsername(username).orElseThrow(() -> new NotFoundException("User not found"));
+			User user = userRepository.findByUsername(username)
+					.orElseThrow(() -> new NotFoundException("User not found"));
 			logger.debug("### Username From Entity : " + user.getUsername());
-			boolean isAdmin = authentication.getAuthorities().stream().anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
-
+			boolean isAdmin = authentication.getAuthorities().stream()
+					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
 
 			// Credit Card and Invoice Adjustment
-			CreditCard creditcard = creditcardRepository.findById(purchaseForm.getCreditCardId()).orElseThrow(() -> new NotFoundException("Cartão não encontrado"));
+			CreditCard creditcard = creditcardRepository.findById(purchaseForm.getCreditCardId())
+					.orElseThrow(() -> new NotFoundException("Cartão não encontrado"));
 			logger.debug("### Creditcard: {}", creditcard.toString());
-			
+
 			boolean isCardFromUser = (user.getId() == creditcard.getUser().getId());
 
 			if (!isAdmin && !isCardFromUser) {
 				Invoice currentInvoice = invoiceService.getOrCreateCurrentInvoice(creditcard);
 				logger.debug("### Current Invoice: {}", currentInvoice);
-	
-	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-	                    .body(Map.of("message", "Não autorizado"));
-	        }
 
-	        // Delegate to service
-	        CreditPurchase newPurchase = invoiceService.createPurchase( purchaseForm, creditcard);
-	        purchaseRepository.save(newPurchase);
-	        
-	        
-	        creditcard.getUsedLimit().add(newPurchase.getValue());
-	        creditcardRepository.save(creditcard);
-	        
-	        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(newPurchase);
-	        return ResponseEntity.ok(purchaseDTO);
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message", "Não autorizado"));
+			}
+
+			// Delegate to service
+			CreditPurchase newPurchase = invoiceService.createPurchase(purchaseForm, creditcard);
+			purchaseRepository.save(newPurchase);
+
+			creditcard.setUsedLimit(creditcard.getUsedLimit().add(newPurchase.getValue()));
+			creditcardRepository.save(creditcard);
+
+			PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(newPurchase);
+			return ResponseEntity.ok(purchaseDTO);
 
 		} catch (TransactionSystemException e) {
 			Throwable root = e.getRootCause();
@@ -261,53 +261,47 @@ public class CreditcardController {
 		}
 
 	}
-	
+
 	@GetMapping("/purchase/{purchaseId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<?> gettPurchaseDetails(@PathVariable Long purchaseId) {
-		
+
 		logger.debug("######## ### GET PURCHASE BY ID ### ########");
 
 		try {
-			
+
 			logger.debug("### Purchase ID : " + purchaseId);
-			
+
 			// 1. Recover authenticated user from SecurityContext
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			logger.debug("### Auth : " + authentication);
-			String username = authentication.getName(); 
+			String username = authentication.getName();
 			logger.debug("### Username From Token : " + username);
 			User user = userRepository.findByUsername(username)
 					.orElseThrow(() -> new NotFoundException("User not found"));
 			logger.debug("### Username From Entity : " + user.getUsername());
 			boolean isAdmin = authentication.getAuthorities().stream()
 					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
-			
+
 			CreditPurchase purchase = purchaseRepository.findById(purchaseId)
-			        .orElseThrow(() -> new NotFoundException("Purchase not found"));
+					.orElseThrow(() -> new NotFoundException("Purchase not found"));
 
 			// safely get the first invoice (if any)
 			Invoice invoice = purchase.getInvoices().stream().findFirst()
-			        .orElseThrow(() -> new NotFoundException("No invoice linked to this purchase"));
+					.orElseThrow(() -> new NotFoundException("No invoice linked to this purchase"));
 
 			// validate the user
 			boolean isPurchaseFromUser = user.getId().equals(invoice.getCreditCard().getUser().getId());
-			
+
 			if (isAdmin || isPurchaseFromUser) {
 				logger.debug("### Permitions OK");
-				
-				// DTO Purchase
-				if(purchase.isHasInstallments()) {
-					return ResponseEntity.ok(PurchaseDTO.fromEntity(purchase));
-				} else {
-					return ResponseEntity.ok(PurchaseSingleInstallmentDTO.fromEntity(purchase));
-				}		
+				return ResponseEntity.ok(PurchaseDTO.fromEntity(purchase));
 			} else {
 				Map<String, String> body = new HashMap<>();
 				body.put("message", "Não autorizado");
 				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
 			}
-		
+
 		} catch (TransactionSystemException e) {
 			Throwable root = e.getRootCause();
 			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
@@ -332,17 +326,17 @@ public class CreditcardController {
 			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/invoice/{invoiceId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<?> gettInvoiceDetails(@PathVariable Long invoiceId) {
-		
+
 		logger.debug("######## ### GET INVOICE BY ID ### ########");
 
 		try {
-			
+
 			logger.debug("### Invoice ID : " + invoiceId);
-			
+
 			// 1. Recover authenticated user from SecurityContext
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			logger.debug("### Auth : " + authentication);
@@ -353,23 +347,25 @@ public class CreditcardController {
 			logger.debug("### Username From Entity : " + user.getUsername());
 			boolean isAdmin = authentication.getAuthorities().stream()
 					.anyMatch(auth -> auth.getAuthority().equals("ROLE_ADMIN"));
-			
-			Invoice invoice = invoiceRepository.findById(invoiceId).orElseThrow(() -> new NotFoundException("Invoice not found"));;
-			
+
+			Invoice invoice = invoiceRepository.findById(invoiceId)
+					.orElseThrow(() -> new NotFoundException("Invoice not found"));
+			;
+
 			boolean isInvoiceFromUser = (user.getId() == invoice.getCreditCard().getUser().getId());
-			
+
 			if (isAdmin || isInvoiceFromUser) {
 				logger.debug("### Permitions OK");
-				
+
 				InvoiceDTO invoiceDTO = InvoiceDTO.fromEntity(invoice);
-				
-				return ResponseEntity.ok(invoiceDTO);		
+
+				return ResponseEntity.ok(invoiceDTO);
 			} else {
 				Map<String, String> body = new HashMap<>();
 				body.put("message", "Não autorizado");
 				return new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
-			}		
-			
+			}
+
 		} catch (TransactionSystemException e) {
 			Throwable root = e.getRootCause();
 			logger.error("### Root cause: {}", root != null ? root.getMessage() : e.getMessage(), e);
@@ -392,7 +388,7 @@ public class CreditcardController {
 			Map<String, String> body = new HashMap<>();
 			body.put("message", "Internal Server Error");
 			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
-		}	
+		}
 	}
-	
+
 }

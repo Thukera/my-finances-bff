@@ -24,9 +24,22 @@ public class PurchaseDTO {
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
 	private PurchaseCategory category;
+	private InvoiceDTOFromPurchase invoice;
 	private List<InstallmentDTOFromPurchase> installments;
 	
 	public static PurchaseDTO fromEntity(CreditPurchase purchase) {
+		
+		InvoiceDTOFromPurchase currentInvoice = null;
+
+	    // Only get invoice if purchase has no installments
+	    if (!purchase.isHasInstallments() && !purchase.getInvoices().isEmpty()) {
+	        currentInvoice = InvoiceDTOFromPurchase.fromEntity(
+	            purchase.getInvoices().stream()
+	                    .max((i1, i2) -> i1.getEndDate().compareTo(i2.getEndDate()))
+	                    .orElse(null)
+	        );
+	    }
+	    
         return new PurchaseDTO(
         	purchase.getPurchaseId(),
         	purchase.getDescricao(),
@@ -34,6 +47,7 @@ public class PurchaseDTO {
         	purchase.getValue(),
         	purchase.getPurchaseDateTime(),
         	purchase.getCategory(),
+        	currentInvoice,
         	purchase.getInstallments().stream().map(InstallmentDTOFromPurchase::fromEntity).collect(Collectors.toList()));
     }
 }

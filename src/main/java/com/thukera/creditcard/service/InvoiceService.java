@@ -96,6 +96,7 @@ public class InvoiceService {
                 .findByCreditCardAndStartDateAndEndDate(card, startDate, endDate)
                 .orElseGet(() -> {
                 	
+                	logger.debug("## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## ");
                 	// INVOICE 
                     Invoice invoice = new Invoice();
                     invoice.setCreditCard(card);
@@ -103,19 +104,43 @@ public class InvoiceService {
                     invoice.setEndDate(endDate);
                     invoice.setDueDate(dueDate);
                     invoice.setStatus(InvoiceStatus.PENDING);
-                    invoice.setTotalAmount(BigDecimal.ZERO);           
+                    invoice.setTotalAmount(BigDecimal.ZERO);      
+                    
                     
                 	// FIND SIGNATURES ON CREDIT CARD
-                	if(creditPurchaseRepository.existsRepeatsOnLastInvoice(card)) {
+                	if(creditPurchaseRepository.existsRepeatsOnLastInvoice(card.getCardId())) {
                 		logger.debug("## Repeat exists on credit card");
-                		List<CreditPurchase> repeatPurchases = creditPurchaseRepository.findRepeatsOnLastInvoice(card);
+                		List<CreditPurchase> repeatPurchases = creditPurchaseRepository.findRepeatPurchasesFromLastInvoice(card.getCardId());
+                		invoice = invoiceRepository.save(invoice);
                 		invoice.getPurchases().addAll(repeatPurchases);		
                 		for (CreditPurchase creditPurchase : repeatPurchases) {
-							invoice.getTotalAmount().add(creditPurchase.getValue());
+                			
+                			logger.debug("## Repeat Purchase : " + creditPurchase.toString());
+                			CreditPurchase newPurchase = creteRepeatedPurchase(creditPurchase,invoice);
+                			invoice.setTotalAmount(invoice.getTotalAmount().add(newPurchase.getValue()));
+	
 						}
-                	}               	
+                		
+                	}  else {
+                		logger.debug("## There´s no purchases that must repeat");
+                	}
                     return invoiceRepository.save(invoice);
                 });
+    }
+    
+    private CreditPurchase creteRepeatedPurchase(CreditPurchase creditPurchase, Invoice currentInvoice) {
+    	
+    	 CreditPurchase purchase = new CreditPurchase();
+         purchase.setDescricao(creditPurchase.getDescricao());
+         purchase.setValue(creditPurchase.getValue());
+         purchase.setHasInstallments(false);
+         purchase.setCategory(creditPurchase.getCategory());
+         purchase.setCreditCard(creditPurchase.getCreditCard());
+         purchase.setPurchaseDateTime(creditPurchase.getPurchaseDateTime().plusMonths(1)); 
+         purchase.getInvoices().add(currentInvoice);
+         
+         return creditPurchaseRepository.save(purchase);
+    	
     }
 
 

@@ -11,35 +11,44 @@ import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 
 @Repository
-public interface CreditPurchaseRepository extends JpaRepository<CreditPurchase, Long>{
-	
-    @Query("""
-            SELECT cp FROM CreditPurchase cp
-            JOIN cp.category c
-            JOIN cp.invoices i
-            WHERE cp.creditCard = :creditCard
-              AND c.repeat = true
-              AND i.invoiceId = (
-                  SELECT MAX(inv.invoiceId) 
-                  FROM Invoice inv
-                  WHERE inv.creditCard = :creditCard
-              )
-            """)
-     List<CreditPurchase> findRepeatsOnLastInvoice(@Param("creditCard") CreditCard creditCard);
+public interface CreditPurchaseRepository extends JpaRepository<CreditPurchase, Long> {
 
-     @Query("""
-            SELECT CASE WHEN COUNT(cp) > 0 THEN true ELSE false END
-            FROM CreditPurchase cp
-            JOIN cp.category c
-            JOIN cp.invoices i
-            WHERE cp.creditCard = :creditCard
-              AND c.repeat = true
-              AND i.invoiceId = (
-                  SELECT MAX(inv.invoiceId) 
-                  FROM Invoice inv
-                  WHERE inv.creditCard = :creditCard
-              )
-            """)
-     boolean existsRepeatsOnLastInvoice(@Param("creditCard") CreditCard creditCard);
+	@Query(value = """
+			SELECT cp.*
+			FROM tb_credit_purchase cp
+			JOIN tb_purchase_category pc
+			    ON cp.tb_purchase_category = pc.purchase_category_id
+			JOIN tb_invoice_purchase ip
+			    ON cp.purchase_id = ip.purchase_id
+			JOIN tb_invoice i
+			    ON ip.invoice_id = i.invoice_id
+			WHERE pc.repeat = true
+			  AND i.card_id = :creditCardId
+			  AND i.invoice_id = (
+			        SELECT MAX(i2.invoice_id)
+			        FROM tb_invoice i2
+			        WHERE i2.card_id = :creditCardId
+			  )
+			""", nativeQuery = true)
+	List<CreditPurchase> findRepeatPurchasesFromLastInvoice(@Param("creditCardId") Long creditCardId);
+
+	@Query(value = """
+			SELECT CASE WHEN COUNT(cp.purchase_id) > 0 THEN true ELSE false END
+			FROM tb_credit_purchase cp
+			JOIN tb_purchase_category pc
+			    ON cp.tb_purchase_category = pc.purchase_category_id
+			JOIN tb_invoice_purchase ip
+			    ON cp.purchase_id = ip.purchase_id
+			JOIN tb_invoice i
+			    ON ip.invoice_id = i.invoice_id
+			WHERE cp.card_id = :creditCardId
+			  AND pc.repeat = true
+			  AND i.invoice_id = (
+			        SELECT MAX(i2.invoice_id)
+			        FROM tb_invoice i2
+			        WHERE i2.card_id = :creditCardId
+			  )
+			""", nativeQuery = true)
+	boolean existsRepeatsOnLastInvoice(@Param("creditCardId") Long creditCardId);
 
 }
