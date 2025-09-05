@@ -21,7 +21,7 @@ public class PurchaseDTO {
 	private String descricao;
 	private boolean hasIinstallment;
 	private BigDecimal value;
-	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
+	//@JsonFormat(pattern = "dd-MM-yyyy hh:mm")
 	private LocalDateTime purchaseDateTime;
 	private PurchaseCategory category;
 	private InvoiceDTOFromPurchase invoice;

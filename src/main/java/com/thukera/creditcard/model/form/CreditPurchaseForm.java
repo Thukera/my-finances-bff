@@ -19,8 +19,7 @@ public class CreditPurchaseForm {
 	private int totalInstallments;
 	private String category;
 	private BigDecimal value;
-	
-	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
+	//@JsonFormat(pattern = "dd-MM-yyyy[ HH:mm]")
 	private LocalDateTime purchaseDateTime;
 
 	

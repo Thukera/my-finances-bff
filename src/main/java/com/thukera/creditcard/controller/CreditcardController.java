@@ -16,18 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.dto.PurchaseDTO;
-import com.thukera.creditcard.model.dto.PurchaseSingleInstallmentDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Invoice;
-import com.thukera.creditcard.model.entities.PurchaseCategory;
-import com.thukera.creditcard.model.enums.PurchaseCategoryEnum;
 import com.thukera.creditcard.model.form.CreditCardForm;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.repository.CreditcardRepository;
 import com.thukera.creditcard.repository.InvoiceRepository;
 import com.thukera.creditcard.repository.CreditPurchaseRepository;
-import com.thukera.creditcard.repository.PurchaseCategoryRepository;
 import com.thukera.creditcard.service.InvoiceService;
 import com.thukera.root.model.messages.NotFoundException;
 import com.thukera.user.model.entities.User;
@@ -39,8 +35,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-
 @RestController
 @RequestMapping("/api/creditcard")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -219,15 +213,11 @@ public class CreditcardController {
 			boolean isCardFromUser = (user.getId() == creditcard.getUser().getId());
 
 			if (!isAdmin && !isCardFromUser) {
-				Invoice currentInvoice = invoiceService.getOrCreateCurrentInvoice(creditcard);
-				logger.debug("### Current Invoice: {}", currentInvoice);
-
 				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("message", "Não autorizado"));
 			}
 
-			// Delegate to service
 			CreditPurchase newPurchase = invoiceService.createPurchase(purchaseForm, creditcard);
-			purchaseRepository.save(newPurchase);
+			logger.debug("## NEW CREDIT PURCHASE : {}", newPurchase);
 
 			creditcard.setUsedLimit(creditcard.getUsedLimit().add(newPurchase.getValue()));
 			creditcardRepository.save(creditcard);

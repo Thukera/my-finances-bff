@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class InvoiceDTOFromPurchase {
 	
 	private Long invoiceId;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate dueDate;
 	
 	public static InvoiceDTOFromPurchase fromEntity(Invoice invoice) {

@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringExclude;
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -18,10 +18,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
@@ -53,31 +51,48 @@ public class CreditPurchase {
 	private LocalDateTime purchaseDateTime;
 
 	@ToString.Exclude
-	@ManyToMany(mappedBy = "purchases") 
-    private List<Invoice> invoices = new ArrayList<>();
-	
+	@ManyToMany(mappedBy = "purchases")
+	private List<Invoice> invoices = new ArrayList<>();
+
 	@ToString.Exclude
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "card_id", nullable = false)
 	private CreditCard creditCard;
-	
+
 	@ToString.Exclude
 	@OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Installment> installments = new ArrayList<>();
+	private List<Installment> installments = new ArrayList<>();
 
-	@PrePersist
-	public void prePersist() {
-		setPurchaseDateTime(LocalDateTime.now());
-	}
+//	@PrePersist
+//	public void prePersist() {
+//		if (purchaseDateTime != null) {
+//			setPurchaseDateTime(LocalDateTime.now());
+//		}
+//	}
 
 	public CreditPurchase() {
 		this.purchaseDateTime = LocalDateTime.now();
 	}
+
+	// helper method to keep both sides in sync
+	public void addInstallment(Installment installment) {
+		installments.add(installment);
+		installment.setPurchase(this);
+	}
+
+	public CreditPurchase(String descricao, BigDecimal value) {
+		super();
+		this.descricao = descricao;
+		this.value = value;
+	}
 	
-    // helper method to keep both sides in sync
-    public void addInstallment(Installment installment) {
-        installments.add(installment);
-        installment.setPurchase(this);
-    }
+	public CreditPurchase(String descricao, BigDecimal value, LocalDateTime purchaseDateTime) {
+		super();
+		this.descricao = descricao;
+		this.value = value;
+		this.purchaseDateTime = purchaseDateTime;
+	}
+	
+	
 
 }

@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 public class InvoiceDTO {
 
 	private Long invoiceId;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate startDate;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate endDate;
-	@JsonFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate dueDate;
 	private InvoiceStatus status;
 	private BigDecimal totalAmount;
