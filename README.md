@@ -1,6 +1,6 @@
-# HEY! LISTEN! 
+# MY FINANCES BACKEND-FOR-FRONTEND
 
-## It's dangerous to go alone! Take this!
+## HEY! LISTEN! It's dangerous to go alone! Take this!
 
 ## About the Project
 My finances it´s a application that assist users with financial management and planning. 
