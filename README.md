@@ -3,8 +3,14 @@
 ## It's dangerous to go alone! Take this!
 
 ## About the Project
-This is a core project that can be used with Huge Solutions. 
-It´s already with a JWT authentication build, that allows create a Auth Method with your Front-End Application with controlled sessions, or build a  Middleware that need to rotate Token frequently. 
+My finances it´s a application that assist users with financial management and planning. 
+Each user will have permition to check only it´s own financial planning, except a few features that can be shared between multiple users.
+25% of backend completed
+
+##### Credit card features applied - Each user created can add multiple credit card, manage credit invoices, purchases and it´s details , such as categories, with or not installments,and fixed signatures that repeat each invoice.
+
+## Project Authentication JWT Core
+It's already with a JWT authentication build, that allows create a Auth Method with your Front-End Application with controlled sessions, or build a  Middleware that need to rotate Token frequently. 
 Create and Manage Users and it´s roles.
 User will choose a password, that will be encrypted with your own Private Key, and Hashed512 to the database. 
 Sign user and generate a temporary tokens to access controlled services, with roles permissions. 
