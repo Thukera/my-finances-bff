@@ -10,7 +10,9 @@ import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -35,10 +37,9 @@ import com.thukera.user.model.forms.SignUpForm;
 import com.thukera.user.repository.RoleRepository;
 import com.thukera.user.repository.UserRepository;
 
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", maxAge = 3600) // make sure it's set if
-																							// needed
 @RestController
 @RequestMapping("/api/auth")
 public class AuthRestAPIs {
@@ -118,9 +119,9 @@ public class AuthRestAPIs {
 			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
+	
 	@PostMapping("/signup")
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
 
 		logger.info("######## ### ######## ###  SIGN UP  ### ######## ### ########");

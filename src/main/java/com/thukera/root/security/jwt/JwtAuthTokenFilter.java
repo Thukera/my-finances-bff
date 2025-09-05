@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -57,11 +58,18 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
     }
 
     private String getJwt(HttpServletRequest request) {
-    	
         String authHeader = request.getHeader("Authorization");
-            	
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
-        	return authHeader.replace("Bearer ","");
+            return authHeader.replace("Bearer ","");
+        }
+
+        // fallback to cookie
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if ("access_token".equals(cookie.getName())) {
+                    return cookie.getValue();
+                }
+            }
         }
 
         return null;
