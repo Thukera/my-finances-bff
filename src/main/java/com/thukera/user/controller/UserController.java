@@ -1,5 +1,9 @@
 package com.thukera.user.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -10,18 +14,25 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.thukera.root.model.messages.NotFoundException;
 import com.thukera.user.dto.UserDTO;
@@ -32,9 +43,12 @@ import com.thukera.user.model.forms.LoginForm;
 import com.thukera.user.model.forms.SignUpForm;
 import com.thukera.user.repository.RoleRepository;
 import com.thukera.user.repository.UserRepository;
+
+import jakarta.annotation.Resource;
+
 import com.google.gson.Gson;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -53,25 +67,25 @@ public class UserController {
 	@Autowired
 	RoleRepository roleRepository;
 
+	@Value("${spring.web.resources.static-locations}")
+	private String uploadDir;
+
 	public UserController(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<?>  listar() {
-		
-		logger.debug("######## ### FIND ALL ### ########");
-		
-		try {
-			
-			List<UserDTO> users = userRepository.findAll()
-	                .stream()
-	                .map(UserDTO::fromEntity)
-	                .toList();
+	public ResponseEntity<?> listar() {
 
-	        return ResponseEntity.ok(users);
-			
+		logger.debug("######## ### FIND ALL ### ########");
+
+		try {
+
+			List<UserDTO> users = userRepository.findAll().stream().map(UserDTO::fromEntity).toList();
+
+			return ResponseEntity.ok(users);
+
 		} catch (Exception e) {
 			logger.debug("## General Exception");
 			logger.error("### Exception : " + e.getClass());
@@ -80,7 +94,7 @@ public class UserController {
 			body.put("message", "Internal Server Error");
 			return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
+
 	}
 
 	@GetMapping("/{id}")
@@ -91,10 +105,9 @@ public class UserController {
 
 		try {
 
-		    User user = userRepository.findById(id)
-		            .orElseThrow(() -> new NotFoundException("Recurso não encontrado"));
+			User user = userRepository.findById(id).orElseThrow(() -> new NotFoundException("Recurso não encontrado"));
 
-		    return ResponseEntity.ok(UserDTO.fromEntity(user));
+			return ResponseEntity.ok(UserDTO.fromEntity(user));
 
 		} catch (NotFoundException e) {
 			logger.debug("## NotFoundException Exception");
@@ -103,8 +116,8 @@ public class UserController {
 			Map<String, String> body = new HashMap<>();
 			body.put("message", "Não encontrado");
 			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
-			
-		}  catch (Exception e) {
+
+		} catch (Exception e) {
 			logger.debug("## General Exception");
 			logger.error("### Exception : " + e.getClass());
 			logger.error("### Message : " + e.getMessage());
@@ -119,7 +132,7 @@ public class UserController {
 	public ResponseEntity<?> updateUser(@PathVariable("userid") String userid, @RequestBody SignUpForm user) {
 
 		logger.debug("######## ### UPDATE USER BY ID");
-		
+
 		try {
 			User usuario = userRepository.getById(Long.parseLong(userid));
 
@@ -156,13 +169,12 @@ public class UserController {
 
 			usuario.setRoles(roles);
 
-			
 			userRepository.save(usuario);
 
 			Map<String, String> body = new HashMap<>();
 			body.put("message", "Usuer Updated Sucessfuly");
 			return ResponseEntity.ok(body);
-			
+
 		} catch (Exception e) {
 			logger.debug("## General Exception");
 			logger.error("### Exception : " + e.getClass());
@@ -176,9 +188,8 @@ public class UserController {
 	@PutMapping("/changepassword")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 	public String resetPassword(@RequestBody LoginForm user) {
-		
+
 		logger.debug("######## ### CHANGE PASSWORD");
-		
 
 		User usuario = userRepository.findByEmail(user.getUsername());
 		if (usuario == null) {
@@ -193,7 +204,7 @@ public class UserController {
 	@PutMapping("/forgotpassword")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
 	public String forgotPassword(@RequestBody SignUpForm user) {
-		
+
 		logger.debug("######## ### FORGOT PASSWORD");
 
 		User usuario = userRepository.findByEmail(user.getEmail());
@@ -212,7 +223,7 @@ public class UserController {
 	@PutMapping("/updateUser")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> updateUser(@RequestBody SignUpForm user) {
-		
+
 		logger.debug("######## ### UPDATE USER");
 
 		try {
@@ -243,14 +254,14 @@ public class UserController {
 	@DeleteMapping("/deleteUser/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-		
+
 		logger.debug("######## ### DELETE USER BY ID");
 
 		try {
 			userRepository.deleteById(id);
-			
+
 			Map<String, String> body = new HashMap<>();
-			body.put("message", "User Deleted!");	
+			body.put("message", "User Deleted!");
 			return ResponseEntity.ok(body);
 
 		} catch (NotFoundException e) {
@@ -260,7 +271,7 @@ public class UserController {
 			Map<String, String> body = new HashMap<>();
 			body.put("message", "Não encontrado");
 			return new ResponseEntity<>(body, HttpStatus.NOT_ACCEPTABLE);
-			
+
 		} catch (Exception e) {
 			logger.debug("## General Exception");
 			logger.error("### Exception : " + e.getClass());
@@ -268,7 +279,7 @@ public class UserController {
 			Map<String, String> body = new HashMap<>();
 			body.put("message", "Error! User not deleted!");
 			return ResponseEntity.badRequest().body("Error! User not deleted!");
-			//return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+			// return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 

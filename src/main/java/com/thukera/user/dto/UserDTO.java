@@ -17,6 +17,7 @@ public class UserDTO {
     private Long id;
     private String username;
     private String email;
+    private String profilePicturePath;
 
     private List<CreditCardDTOFromUser> creditcards;
 
@@ -25,6 +26,7 @@ public class UserDTO {
             user.getId(),
             user.getUsername(),
             user.getEmail(),
+            user.getProfilePicturePath(),
             user.getCreditcards().stream()
                 .map(CreditCardDTOFromUser::fromEntity)
                 .collect(Collectors.toList())

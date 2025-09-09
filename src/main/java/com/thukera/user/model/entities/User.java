@@ -83,6 +83,9 @@ public class User{
 
     @Transient
     private JwtResponse token;
+    
+    @Column
+    private String profilePicturePath;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "tb_user_roles", 
@@ -125,6 +128,27 @@ public class User{
         this.password = password;
         this.status = status;
         this.dataCadastro = dataCadastro;
+    }
+    
+    public User(String doc, String name, String username, String email, String password, Boolean status,String profilePicturePath) {
+        this.doc = doc;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.status = status;
+        this.profilePicturePath = profilePicturePath;
+    }
+    
+    public User(long id,String doc, String name, String username, String email, String password, Boolean status,LocalDate dataCadastro,String profilePicturePath) {
+        this.doc = doc;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.status = status;
+        this.dataCadastro = dataCadastro;
+        this.profilePicturePath = profilePicturePath;
     }
     
     @Override

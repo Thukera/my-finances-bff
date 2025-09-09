@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping("/api/creditcard")
-@CrossOrigin(origins = "*", maxAge = 3600)
+//@CrossOrigin(origins = "*", maxAge = 3600)
 public class CreditcardController {
 
 	private static final Logger logger = LogManager.getLogger(CreditcardController.class);
