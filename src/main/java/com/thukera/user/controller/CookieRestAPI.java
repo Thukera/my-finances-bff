@@ -53,6 +53,9 @@ public class CookieRestAPI {
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@RequestBody LoginForm loginRequest, HttpServletResponse response) {
+		
+		logger.debug("######## ### INSERT COOKIE ### ########");
+
 	    Optional<User> usuario = loginRequest.getUsername().contains("@") ?
 	            userRepository.findFirstByEmail(loginRequest.getUsername()) :
 	            userRepository.findByUsername(loginRequest.getUsername());

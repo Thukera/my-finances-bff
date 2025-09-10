@@ -38,7 +38,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 	private UserDetailsService userDetailsService;
 
 	private static final String[] AUTH_WHITELIST = { "/swagger-resources/**", "/webjars/**", "/v3/api-docs/**",
-			"/swagger-ui/**", "/swagger-ui.html", "/swagger-ui/index.html", "/api/auth/**", "/api/test/**" };
+			"/swagger-ui/**", "/swagger-ui.html", "/swagger-ui/index.html", "/api/**", "/api/test/**" };
 
 	@Bean
 	public JwtAuthTokenFilter authenticationJwtTokenFilter() {
@@ -80,7 +80,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOriginPatterns(List.of("*"));
+		configuration.setAllowedOriginPatterns(List.of("http://localhost:3000"));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
 		configuration.setAllowCredentials(true);
 		configuration.addAllowedHeader("*");
