@@ -24,8 +24,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.thukera.root.security.jwt.JwtAuthEntryPoint;
-import com.thukera.root.security.jwt.JwtAuthTokenFilter;
+import com.thukera.config.security.jwt.JwtAuthEntryPoint;
+import com.thukera.config.security.jwt.JwtAuthTokenFilter;
 
 @Configuration
 @EnableMethodSecurity

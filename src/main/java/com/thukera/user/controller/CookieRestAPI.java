@@ -21,8 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.thukera.root.security.jwt.JwtProvider;
+import com.thukera.config.security.jwt.JwtProvider;
 import com.thukera.user.model.entities.User;
 import com.thukera.user.model.forms.LoginForm;
 import com.thukera.user.repository.RoleRepository;
@@ -75,22 +74,39 @@ public class CookieRestAPI {
 	    String refreshToken = jwtProvider.generateTokenFromUsername(usuario.get().getUsername(), true);
 
 	    // Access token cookie (HttpOnly)
+//	    ResponseCookie accessCookie = ResponseCookie.from("access_token", accessToken)
+//	            .httpOnly(true)
+//	            .secure(true)
+//	            .sameSite("Strict")
+//	            .path("/")
+//	            .maxAge(3600) // 1h
+//	            .build();
+	    
 	    ResponseCookie accessCookie = ResponseCookie.from("access_token", accessToken)
-	            .httpOnly(true)
-	            .secure(true)
-	            .sameSite("Strict")
-	            .path("/")
-	            .maxAge(3600) // 1h
-	            .build();
+	    	    .httpOnly(true)
+	    	    .secure(false) // ⬅️ Disable HTTPS-only
+	    	    .sameSite("Lax") // ⬅️ Allow cookies from your frontend on HTTP
+	    	    .path("/")
+	    	    .maxAge(3600)
+	    	    .build();
+
 	    
 	    // Refresh token cookie (HttpOnly)
+//	    ResponseCookie refreshCookie = ResponseCookie.from("refresh_token", refreshToken)
+//	            .httpOnly(true)
+//	            .secure(true)
+//	            .sameSite("Strict")
+//	            .path("/api/cookie/refresh")
+//	            .maxAge(7 * 24 * 3600) // 7 days
+//	            .build();
+	    
 	    ResponseCookie refreshCookie = ResponseCookie.from("refresh_token", refreshToken)
-	            .httpOnly(true)
-	            .secure(true)
-	            .sameSite("Strict")
-	            .path("/api/cookie/refresh")
-	            .maxAge(7 * 24 * 3600) // 7 days
-	            .build();
+	    	    .httpOnly(true)
+	    	    .secure(false)
+	    	    .sameSite("Lax")
+	    	    .path("/api/cookie/refresh")
+	    	    .maxAge(7 * 24 * 3600)
+	    	    .build();
 
 	    response.addHeader(HttpHeaders.SET_COOKIE, accessCookie.toString());
 	    response.addHeader(HttpHeaders.SET_COOKIE, refreshCookie.toString());

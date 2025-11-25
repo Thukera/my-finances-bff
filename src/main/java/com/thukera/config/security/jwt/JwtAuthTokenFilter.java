@@ -1,4 +1,4 @@
-package com.thukera.root.security.jwt;
+package com.thukera.config.security.jwt;
 
 import java.io.IOException;
 

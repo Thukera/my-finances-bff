@@ -33,8 +33,8 @@ public class PanelController {
 	
 	private static final Logger logger = LogManager.getLogger(PanelController.class);
 
-	@Autowired
-	private CreditcardRepository creditcardRepository;
+	//@Autowired
+	//private CreditcardRepository creditcardRepository;
 	
 	@Autowired
 	private InvoiceRepository invoiceRepository;

@@ -27,8 +27,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 
+import com.thukera.config.security.jwt.JwtProvider;
 import com.thukera.root.model.messages.JwtResponse;
-import com.thukera.root.security.jwt.JwtProvider;
 import com.thukera.user.model.entities.Role;
 import com.thukera.user.model.entities.User;
 import com.thukera.user.model.enums.RoleName;

@@ -1,4 +1,4 @@
-package com.thukera.root.security.jwt;
+package com.thukera.config.security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
