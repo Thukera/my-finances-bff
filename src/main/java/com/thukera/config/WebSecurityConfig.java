@@ -44,7 +44,8 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 			"/swagger-ui.html", 
 			"/swagger-ui/index.html", 
 			"/api/**", 
-			"/api/test/**" };
+			"/api/test/**",
+			"/uploads/**"};
 
 	@Bean
 	public JwtAuthTokenFilter authenticationJwtTokenFilter() {
@@ -71,22 +72,30 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+	    http
+	        .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+	        .csrf(csrf -> csrf.disable())
+	        .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
+	        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+	        .authorizeHttpRequests(auth -> auth
+	            .requestMatchers("/uploads/**").permitAll()
+	            .requestMatchers(AUTH_WHITELIST).permitAll()
+	            .anyRequest().authenticated()
+	        );
 
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/uploads/**").permitAll()
-						.requestMatchers(AUTH_WHITELIST).permitAll().anyRequest().authenticated());
+	    http.authenticationProvider(authenticationProvider());
+	    http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
-		http.authenticationProvider(authenticationProvider());
-		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
-		return http.build();
+	    return http.build();
 	}
 
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOriginPatterns(List.of("http://localhost:3000"));
+		configuration.setAllowedOriginPatterns(Arrays.asList(
+		        "http://localhost:3000",
+		        "http://192.168.0.60:3000"
+		    ));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
 		configuration.setAllowCredentials(true);
 		configuration.addAllowedHeader("*");
@@ -98,7 +107,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/uploads/**")
-				.addResourceLocations("file:///C:/Users/nitro/Workspace/Projetos/Estudos/MinhasFinancas/uploads/");
+	    registry.addResourceHandler("/uploads/**")
+	            .addResourceLocations("file:./uploads/"); // Use relative path for Docker
 	}
 }
