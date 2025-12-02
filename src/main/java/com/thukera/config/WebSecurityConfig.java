@@ -37,15 +37,34 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
+	// Public endpoints that don't require authentication
 	private static final String[] AUTH_WHITELIST = { 
+			// Swagger/OpenAPI
 			"/swagger-resources/**", 
-			"/webjars/**", "/v3/api-docs/**",
+			"/webjars/**", 
+			"/v3/api-docs/**",
 			"/swagger-ui/**", 
 			"/swagger-ui.html", 
-			"/swagger-ui/index.html", 
-			"/api/**", 
-			"/api/test/**",
-			"/uploads/**"};
+			"/swagger-ui/index.html",
+			
+			// Static resources
+			"/uploads/**",
+			
+			// Public API endpoints
+			"/api/auth/**",      // Authentication endpoints (login, register, etc.)
+			"/api/cookie/**",    // Cookie-based authentication
+			"/api/test"          // Only the base test endpoint (not /api/test/**)
+	};
+
+	/**
+	 * Completely bypass Spring Security for static resources
+	 * This tells Spring Security to ignore these paths entirely
+	 */
+	@Bean
+	public org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer webSecurityCustomizer() {
+		return (web) -> web.ignoring()
+			.requestMatchers("/uploads/**", "/favicon.ico", "/error");
+	}
 
 	@Bean
 	public JwtAuthTokenFilter authenticationJwtTokenFilter() {

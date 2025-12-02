@@ -1,6 +1,9 @@
 package com.thukera.config.security.jwt;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -13,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 import com.thukera.user.security.service.UserDetailsServiceImpl;
 
@@ -22,6 +26,40 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 	private static final Logger logger = LoggerFactory.getLogger(JwtAuthTokenFilter.class);
+
+	// Public endpoints that should skip JWT authentication
+	private static final List<String> PUBLIC_ENDPOINTS = Arrays.asList(
+		"/uploads/**",
+		"/swagger-resources/**",
+		"/webjars/**",
+		"/v3/api-docs/**",
+		"/swagger-ui/**",
+		"/swagger-ui.html",
+		"/swagger-ui/index.html",
+		"/api/auth/**",
+		"/api/cookie/**",
+		"/api/test"  // Only base endpoint, not /** (protected endpoints need auth)
+	);
+
+	private final AntPathMatcher pathMatcher = new AntPathMatcher();
+
+	/**
+	 * Skip JWT filter for public endpoints
+	 */
+	@Override
+	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+		String path = request.getRequestURI();
+		logger.debug("### Checking if path should skip JWT filter: {}", path);
+		
+		boolean shouldSkip = PUBLIC_ENDPOINTS.stream()
+			.anyMatch(pattern -> pathMatcher.match(pattern, path));
+		
+		if (shouldSkip) {
+			logger.debug("### Skipping JWT authentication for public path: {}", path);
+		}
+		
+		return shouldSkip;
+	}
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
