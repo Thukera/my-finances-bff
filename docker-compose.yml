@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  my-finances-bff:
+    build: .
+    container_name: my-finances-bff
+    ports:
+      - "9090:9090"
+    volumes:
+      # Persistent logs - logs will be saved on host machine
+      - ./logs:/app/logs
+      # Persistent uploads - uploaded files will be saved on host machine
+      - ./uploads:/app/uploads
+    environment:
+      # Override if needed, defaults to prod from application.properties
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: unless-stopped
+    networks:
+      - my-finances-network
+
+networks:
+  my-finances-network:
+    driver: bridge
