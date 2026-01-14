@@ -3,7 +3,7 @@ name: 🚀 Deploy Backend to Orange Pi
 on:
   push:
     branches:
-      - master  # Only deploy on master branch
+      - master
       - deploy
 
 jobs:
@@ -22,36 +22,30 @@ jobs:
       
       - name: 🔐 Setup SSH with Cloudflare Access
         env:
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
+          CF_SERVICE_TOKEN_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+          CF_SERVICE_TOKEN_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
           SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           
-          # Configure SSH to use cloudflared with service tokens via environment variables
-          cat >> ~/.ssh/config <<EOF
+          # Configure SSH to use cloudflared with service tokens
+          cat >> ~/.ssh/config <<'EOF'
           Host ssh.hardman.app.br
-            ProxyCommand bash -c 'TUNNEL_SERVICE_TOKEN_ID=${CF_ACCESS_CLIENT_ID} TUNNEL_SERVICE_TOKEN_SECRET=${CF_ACCESS_CLIENT_SECRET} cloudflared access ssh --hostname %h'
+            ProxyCommand bash -c "cloudflared access tcp --hostname %h --url ssh://ssh.hardman.app.br:22 --service-token-id $CF_SERVICE_TOKEN_ID --service-token-secret $CF_SERVICE_TOKEN_SECRET"
             User thukera
             IdentityFile ~/.ssh/id_ed25519
             StrictHostKeyChecking no
           EOF
           
-          # Verify SSH config
-          echo "SSH config created:"
-          cat ~/.ssh/config
+          echo "SSH config created"
       
       - name: 🚀 Deploy Backend
         env:
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
+          CF_SERVICE_TOKEN_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+          CF_SERVICE_TOKEN_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
         run: |
-          # Export service token as environment variables for cloudflared
-          export TUNNEL_SERVICE_TOKEN_ID="${CF_ACCESS_CLIENT_ID}"
-          export TUNNEL_SERVICE_TOKEN_SECRET="${CF_ACCESS_CLIENT_SECRET}"
-          
           ssh ssh.hardman.app.br << 'ENDSSH'
             
              set -e  # Exit on any error
