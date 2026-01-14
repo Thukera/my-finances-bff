@@ -17,10 +17,9 @@ jobs:
       - name: 🔐 Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: orangepizero3
-          username: thukera
-          key: -----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACAsgaL2Daihe3JzDW0w6b9622hr7kd2X80ROdR908lRXAAAAJj3aT6t92k+rQAAAAtzc2gtZWQyNTUxOQAAACAsgaL2Daihe3JzDW0w6b9622hr7kd2X80ROdR908lRXAAAAED/wyP27EWaBZDbnLEjCB1W8GVgxFSJX7HQnnmQqlOK1SyBovYNqKF7cnMNbTDpv3rbaGvuR3ZfzRE51H3TyVFcAAAAFWdpdGh1Yi1hY3Rpb25zLWRlcGxveQ==-----END OPENSSH PRIVATE KEY-----
-
+          host: ${{ secrets.ORANGE_PI_HOST }}
+          username: ${{ secrets.ORANGE_PI_USER }}
+          key: ${{ secrets.ORANGE_PI_SSH_KEY }}
           port: 22
           script: |
             set -e  # Exit on any error
