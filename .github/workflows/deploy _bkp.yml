@@ -7,41 +7,22 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to Production
     runs-on: ubuntu-latest
     
     steps:
       - name: 📦 Checkout Code
         uses: actions/checkout@v4
       
-      - name: 🔧 Install cloudflared
-        run: |
-          wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-          sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
-          sudo chmod +x /usr/local/bin/cloudflared
-      
-      - name: 🔐 Setup SSH with Cloudflare Access
-        env:
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
-          SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          
-          # Configure SSH to use cloudflared
-          cat >> ~/.ssh/config <<EOF
-          Host ssh.hardman.app.br
-            ProxyCommand cloudflared access ssh --hostname %h
-            User thukera
-            IdentityFile ~/.ssh/id_ed25519
-          EOF
-      
-      - name: 🚀 Deploy Backend
-        run: |
-          ssh ssh.hardman.app.br << 'ENDSSH'
-            
-             set -e  # Exit on any error
+      - name: 🔐 Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.ORANGE_PI_HOST }}
+          username: ${{ secrets.ORANGE_PI_USER }}
+          key: ${{ secrets.ORANGE_PI_SSH_KEY }}
+          port: 22
+          script: |
+            set -e  # Exit on any error
             
             echo "================================================"
             echo "🚀 Starting Backend Deployment"
@@ -121,8 +102,6 @@ jobs:
             echo "✅ Backend Deployment Complete!"
             echo "🌐 API: https://api.hardman.app.br"
             echo "================================================"
-            
-          ENDSSH
       
       - name: 📢 Notify on Success
         if: success()
