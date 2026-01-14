@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # Only deploy on master branch
+	  - deploy
 
 jobs:
   deploy:
@@ -19,18 +20,23 @@ jobs:
           sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
           sudo chmod +x /usr/local/bin/cloudflared
       
-      - name: 🔐 Setup SSH with Cloudflare Access
-        env:
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
-          SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          
-          printf "Host ssh.hardman.app.br\n  User thukera\n  IdentityFile ~/.ssh/id_ed25519\n  ProxyCommand cloudflared access ssh --hostname %%h --service-token-id %s --service-token-secret %s\n" \
-            "$CF_ACCESS_CLIENT_ID" "$CF_ACCESS_CLIENT_SECRET" >> ~/.ssh/config
+		  - name: 🔐 Setup SSH with Cloudflare Access
+		    env:
+		      CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+		      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
+		      SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
+		    run: |
+		      mkdir -p ~/.ssh
+		      echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+		      chmod 600 ~/.ssh/id_ed25519
+		      
+		      # Configure SSH to use cloudflared
+		      cat >> ~/.ssh/config <<EOF
+		      Host ssh.hardman.app.br
+		        ProxyCommand cloudflared access ssh --hostname %h
+		        User thukera
+		        IdentityFile ~/.ssh/id_ed25519
+		      EOF
       
       - name: 🚀 Deploy Backend
         run: |
