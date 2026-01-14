@@ -14,13 +14,20 @@ jobs:
       - name: 📦 Checkout Code
         uses: actions/checkout@v4
       
-      - name: 🔐 Deploy via SSH
+      - name: 🔐 Deploy via SSH (with Cloudflare Access)
         uses: appleboy/ssh-action@v1.0.3
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
         with:
           host: ${{ secrets.ORANGE_PI_HOST }}
           username: ${{ secrets.ORANGE_PI_USER }}
           key: ${{ secrets.ORANGE_PI_SSH_KEY }}
           port: 22
+          proxy_host: ssh.hardman.app.br
+          proxy_port: 443
+          proxy_username: ""
+          proxy_password: ""
           script: |
             set -e  # Exit on any error
             
