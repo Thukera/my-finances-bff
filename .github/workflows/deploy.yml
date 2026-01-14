@@ -1,0 +1,113 @@
+name: 🚀 Deploy Backend to Orange Pi
+
+on:
+  push:
+    branches:
+      - master  # Only deploy on master branch
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📦 Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: 🔐 Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: orangepizero3
+          username: thukera
+          key: -----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACAsgaL2Daihe3JzDW0w6b9622hr7kd2X80ROdR908lRXAAAAJj3aT6t92k+rQAAAAtzc2gtZWQyNTUxOQAAACAsgaL2Daihe3JzDW0w6b9622hr7kd2X80ROdR908lRXAAAAED/wyP27EWaBZDbnLEjCB1W8GVgxFSJX7HQnnmQqlOK1SyBovYNqKF7cnMNbTDpv3rbaGvuR3ZfzRE51H3TyVFcAAAAFWdpdGh1Yi1hY3Rpb25zLWRlcGxveQ==-----END OPENSSH PRIVATE KEY-----
+
+          port: 22
+          script: |
+            set -e  # Exit on any error
+            
+            echo "================================================"
+            echo "🚀 Starting Backend Deployment"
+            echo "================================================"
+            
+            # Navigate to project directory
+            cd ~/Projects/MyFinances/backend || exit 1
+            
+            # Create backup directory if it doesn't exist
+            mkdir -p backups
+            
+            # Backup current JAR file (if exists)
+            if [ -f "target/my-finances-bff.jar" ]; then
+              BACKUP_DATE=$(date +"%d%m")
+              BACKUP_FILE="backups/my-finances-bff-${BACKUP_DATE}.bkp"
+              echo "💾 Backing up current JAR to ${BACKUP_FILE}..."
+              cp target/my-finances-bff.jar "${BACKUP_FILE}"
+              echo "✅ Backup created: ${BACKUP_FILE}"
+            else
+              echo "ℹ️  No existing JAR file to backup"
+            fi
+            
+            # Pull latest code
+            echo "📥 Pulling latest code from GitHub..."
+            git fetch --all
+            git reset --hard origin/master
+            
+            # Build Java application
+            echo "🏗️  Building JAR file..."
+            ./mvnw clean package -DskipTests
+            
+            # Build Docker image
+            echo "🐳 Building Docker image..."
+            sudo docker build -t myfinances-backend:latest .
+            
+            # Stop old container
+            echo "🛑 Stopping old container..."
+            sudo docker stop myfinances-bff || true
+            sudo docker rm myfinances-bff || true
+            
+            # Run new container
+            echo "▶️  Starting new container..."
+            sudo docker run -d \
+              -p 9090:9090 \
+              --name myfinances-bff \
+              --restart unless-stopped \
+              -v ~/Projects/MyFinances/backend/uploads:/app/uploads \
+              -v ~/Projects/MyFinances/backend/logs:/app/logs \
+              myfinances-backend:latest
+            
+            # Wait for container to start
+            echo "⏳ Waiting for container to start..."
+            sleep 5
+            
+            # Verify container is running
+            if sudo docker ps | grep -q myfinances-bff; then
+              echo "✅ Container is running!"
+            else
+              echo "❌ Container failed to start!"
+              sudo docker logs myfinances-bff
+              exit 1
+            fi
+            
+            # Clean up old images
+            echo "🧹 Cleaning up old Docker images..."
+            sudo docker image prune -f
+            
+            # Show container status
+            echo "📊 Container Status:"
+            sudo docker ps -a | grep myfinances-bff
+            
+            # List recent backups
+            echo "📦 Recent Backups:"
+            ls -lht backups/ | head -5
+            
+            echo "================================================"
+            echo "✅ Backend Deployment Complete!"
+            echo "🌐 API: https://api.hardman.app.br"
+            echo "================================================"
+      
+      - name: 📢 Notify on Success
+        if: success()
+        run: echo "✅ Backend deployed successfully to Orange Pi!"
+      
+      - name: 📢 Notify on Failure
+        if: failure()
+        run: echo "❌ Backend deployment failed! Check logs above."
