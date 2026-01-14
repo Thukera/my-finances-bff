@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master  # Only deploy on master branch
-	  - deploy
+      - deploy
 
 jobs:
   deploy:
@@ -20,26 +20,38 @@ jobs:
           sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
           sudo chmod +x /usr/local/bin/cloudflared
       
-		  - name: 🔐 Setup SSH with Cloudflare Access
-		    env:
-		      CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-		      CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
-		      SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
-		    run: |
-		      mkdir -p ~/.ssh
-		      echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-		      chmod 600 ~/.ssh/id_ed25519
-		      
-		      # Configure SSH to use cloudflared
-		      cat >> ~/.ssh/config <<EOF
-		      Host ssh.hardman.app.br
-		        ProxyCommand cloudflared access ssh --hostname %h
-		        User thukera
-		        IdentityFile ~/.ssh/id_ed25519
-		      EOF
+      - name: 🔐 Setup SSH with Cloudflare Access
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
+          SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          
+          # Configure SSH to use cloudflared with service tokens via environment variables
+          cat >> ~/.ssh/config <<EOF
+          Host ssh.hardman.app.br
+            ProxyCommand bash -c 'TUNNEL_SERVICE_TOKEN_ID=${CF_ACCESS_CLIENT_ID} TUNNEL_SERVICE_TOKEN_SECRET=${CF_ACCESS_CLIENT_SECRET} cloudflared access ssh --hostname %h'
+            User thukera
+            IdentityFile ~/.ssh/id_ed25519
+            StrictHostKeyChecking no
+          EOF
+          
+          # Verify SSH config
+          echo "SSH config created:"
+          cat ~/.ssh/config
       
       - name: 🚀 Deploy Backend
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
         run: |
+          # Export service token as environment variables for cloudflared
+          export TUNNEL_SERVICE_TOKEN_ID="${CF_ACCESS_CLIENT_ID}"
+          export TUNNEL_SERVICE_TOKEN_SECRET="${CF_ACCESS_CLIENT_SECRET}"
+          
           ssh ssh.hardman.app.br << 'ENDSSH'
             
              set -e  # Exit on any error
