@@ -30,16 +30,25 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           
-          # Configure SSH to use cloudflared with service tokens
-          cat >> ~/.ssh/config <<'EOF'
-          Host ssh.hardman.app.br
-            ProxyCommand bash -c "cloudflared access tcp --hostname %h --url ssh://ssh.hardman.app.br:22 --service-token-id $CF_SERVICE_TOKEN_ID --service-token-secret $CF_SERVICE_TOKEN_SECRET"
-            User thukera
-            IdentityFile ~/.ssh/id_ed25519
-            StrictHostKeyChecking no
-          EOF
+          # Create wrapper script with embedded tokens
+          cat > ~/.ssh/cloudflared-tcp.sh <<WRAPPER
+#!/bin/bash
+export TUNNEL_SERVICE_TOKEN_ID="${CF_SERVICE_TOKEN_ID}"
+export TUNNEL_SERVICE_TOKEN_SECRET="${CF_SERVICE_TOKEN_SECRET}"
+exec cloudflared access tcp --hostname ssh.hardman.app.br
+WRAPPER
+          chmod +x ~/.ssh/cloudflared-tcp.sh
           
-          echo "SSH config created"
+          # Configure SSH to use cloudflared TCP proxy
+          cat >> ~/.ssh/config <<'EOF'
+Host ssh.hardman.app.br
+  ProxyCommand /home/runner/.ssh/cloudflared-tcp.sh
+  User thukera
+  IdentityFile ~/.ssh/id_ed25519
+  StrictHostKeyChecking no
+EOF
+          
+          echo "SSH config created with embedded service tokens"
       
       - name: 🚀 Deploy Backend
         env:
