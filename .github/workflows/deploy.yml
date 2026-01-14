@@ -31,11 +31,14 @@ jobs:
           
           # Configure SSH to use cloudflared
           cat >> ~/.ssh/config <<EOF
-          Host ssh.hardman.app.br
-            ProxyCommand cloudflared access ssh --hostname %h
-            User thukera
-            IdentityFile ~/.ssh/id_ed25519
-          EOF
+		  Host ssh.hardman.app.br
+		    User thukera
+		    IdentityFile ~/.ssh/id_ed25519
+		    ProxyCommand cloudflared access tcp \
+		      --hostname %h \
+		      --service-token-id $CF_ACCESS_CLIENT_ID \
+		      --service-token-secret $CF_ACCESS_CLIENT_SECRET
+		  EOF
       
       - name: 🚀 Deploy Backend
         run: |
