@@ -1,0 +1,77 @@
+name: 🚀 Deploy Backend to Orange Pi
+
+on:
+  push:
+    branches:
+      - master
+      - deploy
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: self-hosted  # Changed from ubuntu-latest
+    
+    steps:
+      - name: 📦 Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: 🚀 Deploy Backend
+        run: |
+          set -e
+          
+          echo "================================================"
+          echo "🚀 Starting Backend Deployment"
+          echo "================================================"
+          
+          # Already in the repo directory
+          
+          # Create backup directory
+          mkdir -p backups
+          
+          # Backup current JAR
+          if [ -f "target/my-finances-bff-1.0.jar" ]; then
+            BACKUP_DATE=$(date +"%d%m")
+            BACKUP_FILE="backups/my-finances-bff-${BACKUP_DATE}.bkp"
+            echo "💾 Backing up JAR to ${BACKUP_FILE}..."
+            cp target/my-finances-bff-1.0.jar "${BACKUP_FILE}"
+          fi
+          
+          # Build JAR
+          echo "🏗️  Building JAR..."
+          ./mvnw clean package -DskipTests
+          
+          # Build Docker image
+          echo "🐳 Building Docker image..."
+          sudo docker build -t myfinances-backend:latest .
+          
+          # Stop old container
+          echo "🛑 Stopping old container..."
+          sudo docker stop myfinances-bff || true
+          sudo docker rm myfinances-bff || true
+          
+          # Run new container
+          echo "▶️  Starting new container..."
+          sudo docker run -d \
+            -p 9090:9090 \
+            --name myfinances-bff \
+            --restart unless-stopped \
+            -v ~/Projects/MyFinances/backend/uploads:/app/uploads \
+            -v ~/Projects/MyFinances/backend/logs:/app/logs \
+            myfinances-backend:latest
+          
+          # Wait and verify
+          sleep 5
+          
+          if sudo docker ps | grep -q myfinances-bff; then
+            echo "✅ Container is running!"
+          else
+            echo "❌ Container failed!"
+            sudo docker logs myfinances-bff
+            exit 1
+          fi
+          
+          # Cleanup
+          sudo docker image prune -f
+          
+          echo "✅ Backend Deployment Complete!"
+          echo "🌐 API: https://api.hardman.app.br"

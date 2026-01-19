@@ -1,0 +1,47 @@
+# Ignore files that don't need to be in Docker image
+
+# Build artifacts
+target/
+*.jar
+*.war
+*.class
+
+# IDE files
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+*.iml
+.factorypath
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation (already in image from src/)
+*.md
+!README.md
+
+# Logs (will be created by container)
+logs/
+*.log
+*.log.*
+
+# Uploads (will be mounted as volume)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Maven wrapper (keep mvnw files)
+.mvn/wrapper/maven-wrapper.jar
+
+# Test files
+src/test/
+
+# Environment files
+.env
+.env.local
