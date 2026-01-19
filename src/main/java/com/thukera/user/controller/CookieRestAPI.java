@@ -84,8 +84,8 @@ public class CookieRestAPI {
 	    
 	    ResponseCookie accessCookie = ResponseCookie.from("access_token", accessToken)
 	    	    .httpOnly(true)
-	    	    .secure(true) // ⬅️ Disable HTTPS-only
-	    	    .sameSite("None") // ⬅️ Allow cookies from your frontend on HTTP
+	    	    .secure(true) 
+	    	    .sameSite("None") 
 	    	    .path("/")
 	    	    .maxAge(3600)
 	    	    .build();
