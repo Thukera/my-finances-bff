@@ -1,8 +1,8 @@
 # Ignore files that don't need to be in Docker image
 
 # Build artifacts
-target/
-*.jar
+target/*
+!target/my-finances-bff.jar
 *.war
 *.class
 

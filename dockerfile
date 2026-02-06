@@ -5,7 +5,7 @@ WORKDIR /
 COPY my-finances-bff.jar ./my-finances-bff.jar
 
 # ✅ Copy your config folder into the image
-COPY config ./config
+#COPY config ./config
 
 EXPOSE 9090
 CMD ["java", "-jar", "my-finances-bff.jar"]
