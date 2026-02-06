@@ -36,7 +36,7 @@ jobs:
           
           # Build JAR
           echo "🏗️  Building JAR..."
-          ./mvnw clean package -DskipTests
+          mvn clean package -DskipTests
           
           # Build Docker image
           echo "🐳 Building Docker image..."
