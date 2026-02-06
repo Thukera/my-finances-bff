@@ -3,126 +3,75 @@ name: 🚀 Deploy Backend to Orange Pi
 on:
   push:
     branches:
-      - master  # Only deploy on master branch
+      - master
+      - cicd
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # ← Changed from ubuntu-latest
     
     steps:
       - name: 📦 Checkout Code
         uses: actions/checkout@v4
       
-      - name: 🔧 Install cloudflared
-        run: |
-          wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-          sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
-          sudo chmod +x /usr/local/bin/cloudflared
-      
-      - name: 🔐 Setup SSH with Cloudflare Access
-        env:
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_SERVICE_TOKEN_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_SERVICE_TOKEN_SECRET }}
-          SSH_PRIVATE_KEY: ${{ secrets.ORANGE_PI_SSH_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          
-          printf "Host ssh.hardman.app.br\n  User thukera\n  IdentityFile ~/.ssh/id_ed25519\n  ProxyCommand cloudflared access ssh --hostname %%h --service-token-id %s --service-token-secret %s\n" \
-            "$CF_ACCESS_CLIENT_ID" "$CF_ACCESS_CLIENT_SECRET" >> ~/.ssh/config
-      
       - name: 🚀 Deploy Backend
         run: |
-          ssh ssh.hardman.app.br << 'ENDSSH'
-            
-             set -e  # Exit on any error
-            
-            echo "================================================"
-            echo "🚀 Starting Backend Deployment"
-            echo "================================================"
-            
-            # Navigate to project directory
-            cd ~/Projects/MyFinances/backend || exit 1
-            
-            # Create backup directory if it doesn't exist
-            mkdir -p backups
-            
-            # Backup current JAR file (if exists)
-            if [ -f "target/my-finances-bff.jar" ]; then
-              BACKUP_DATE=$(date +"%d%m")
-              BACKUP_FILE="backups/my-finances-bff-${BACKUP_DATE}.bkp"
-              echo "💾 Backing up current JAR to ${BACKUP_FILE}..."
-              cp target/my-finances-bff.jar "${BACKUP_FILE}"
-              echo "✅ Backup created: ${BACKUP_FILE}"
-            else
-              echo "ℹ️  No existing JAR file to backup"
-            fi
-            
-            # Pull latest code
-            echo "📥 Pulling latest code from GitHub..."
-            git fetch --all
-            git reset --hard origin/master
-            
-            # Build Java application
-            echo "🏗️  Building JAR file..."
-            ./mvnw clean package -DskipTests
-            
-            # Build Docker image
-            echo "🐳 Building Docker image..."
-            sudo docker build -t myfinances-backend:latest .
-            
-            # Stop old container
-            echo "🛑 Stopping old container..."
-            sudo docker stop myfinances-bff || true
-            sudo docker rm myfinances-bff || true
-            
-            # Run new container
-            echo "▶️  Starting new container..."
-            sudo docker run -d \
-              -p 9090:9090 \
-              --name myfinances-bff \
-              --restart unless-stopped \
-              -v ~/Projects/MyFinances/backend/uploads:/app/uploads \
-              -v ~/Projects/MyFinances/backend/logs:/app/logs \
-              myfinances-backend:latest
-            
-            # Wait for container to start
-            echo "⏳ Waiting for container to start..."
-            sleep 5
-            
-            # Verify container is running
-            if sudo docker ps | grep -q myfinances-bff; then
-              echo "✅ Container is running!"
-            else
-              echo "❌ Container failed to start!"
-              sudo docker logs myfinances-bff
-              exit 1
-            fi
-            
-            # Clean up old images
-            echo "🧹 Cleaning up old Docker images..."
-            sudo docker image prune -f
-            
-            # Show container status
-            echo "📊 Container Status:"
-            sudo docker ps -a | grep myfinances-bff
-            
-            # List recent backups
-            echo "📦 Recent Backups:"
-            ls -lht backups/ | head -5
-            
-            echo "================================================"
-            echo "✅ Backend Deployment Complete!"
-            echo "🌐 API: https://api.hardman.app.br"
-            echo "================================================"
-            
-          ENDSSH
-      
-      - name: 📢 Notify on Success
-        if: success()
-        run: echo "✅ Backend deployed successfully to Orange Pi!"
-      
-      - name: 📢 Notify on Failure
-        if: failure()
-        run: echo "❌ Backend deployment failed! Check logs above."
+          set -e
+          
+          echo "================================================"
+          echo "🚀 Starting Backend Deployment"
+          echo "================================================"
+          
+          # Create backup directory
+          mkdir -p backups
+          
+          # Backup current JAR
+          if [ -f "target/my-finances-bff-1.0.jar" ]; then
+            BACKUP_DATE=$(date +"%d%m")
+            BACKUP_FILE="backups/my-finances-bff-${BACKUP_DATE}.bkp"
+            echo "💾 Backing up JAR to ${BACKUP_FILE}..."
+            cp target/my-finances-bff-1.0.jar "${BACKUP_FILE}"
+            echo "✅ Backup created"
+          fi
+          
+          # Build JAR
+          echo "🏗️  Building JAR..."
+          ./mvnw clean package -DskipTests
+          
+          # Build Docker image
+          echo "🐳 Building Docker image..."
+          sudo docker build -t myfinances-backend:latest .
+          
+          # Stop old container
+          echo "🛑 Stopping old container..."
+          sudo docker stop myfinances-bff || true
+          sudo docker rm myfinances-bff || true
+          
+          # Run new container
+          echo "▶️  Starting new container..."
+          sudo docker run -d \
+            -p 9090:9090 \
+            --name myfinances-bff \
+            --restart unless-stopped \
+            -v ~/Projects/MyFinances/backend/uploads:/app/uploads \
+            -v ~/Projects/MyFinances/backend/logs:/app/logs \
+            myfinances-backend:latest
+          
+          # Wait and verify
+          sleep 5
+          
+          if sudo docker ps | grep -q myfinances-bff; then
+            echo "✅ Container is running!"
+          else
+            echo "❌ Container failed!"
+            sudo docker logs myfinances-bff
+            exit 1
+          fi
+          
+          # Cleanup
+          sudo docker image prune -f
+          
+          echo "================================================"
+          echo "✅ Backend Deployment Complete!"
+          echo "🌐 API: https://api.hardman.app.br"
+          echo "================================================"
