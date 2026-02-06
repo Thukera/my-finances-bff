@@ -39,6 +39,9 @@ jobs:
           mvn clean package -DskipTests
           
           # Build Docker image
+          echo "=== FILES AFTER BUILD ==="
+          ls -la
+          ls -la target
           echo "🐳 Building Docker image..."
           docker build -t myfinances-backend:latest .
           
