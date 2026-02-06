@@ -40,16 +40,16 @@ jobs:
           
           # Build Docker image
           echo "🐳 Building Docker image..."
-          sudo docker build -t myfinances-backend:latest .
+          docker build -t myfinances-backend:latest .
           
           # Stop old container
           echo "🛑 Stopping old container..."
-          sudo docker stop myfinances-bff || true
-          sudo docker rm myfinances-bff || true
+          docker stop myfinances-bff || true
+          docker rm myfinances-bff || true
           
           # Run new container
           echo "▶️  Starting new container..."
-          sudo docker run -d \
+          docker run -d \
             -p 9090:9090 \
             --name myfinances-bff \
             --restart unless-stopped \
@@ -60,16 +60,16 @@ jobs:
           # Wait and verify
           sleep 5
           
-          if sudo docker ps | grep -q myfinances-bff; then
+          if docker ps | grep -q myfinances-bff; then
             echo "✅ Container is running!"
           else
             echo "❌ Container failed!"
-            sudo docker logs myfinances-bff
+            docker logs myfinances-bff
             exit 1
           fi
           
           # Cleanup
-          sudo docker image prune -f
+          docker image prune -f
           
           echo "================================================"
           echo "✅ Backend Deployment Complete!"
