@@ -3,8 +3,7 @@ name: 🚀 Deploy Backend to Orange Pi
 on:
   push:
     branches:
-      #- master
-      - cicd
+      - master
 
 jobs:
   deploy:
