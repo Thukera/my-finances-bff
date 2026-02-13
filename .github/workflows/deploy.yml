@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: production
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: self-hosted  # ← Changed from ubuntu-latest
@@ -20,18 +24,7 @@ jobs:
           echo "================================================"
           echo "🚀 Starting Backend Deployment"
           echo "================================================"
-          
-          # Create backup directory
-          mkdir -p backups
-          
-          # Backup current JAR
-          if [ -f "target/my-finances-bff-1.0.jar" ]; then
-            BACKUP_DATE=$(date +"%d%m")
-            BACKUP_FILE="backups/my-finances-bff-${BACKUP_DATE}.bkp"
-            echo "💾 Backing up JAR to ${BACKUP_FILE}..."
-            cp target/my-finances-bff-1.0.jar "${BACKUP_FILE}"
-            echo "✅ Backup created"
-          fi
+ 
           
           # Build JAR
           echo "🏗️  Building JAR..."
