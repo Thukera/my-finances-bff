@@ -26,6 +26,7 @@ public class CreditCardForm {
 	private int billingPeriodEnd;
 	private BigDecimal usedLimit;
 	private BigDecimal totalLimit;
+	private BigDecimal estimateLimit;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate cadastro;
@@ -37,7 +38,7 @@ public class CreditCardForm {
 	}
 
 	public CreditCardForm(long cardId, String bank, String endNumbers, String nickname, int billingInvoiceStart, int billingInvoiceEnd,
-			BigDecimal usedLimit, BigDecimal totalLimit, LocalDate cadastro) {
+			BigDecimal usedLimit, BigDecimal totalLimit, BigDecimal estimateLimit, LocalDate cadastro) {
 		super();
 		this.cardId = cardId;
 		this.bank = bank;
@@ -47,11 +48,12 @@ public class CreditCardForm {
 		this.billingPeriodEnd = billingInvoiceEnd;
 		this.usedLimit = usedLimit;
 		this.totalLimit = totalLimit;
+		this.estimateLimit = estimateLimit;
 		this.cadastro = cadastro;
 	}
 	
 	public CreditCardForm(long cardId, String bank, String endNumbers, String nickname, int billingInvoiceStart, int billingInvoiceEnd,
-			BigDecimal usedLimit, BigDecimal totalLimit, LocalDate cadastro, List<InvoiceDTOFromCreditCard> invoices) {
+			BigDecimal usedLimit, BigDecimal totalLimit, BigDecimal estimateLimit, LocalDate cadastro, List<InvoiceDTOFromCreditCard> invoices) {
 		super();
 		this.cardId = cardId;
 		this.bank = bank;
@@ -61,17 +63,18 @@ public class CreditCardForm {
 		this.billingPeriodEnd = billingInvoiceEnd;
 		this.usedLimit = usedLimit;
 		this.totalLimit = totalLimit;
+		this.estimateLimit = estimateLimit;
 		this.cadastro = cadastro;
 		this.invoices = invoices;
 	}
 	
 	
 	public CreditCard toModel() {
-		return new CreditCard(user,bank,endNumbers,nickname,billingPeriodStart,billingPeriodEnd,usedLimit,totalLimit,cadastro);
+		return new CreditCard(user,bank,endNumbers,nickname,billingPeriodStart,billingPeriodEnd,usedLimit,totalLimit,estimateLimit,cadastro);
 	}
 	
 	public CreditCardForm fromModel(CreditCard creditcard) {
-		return new CreditCardForm(creditcard.getCardId(), creditcard.getBank(), creditcard.getEndnumbers(), creditcard.getNickname(),creditcard.getBillingPeriodStart(), creditcard.getBillingPeriodEnd(), creditcard.getUsedLimit(), creditcard.getTotalLimit(), creditcard.getDataCadastro(), 
+		return new CreditCardForm(creditcard.getCardId(), creditcard.getBank(), creditcard.getEndnumbers(), creditcard.getNickname(),creditcard.getBillingPeriodStart(), creditcard.getBillingPeriodEnd(), creditcard.getUsedLimit(), creditcard.getTotalLimit(), creditcard.getEstimateLimit(),creditcard.getDataCadastro(), 
 				creditcard.getInvoices().stream()
                 .map(InvoiceDTOFromCreditCard::fromEntity)
                 .collect(Collectors.toList()));

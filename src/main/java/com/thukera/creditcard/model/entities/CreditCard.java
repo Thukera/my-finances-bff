@@ -83,6 +83,8 @@ public class CreditCard {
     @Column(name = "total_limit", precision = 16, scale = 2)
     private BigDecimal totalLimit;
     
+    @Column(name = "estimate_limit", precision = 16, scale = 2)
+    private BigDecimal estimateLimit;
 
 
     @Column(name = "data_cadastro", nullable = false)
@@ -110,7 +112,7 @@ public class CreditCard {
 
 	public CreditCard(User user, @NotBlank @Size(max = 50) String bank, @NotBlank @Size(max = 4) String endnumbers, @Size(max = 50) String nickname,
 			@NotBlank int billingPeriodStart, @NotBlank int billingPeriodEnd, BigDecimal usedLimit,
-			@NotBlank BigDecimal totalLimit, @NotBlank LocalDate dataCadastro) {
+			@NotBlank BigDecimal totalLimit, BigDecimal estimateLimit,@NotBlank LocalDate dataCadastro) {
 		super();
 		this.user = user;
 		this.bank = bank;
@@ -120,12 +122,13 @@ public class CreditCard {
 		this.billingPeriodEnd = billingPeriodEnd;
 		this.usedLimit = usedLimit;
 		this.totalLimit = totalLimit;
+		this.estimateLimit = estimateLimit;
 		this.dataCadastro = dataCadastro;
 	}
 
 	public CreditCard(Long cardId, User user, @NotBlank @Size(max = 50) String bank, String nickname,
 			@NotBlank @Size(max = 4) String endnumbers, @NotBlank int billingPeriodStart,
-			@NotBlank int billingPeriodEnd, BigDecimal usedLimit, @NotBlank BigDecimal totalLimit,
+			@NotBlank int billingPeriodEnd, BigDecimal usedLimit, @NotBlank BigDecimal totalLimit,BigDecimal estimateLimit,
 			LocalDate dataCadastro) {
 		super();
 		this.cardId = cardId;
@@ -137,6 +140,7 @@ public class CreditCard {
 		this.billingPeriodEnd = billingPeriodEnd;
 		this.usedLimit = usedLimit;
 		this.totalLimit = totalLimit;
+		this.estimateLimit = estimateLimit;
 		this.dataCadastro = dataCadastro;
 	}
 	

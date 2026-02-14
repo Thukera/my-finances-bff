@@ -83,14 +83,12 @@ public class InvoiceService {
             
             // Find or create current invoice
             Invoice currentInvoice = retroativePurchase ? findOrCreateRetroativeInvoice(creditCard, purchaseForm) : getOrCreateCurrentInvoice(creditCard);
-        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(purchase.getValue()));
+        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(installmentValue));
             currentInvoice.getPurchases().add(purchase);            
             purchase.getInvoices().add(currentInvoice);
             logger.debug("## First Invoice : " + currentInvoice.toString());
             
-            LocalDate nextStartDate = currentInvoice.getStartDate();
-            LocalDate nextEndDate   = currentInvoice.getEndDate();
-            LocalDate nextdueDate   = currentInvoice.getDueDate();
+            LocalDate baseDate = retroativePurchase ? purchaseForm.getPurchaseDateTime().toLocalDate() : LocalDate.now();
             LocalDate installmentDate = purchaseForm.getPurchaseDateTime().toLocalDate();
             
             // Find or create next Invoices ; generate installments child
@@ -104,10 +102,11 @@ public class InvoiceService {
             
             for (int i = 1; i < purchaseForm.getTotalInstallments(); i++) {
 	
-            	// Child Invoices Handler
-                nextStartDate = nextStartDate.plusMonths(1);
-                nextEndDate   = nextEndDate.plusMonths(1);
-                nextdueDate   = nextdueDate.plusMonths(1);
+            	// Child Invoices Handler - Calculate dates from base date with proper month offset
+                LocalDate dateForNextInvoice = baseDate.plusMonths(i);
+                LocalDate nextStartDate = calculateStartDate(dateForNextInvoice, creditCard.getBillingPeriodStart());
+                LocalDate nextEndDate   = calculateEndDate(dateForNextInvoice, creditCard.getBillingPeriodEnd());
+                LocalDate nextdueDate   = calculateDueDate(dateForNextInvoice, creditCard.getDueDate());
                 installmentDate = installmentDate.plusMonths(1);
 
                 // Check if Retroative Invoice or reach real current
@@ -274,22 +273,35 @@ public class InvoiceService {
     //  -------------------------------------------- INVOICEs DATE HANDLER -----------------------------------------------------
     
     private LocalDate calculateStartDate(LocalDate today, int startDate) {
-        // e.g., start today or card’s billing cycle
-        return today.withDayOfMonth(startDate);
+        // e.g., start today or card's billing cycle
+        return getValidDayOfMonth(today, startDate);
     }
 
     private LocalDate calculateEndDate(LocalDate today, int endDate) {
-    	LocalDate invoiceEndDate = today.withDayOfMonth(endDate);
-    	invoiceEndDate = invoiceEndDate.plusMonths(1);
-        // example: end of month
+    	LocalDate invoiceEndDate = getValidDayOfMonth(today, endDate);
+        // End date stays in the same month as start date
         return invoiceEndDate;
     }
     
     private LocalDate calculateDueDate(LocalDate today , int dueDate) {
-    	LocalDate invoiceDueDate = today.withDayOfMonth(dueDate);
+    	LocalDate invoiceDueDate = getValidDayOfMonth(today, dueDate);
     	invoiceDueDate = invoiceDueDate.plusMonths(1);
         // example: end of month
         return invoiceDueDate;
+    }
+
+    /**
+     * Helper method to get a valid day of month, handling cases where the day doesn't exist
+     * (e.g., February 31). If the day is invalid, it uses the last valid day of the month.
+     * 
+     * @param date the base date
+     * @param dayOfMonth the desired day of month
+     * @return a valid LocalDate with the closest valid day
+     */
+    private LocalDate getValidDayOfMonth(LocalDate date, int dayOfMonth) {
+        int maxDayInMonth = date.lengthOfMonth();
+        int validDay = Math.min(dayOfMonth, maxDayInMonth);
+        return date.withDayOfMonth(validDay);
     }
 
     private boolean checkIfRetroative(LocalDate purchaseDate, CreditCard card) { 		
@@ -297,4 +309,3 @@ public class InvoiceService {
     	return purchaseDate.isBefore(currentInvoiceStartBilling);
     }
 }
-
