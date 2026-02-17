@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.dto.PurchaseDTO;
+import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.form.CreditCardForm;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.service.CreditCardService;
@@ -42,11 +44,7 @@ public class CreditcardController {
 	private InvoiceManagementService invoiceManagementService;
 
 
-	/**
-	 * Create a new credit card for the authenticated user
-	 * @param creditcardForm the credit card data
-	 * @return ResponseEntity with created card or error
-	 */
+	// ======================================= CREDIT CARD CRUD =======================================
 	@PostMapping
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<CreditCardForm> createCard(@RequestBody CreditCardForm creditcardForm) {
@@ -58,11 +56,6 @@ public class CreditcardController {
 	}
 
 
-	/**
-	 * Get credit card details by ID
-	 * @param id the card ID
-	 * @return ResponseEntity with card details or error
-	 */
 	@GetMapping("/{id}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<CreditCardForm> getCardDetails(@PathVariable Long id) {
@@ -71,13 +64,23 @@ public class CreditcardController {
 		CreditCardForm cardForm = creditCardService.getCreditCardById(id);
 		return ResponseEntity.ok(cardForm);
 	}
+	
+	@PutMapping("/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<CreditCardForm> putCardDetails(@PathVariable Long id, @RequestBody CreditCardForm creditcardForm) {
+		logger.debug("######## ### UPDATE CREDIT CARD  | ID: {} ### ########", id);
+		logger.debug("### CreditCardForm: {}", creditcardForm);
+
+		CreditCard existingCard = creditCardService.getCreditCardEntityById(id);
+		CreditCardForm cardForm = creditCardService.updateCreditCard(existingCard, creditcardForm);
+		
+		return ResponseEntity.ok(cardForm);
+	}
 
 
-	/**
-	 * Create a new purchase on a credit card
-	 * @param purchaseForm the purchase data
-	 * @return ResponseEntity with created purchase or error
-	 */
+		
+	// ======================================= CREDIT PURCHASE CRUD =======================================
+	
 	@PostMapping("/purchase")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<PurchaseDTO> insertPurchase(@RequestBody CreditPurchaseForm purchaseForm) {
@@ -89,11 +92,6 @@ public class CreditcardController {
 	}
 
 
-	/**
-	 * Get purchase details by ID
-	 * @param purchaseId the purchase ID
-	 * @return ResponseEntity with purchase details or error
-	 */
 	@GetMapping("/purchase/{purchaseId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<PurchaseDTO> getPurchaseDetails(@PathVariable Long purchaseId) {
@@ -104,11 +102,9 @@ public class CreditcardController {
 	}
 
 
-	/**
-	 * Get invoice details by ID
-	 * @param invoiceId the invoice ID
-	 * @return ResponseEntity with invoice details or error
-	 */
+
+	// ======================================= INVOICE MANGEMENT  =======================================	
+	
 	@GetMapping("/invoice/{invoiceId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> getInvoiceDetails(@PathVariable Long invoiceId) {
@@ -118,11 +114,7 @@ public class CreditcardController {
 		return ResponseEntity.ok(invoiceDTO);
 	}
 
-	/**
-	 * Get current invoice for a credit card
-	 * @param cardId the card ID
-	 * @return ResponseEntity with current invoice or error
-	 */
+
 	@GetMapping("/current-invoice/{cardid}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> getCurrentInvoice(@PathVariable("cardid") Long cardId) {

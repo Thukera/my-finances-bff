@@ -101,6 +101,18 @@ public class CreditCardService {
         logger.debug("### Updating credit card: {}", card.getCardId());
         creditcardRepository.save(card);
     }
+    
+    @Transactional
+    public CreditCardForm updateCreditCard(CreditCard card, CreditCardForm form) {
+        logger.debug("### Updating credit card: {}", card.getCardId());
+        validateCardOwnership(card);
+          
+        CreditCard updatedCard = creditCardMapper.updateEntity(card, form);
+        creditcardRepository.save(updatedCard);
+		logger.debug("### CreditCard updated: {}", updatedCard.getCardId());
+        
+        return creditCardMapper.toForm(updatedCard);
+    }
 
     /**
      * Validate that the current user owns the credit card

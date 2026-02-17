@@ -52,13 +52,14 @@ public class CreditCardForm {
 		this.cadastro = cadastro;
 	}
 	
-	public CreditCardForm(long cardId, String bank, String endNumbers, String nickname, int billingInvoiceStart, int billingInvoiceEnd,
+	public CreditCardForm(long cardId, String bank, String endNumbers, String nickname, int duedate, int billingInvoiceStart, int billingInvoiceEnd,
 			BigDecimal usedLimit, BigDecimal totalLimit, BigDecimal estimateLimit, LocalDate cadastro, List<InvoiceDTOFromCreditCard> invoices) {
 		super();
 		this.cardId = cardId;
 		this.bank = bank;
 		this.endNumbers = endNumbers;
 		this.nickname = nickname;
+		this.dueDate = duedate;
 		this.billingPeriodStart = billingInvoiceStart;
 		this.billingPeriodEnd = billingInvoiceEnd;
 		this.usedLimit = usedLimit;
@@ -74,7 +75,7 @@ public class CreditCardForm {
 	}
 	
 	public CreditCardForm fromModel(CreditCard creditcard) {
-		return new CreditCardForm(creditcard.getCardId(), creditcard.getBank(), creditcard.getEndnumbers(), creditcard.getNickname(),creditcard.getBillingPeriodStart(), creditcard.getBillingPeriodEnd(), creditcard.getUsedLimit(), creditcard.getTotalLimit(), creditcard.getEstimateLimit(),creditcard.getDataCadastro(), 
+		return new CreditCardForm(creditcard.getCardId(), creditcard.getBank(), creditcard.getEndnumbers(), creditcard.getNickname(),creditcard.getBillingPeriodStart(), creditcard.getBillingPeriodEnd(), creditcard.getDueDate(), creditcard.getUsedLimit(), creditcard.getTotalLimit(), creditcard.getEstimateLimit(),creditcard.getDataCadastro(), 
 				creditcard.getInvoices().stream()
                 .map(InvoiceDTOFromCreditCard::fromEntity)
                 .collect(Collectors.toList()));

@@ -48,6 +48,7 @@ public class CreditCardMapper {
             entity.getBank(),
             entity.getEndnumbers(),
             entity.getNickname(),
+            entity.getDueDate(),
             entity.getBillingPeriodStart(),
             entity.getBillingPeriodEnd(),
             entity.getUsedLimit(),
@@ -65,7 +66,7 @@ public class CreditCardMapper {
      * @param entity existing entity
      * @param form updated form data
      */
-    public void updateEntity(CreditCard entity, CreditCardForm form) {
+    public CreditCard updateEntity(CreditCard entity, CreditCardForm form) {
         if (form.getBank() != null) {
             entity.setBank(form.getBank());
         }
@@ -90,5 +91,7 @@ public class CreditCardMapper {
         if (form.getEstimateLimit() != null) {
             entity.setEstimateLimit(form.getEstimateLimit());
         }
+        
+        return entity;
     }
 }
