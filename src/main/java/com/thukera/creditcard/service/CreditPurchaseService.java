@@ -31,7 +31,7 @@ public class CreditPurchaseService {
     private CreditCardService creditCardService;
 
     @Autowired
-    private InvoiceService invoiceService;
+    private CreditTransactionService invoiceService;
 
     @Autowired
     private AuthenticationHelper authHelper;

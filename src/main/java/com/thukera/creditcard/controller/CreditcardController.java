@@ -16,13 +16,13 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.dto.PurchaseDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
-import com.thukera.creditcard.model.entities.Invoice;
 import com.thukera.creditcard.model.form.CreditCardForm;
 import com.thukera.creditcard.model.form.CreditPurchaseForm;
+import com.thukera.creditcard.model.form.InvoiceForm;
 import com.thukera.creditcard.service.CreditCardService;
 import com.thukera.creditcard.service.CreditPurchaseService;
-import com.thukera.creditcard.service.InvoiceManagementService;
 import com.thukera.creditcard.service.InvoiceService;
+import com.thukera.creditcard.service.CreditTransactionService;
 
 /**
  * REST Controller for Credit Card operations
@@ -43,10 +43,10 @@ public class CreditcardController {
 	private CreditPurchaseService creditPurchaseService;
 
 	@Autowired
-	private InvoiceManagementService invoiceManagementService;
+	private InvoiceService invoiceService;
 	
 	@Autowired
-	private InvoiceService invoiceService;
+	private CreditTransactionService creditTransactionService;
 
 
 	// ======================================= CREDIT CARD CRUD =======================================
@@ -125,32 +125,41 @@ public class CreditcardController {
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> getInvoiceDetails(@PathVariable Long invoiceId) {
 		logger.debug("######## ### GET INVOICE BY ID: {} ### ########", invoiceId);	
-		InvoiceDTO invoiceDTO = invoiceManagementService.getInvoiceById(invoiceId);
+		InvoiceDTO invoiceDTO = invoiceService.getInvoiceById(invoiceId);
+		return ResponseEntity.ok(invoiceDTO);
+	}
+	
+	@PutMapping("/invoice/{invoiceId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<InvoiceDTO> getCurrentInvoice(@PathVariable("invoiceId") Long invoiceId, @RequestBody InvoiceForm invoiceForm) {
+		logger.debug("######## ### UPDATE INVOICE : {} ### ########", invoiceId);	
+		
+		InvoiceDTO invoiceDTO = invoiceService.putInvoice(invoiceId, invoiceForm);
 		return ResponseEntity.ok(invoiceDTO);
 	}
 
 	@PutMapping("/invoice/check-amount/{invoiceId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> updateTotalAmount(@PathVariable Long invoiceId) {
-		logger.debug("######## ### GET INVOICE BY ID: {} ### ########", invoiceId);
-		InvoiceDTO invoiceDTO = invoiceManagementService.getInvoiceById(invoiceId);
-		InvoiceDTO updatedInvoice = InvoiceDTO.fromEntity(invoiceService.updateTotalAmount(invoiceDTO));		
+		logger.debug("######## ### CHECK INVOICE TOTAL AMOUNT BY ID: {} ### ########", invoiceId);
+		InvoiceDTO invoiceDTO = invoiceService.getInvoiceById(invoiceId);
+		InvoiceDTO updatedInvoice = InvoiceDTO.fromEntity(creditTransactionService.updateTotalAmount(invoiceDTO));		
 		return ResponseEntity.ok(updatedInvoice);
 	}
 	
 	@PutMapping("/invoice/change-status/{invoiceId}/{status}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> updateInvoiceStatus(@PathVariable("invoiceId") Long invoiceId, @PathVariable("status") String status) {
-		logger.debug("######## ### GET CURRENT INVOICE FOR CARD ID: {} ### ########", invoiceId);		
-		InvoiceDTO invoiceDTO = invoiceManagementService.putInvoiceStatus(invoiceId,status);
+		logger.debug("######## ### UPDATE INVOICE STATUS: {} ### ########", invoiceId);		
+		InvoiceDTO invoiceDTO = invoiceService.putInvoiceStatus(invoiceId,status);
 		return ResponseEntity.ok(invoiceDTO);
 	}
 
-	@GetMapping("/current-invoice/{cardid}")
+	@GetMapping("/invoice/current-invoice/{invoiceId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-	public ResponseEntity<InvoiceDTO> getCurrentInvoice(@PathVariable("cardid") Long cardId) {
-		logger.debug("######## ### GET CURRENT INVOICE FOR CARD ID: {} ### ########", cardId);
-		InvoiceDTO invoiceDTO = invoiceManagementService.getCurrentInvoice(cardId);
+	public ResponseEntity<InvoiceDTO> getCurrentInvoice(@PathVariable("invoiceId") Long cardId) {
+		logger.debug("######## ### GET CURRENT INVOICE FOR CARD ID: {} ### ########", cardId);		
+		InvoiceDTO invoiceDTO = invoiceService.getCurrentInvoice(cardId);
 		return ResponseEntity.ok(invoiceDTO);
 	}
 

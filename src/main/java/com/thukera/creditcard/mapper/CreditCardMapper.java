@@ -32,7 +32,7 @@ public class CreditCardMapper {
         card.setBillingPeriodStart(form.getBillingPeriodStart());
         card.setBillingPeriodEnd(form.getBillingPeriodEnd());
         card.setTotalLimit(form.getTotalLimit());
-        card.setEstimateLimit(form.getEstimateLimit());
+        card.setEstimateLimitforInvoice(form.getEstimateLimitForinvoices());
         
         return card;
     }
@@ -53,7 +53,7 @@ public class CreditCardMapper {
             entity.getBillingPeriodEnd(),
             entity.getUsedLimit(),
             entity.getTotalLimit(),
-            entity.getEstimateLimit(),
+            entity.getEstimateLimitforInvoice(),
             entity.getDataCadastro(),
             entity.getInvoices().stream()
                 .map(InvoiceDTOFromCreditCard::fromEntity)
@@ -88,8 +88,8 @@ public class CreditCardMapper {
         if (form.getTotalLimit() != null) {
             entity.setTotalLimit(form.getTotalLimit());
         }
-        if (form.getEstimateLimit() != null) {
-            entity.setEstimateLimit(form.getEstimateLimit());
+        if (form.getEstimateLimitForinvoices() != null) {
+            entity.setEstimateLimitforInvoice(form.getEstimateLimitForinvoices());
         }
         
         return entity;
