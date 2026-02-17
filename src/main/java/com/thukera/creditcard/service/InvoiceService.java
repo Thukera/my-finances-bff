@@ -179,9 +179,9 @@ public class InvoiceService {
     	logger.debug("## Total Amount : {}", totalAmount);
     	
     	if(totalAmount.compareTo(invoice.getTotalAmount()) != 0) {
-			logger.debug("## Total Amount Updated! ");
 			invoice.setTotalAmount(totalAmount);
 			invoiceRepository.save(invoice);
+			logger.debug("## Total Amount Updated! ");
 		} else {
 			logger.debug("## Total Amount is correct! ");
 		}   	

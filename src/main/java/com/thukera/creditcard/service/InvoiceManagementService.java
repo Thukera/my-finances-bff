@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.Invoice;
+import com.thukera.creditcard.model.enums.InvoiceStatus;
 import com.thukera.creditcard.repository.InvoiceRepository;
 import com.thukera.root.model.messages.NotFoundException;
 import com.thukera.user.service.AuthenticationHelper;
@@ -31,14 +32,7 @@ public class InvoiceManagementService {
     @Autowired
     private AuthenticationHelper authHelper;
 
-    /**
-     * Get invoice details by ID
-     * Validates ownership before returning
-     * @param invoiceId the invoice ID
-     * @return InvoiceDTO
-     * @throws NotFoundException if invoice not found
-     * @throws SecurityException if user doesn't own the invoice
-     */
+    // GET INVOICE BY ID - DTO
     @Transactional(readOnly = true)
     public InvoiceDTO getInvoiceById(Long invoiceId) {
         logger.debug("### Fetching invoice with ID: {}", invoiceId);
@@ -52,13 +46,8 @@ public class InvoiceManagementService {
         return InvoiceDTO.fromEntity(invoice);
     }
 
-    /**
-     * Get current invoice for a credit card
-     * @param cardId the credit card ID
-     * @return InvoiceDTO
-     * @throws NotFoundException if card not found or no current invoice exists
-     * @throws SecurityException if user doesn't own the card
-     */
+
+    // GET CURRETNT INVOICE BY DATE AND CARD ID- DTO 
     @Transactional(readOnly = true)
     public InvoiceDTO getCurrentInvoice(Long cardId) {
         logger.debug("### Fetching current invoice for card ID: {}", cardId);
@@ -73,13 +62,32 @@ public class InvoiceManagementService {
         logger.debug("### Current invoice found: {}", invoice.getInvoiceId());
         return InvoiceDTO.fromEntity(invoice);
     }
+    
+    
+    // CHANGE INVOICE STATUS 
+    @Transactional(readOnly = true)
+    public InvoiceDTO putInvoiceStatus(Long invoiceId, String status) {
+        
+    	Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+    	
+    	validateInvoiceOwnership(invoice);
+        logger.debug("### Invoice Selected: {}", invoice.getInvoiceId());
+        
+        try {
+        	InvoiceStatus newStatus = InvoiceStatus.valueOf(status.toUpperCase());	
+			invoice.setStatus(newStatus);
+			invoiceRepository.save(invoice);
+			logger.debug("### Invoice status updated to: {}", newStatus);
+		} catch (IllegalArgumentException e) {
+			logger.error("### Invalid status value: {}", status);
+			throw new IllegalArgumentException("Invalid status value: " + status);
+		}
+        return InvoiceDTO.fromEntity(invoice);
+    }
+    
 
-    /**
-     * Validate that the current user owns the invoice's credit card
-     * Admins can access any invoice
-     * @param invoice the invoice to validate
-     * @throws SecurityException if user doesn't own the invoice
-     */
+    // VALIDATE OWNERSHIP
     private void validateInvoiceOwnership(Invoice invoice) {
         Long cardOwnerId = invoice.getCreditCard().getUser().getId();
         if (!authHelper.canAccessUserResource(cardOwnerId)) {

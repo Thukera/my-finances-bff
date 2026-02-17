@@ -1,5 +1,7 @@
 package com.thukera.creditcard.service;
 
+import java.math.BigDecimal;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,10 +94,6 @@ public class CreditCardService {
         return card;
     }
 
-    /**
-     * Update credit card's used limit
-     * @param card the credit card to update
-     */
     @Transactional
     public void updateCreditCard(CreditCard card) {
         logger.debug("### Updating credit card: {}", card.getCardId());
@@ -113,13 +111,30 @@ public class CreditCardService {
         
         return creditCardMapper.toForm(updatedCard);
     }
+    
+    @Transactional
+    public CreditCardForm updateCreditCardUsedLimit(CreditCard card) {
+        logger.debug("### Updating credit card used limit: {}", card.getCardId());
+        validateCardOwnership(card);
+          
+        BigDecimal totalAmount = BigDecimal.ZERO;
+        
+        for (var invoice : card.getInvoices()) {
+			if (invoice.getStatus() != com.thukera.creditcard.model.enums.InvoiceStatus.PAYD) {
+				totalAmount = totalAmount.add(invoice.getTotalAmount());
+			}
+		}
+        
+        if (totalAmount.compareTo(card.getUsedLimit()) != 0) {
+			card.setUsedLimit(totalAmount);
+        	creditcardRepository.save(card);
+        	logger.debug("### Total Amount updated: {}", totalAmount);
+		} else {	
+			logger.debug("### Used Limit ok");
+		}         
+        return creditCardMapper.toForm(card);
+    }
 
-    /**
-     * Validate that the current user owns the credit card
-     * Admins can access any card
-     * @param card the credit card to validate
-     * @throws SecurityException if user doesn't own the card
-     */
     private void validateCardOwnership(CreditCard card) {
         if (!authHelper.canAccessUserResource(card.getUser().getId())) {
             logger.warn("### Unauthorized access attempt to card: {}", card.getCardId());
