@@ -13,6 +13,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.thukera.creditcard.model.dto.InvoiceDTO;
+import com.thukera.creditcard.model.dto.PurchaseDTOFromInvoice;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
 import com.thukera.creditcard.model.entities.Installment;
@@ -152,6 +154,40 @@ public class InvoiceService {
     
     // =========================================== INVOICES METHODS ===================================================
     //
+    // --------------------------------  DOUBLE CHECK INVOICE TOTAL AMOUNT  -------------------------------- 
+    public Invoice updateTotalAmount(InvoiceDTO invoiceDTO) {  	
+    	logger.debug("## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## ");
+    	Invoice invoice = invoiceRepository.findById(invoiceDTO.getInvoiceId()).orElseThrow(() -> new RuntimeException("Invoice not found"));
+    	
+    	// Recalculate total amount based on purchases and installments from DTO
+    	BigDecimal totalAmount = BigDecimal.ZERO; 	
+    	for (PurchaseDTOFromInvoice purchase : invoiceDTO.getPurchases()) {
+			logger.debug("## Purchase : {}", purchase.toString());
+			
+			if(purchase.getInstallment() != null) {
+				logger.debug("## Get Installment's Value");
+				BigDecimal installmentValue = purchase.getInstallment().getValue();
+				logger.debug("## Value to add : {}", installmentValue);
+				totalAmount = totalAmount.add(installmentValue);
+			} else {
+				logger.debug("## Single Installment");
+				logger.debug("## Value to add : {}", purchase.getValue());
+				totalAmount = totalAmount.add(purchase.getValue());
+			}
+			invoice.setTotalAmount(totalAmount);
+		}
+    	logger.debug("## Total Amount : {}", totalAmount);
+    	
+    	if(totalAmount.compareTo(invoice.getTotalAmount()) != 0) {
+			logger.debug("## Total Amount Updated! ");
+			invoice.setTotalAmount(totalAmount);
+			invoiceRepository.save(invoice);
+		} else {
+			logger.debug("## Total Amount is correct! ");
+		}   	
+    	return invoice;
+    }
+    
     // -------------------------------- GET OR CREATE CURRENT INVOICE BY PURCHASE DATE --------------------------
     public Invoice getOrCreateCurrentInvoice(CreditCard creditCard) {
     	
@@ -270,6 +306,8 @@ public class InvoiceService {
                 });
     }
     
+
+    
     //  -------------------------------------------- INVOICEs DATE HANDLER -----------------------------------------------------
     
     private LocalDate calculateStartDate(LocalDate today, int startDate) {
@@ -290,14 +328,6 @@ public class InvoiceService {
         return invoiceDueDate;
     }
 
-    /**
-     * Helper method to get a valid day of month, handling cases where the day doesn't exist
-     * (e.g., February 31). If the day is invalid, it uses the last valid day of the month.
-     * 
-     * @param date the base date
-     * @param dayOfMonth the desired day of month
-     * @return a valid LocalDate with the closest valid day
-     */
     private LocalDate getValidDayOfMonth(LocalDate date, int dayOfMonth) {
         int maxDayInMonth = date.lengthOfMonth();
         int validDay = Math.min(dayOfMonth, maxDayInMonth);

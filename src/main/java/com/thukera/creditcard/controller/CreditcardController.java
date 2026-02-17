@@ -21,6 +21,7 @@ import com.thukera.creditcard.model.form.CreditPurchaseForm;
 import com.thukera.creditcard.service.CreditCardService;
 import com.thukera.creditcard.service.CreditPurchaseService;
 import com.thukera.creditcard.service.InvoiceManagementService;
+import com.thukera.creditcard.service.InvoiceService;
 
 /**
  * REST Controller for Credit Card operations
@@ -42,6 +43,9 @@ public class CreditcardController {
 
 	@Autowired
 	private InvoiceManagementService invoiceManagementService;
+	
+	@Autowired
+	private InvoiceService invoiceService;
 
 
 	// ======================================= CREDIT CARD CRUD =======================================
@@ -108,12 +112,19 @@ public class CreditcardController {
 	@GetMapping("/invoice/{invoiceId}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	public ResponseEntity<InvoiceDTO> getInvoiceDetails(@PathVariable Long invoiceId) {
-		logger.debug("######## ### GET INVOICE BY ID: {} ### ########", invoiceId);
-
+		logger.debug("######## ### GET INVOICE BY ID: {} ### ########", invoiceId);	
 		InvoiceDTO invoiceDTO = invoiceManagementService.getInvoiceById(invoiceId);
 		return ResponseEntity.ok(invoiceDTO);
 	}
 
+	@PutMapping("/invoice/{invoiceId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<InvoiceDTO> updateTotalAmount(@PathVariable Long invoiceId) {
+		logger.debug("######## ### GET INVOICE BY ID: {} ### ########", invoiceId);
+		InvoiceDTO invoiceDTO = invoiceManagementService.getInvoiceById(invoiceId);
+		InvoiceDTO updatedInvoice = InvoiceDTO.fromEntity(invoiceService.updateTotalAmount(invoiceDTO));		
+		return ResponseEntity.ok(updatedInvoice);
+	}
 
 	@GetMapping("/current-invoice/{cardid}")
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
