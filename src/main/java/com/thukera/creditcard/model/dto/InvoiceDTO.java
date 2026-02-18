@@ -6,15 +6,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.thukera.creditcard.model.entities.Invoice;
 import com.thukera.creditcard.model.enums.InvoiceStatus;
+import com.thukera.creditcard.model.form.CreditPanel;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class InvoiceDTO {
 
 	private Long invoiceId;
@@ -28,7 +29,40 @@ public class InvoiceDTO {
 	private BigDecimal totalAmount;
 	private BigDecimal estimateLimit;
 	private CreditCardDTOFromInvoice creditcard;
+	private CreditPanel creditPanel;
 	private List<PurchaseDTOFromInvoice> purchases;
+	
+	public InvoiceDTO() {
+		super();
+	}
+	
+	public InvoiceDTO(Long invoiceId, LocalDate startDate, LocalDate endDate, LocalDate dueDate, InvoiceStatus status,
+			BigDecimal totalAmount, BigDecimal estimateLimit, CreditCardDTOFromInvoice creditcard,
+			List<PurchaseDTOFromInvoice> purchases) {
+		super();
+		this.invoiceId = invoiceId;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.dueDate = dueDate;
+		this.status = status;
+		this.totalAmount = totalAmount;
+		this.estimateLimit = estimateLimit;
+		this.creditcard = creditcard;
+		this.purchases = purchases;
+	}
+	
+	public InvoiceDTO(Long invoiceId, LocalDate startDate, LocalDate endDate, LocalDate dueDate, InvoiceStatus status,
+			BigDecimal totalAmount, BigDecimal estimateLimit, CreditCardDTOFromInvoice creditcard) {
+		super();
+		this.invoiceId = invoiceId;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.dueDate = dueDate;
+		this.status = status;
+		this.totalAmount = totalAmount;
+		this.estimateLimit = estimateLimit;
+		this.creditcard = creditcard;
+	}
 	
 	public static InvoiceDTO fromEntity(Invoice invoice) {
 	    return new InvoiceDTO(
