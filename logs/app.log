@@ -19006,3 +19006,1002 @@ Caused by: org.hibernate.PersistentObjectException: detached entity passed to pe
 [INFO ] 2026-02-18 12:39:30.379 [RMI TCP Connection(23)-127.0.0.1] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 [INFO ] 2026-02-18 12:39:30.382 [RMI TCP Connection(23)-127.0.0.1] HikariDataSource - HikariPool-1 - Shutdown initiated...
 [INFO ] 2026-02-18 12:39:30.387 [RMI TCP Connection(23)-127.0.0.1] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2026-02-18 12:42:29.135 [background-preinit] Version - HV000001: Hibernate Validator 8.0.2.Final
+[INFO ] 2026-02-18 12:42:29.205 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 18956 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2026-02-18 12:42:29.210 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2026-02-18 12:42:29.212 [restartedMain] MyFinancesBffApplication - The following 1 profile is active: "dev"
+[INFO ] 2026-02-18 12:42:29.275 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2026-02-18 12:42:29.275 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2026-02-18 12:42:30.311 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2026-02-18 12:42:30.425 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 7 JPA repository interfaces.
+[INFO ] 2026-02-18 12:42:31.110 [restartedMain] TomcatWebServer - Tomcat initialized with port 9090 (http)
+[INFO ] 2026-02-18 12:42:31.126 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:42:31.128 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2026-02-18 12:42:31.128 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+[INFO ] 2026-02-18 12:42:31.203 [restartedMain] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2026-02-18 12:42:31.203 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1927 ms
+[INFO ] 2026-02-18 12:42:31.383 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2026-02-18 12:42:31.447 [restartedMain] Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+[INFO ] 2026-02-18 12:42:31.486 [restartedMain] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[INFO ] 2026-02-18 12:42:31.784 [restartedMain] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2026-02-18 12:42:31.818 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2026-02-18 12:42:32.112 [restartedMain] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21b78c70
+[INFO ] 2026-02-18 12:42:32.116 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[WARN ] 2026-02-18 12:42:32.150 [restartedMain] deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO ] 2026-02-18 12:42:32.174 [restartedMain] pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[INFO ] 2026-02-18 12:42:33.593 [restartedMain] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[WARN ] 2026-02-18 12:42:33.671 [restartedMain] ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:576) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:516) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySequence(AbstractSchemaMigrator.java:299) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:254) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) [spring-boot-3.5.3.jar:3.5.3]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) [spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.5.3.jar:3.5.3]
+	at com.thukera.MyFinancesBffApplication.main(MyFinancesBffApplication.java:15) [classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tb_users_id_seq" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.0.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	... 133 more
+[INFO ] 2026-02-18 12:42:34.143 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2026-02-18 12:42:34.529 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2026-02-18 12:42:34.621 [restartedMain] QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO ] 2026-02-18 12:42:34.758 [restartedMain] InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+[WARN ] 2026-02-18 12:42:34.759 [restartedMain] InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[WARN ] 2026-02-18 12:42:34.972 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2026-02-18 12:42:35.625 [restartedMain] H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/my-finances'
+[WARN ] 2026-02-18 12:42:35.684 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/uploads/**'], Ant [pattern='/uploads/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:42:35.684 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:42:35.684 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/error'], Ant [pattern='/error']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[INFO ] 2026-02-18 12:42:35.766 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2026-02-18 12:42:35.799 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:42:35.827 [restartedMain] TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[INFO ] 2026-02-18 12:42:35.839 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 7.265 seconds (process running for 15.575)
+[INFO ] 2026-02-18 12:42:35.842 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:42:35.842 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2026-02-18 12:42:35.842 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:42:45.352 [http-nio-9090-exec-1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:42:45.353 [http-nio-9090-exec-1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:42:45.355 [http-nio-9090-exec-1] DispatcherServlet - Completed initialization in 2 ms
+[DEBUG] 2026-02-18 12:42:45.379 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/191
+[DEBUG] 2026-02-18 12:42:45.628 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/191
+[DEBUG] 2026-02-18 12:42:45.659 [http-nio-9090-exec-1] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 191 ### ########
+[DEBUG] 2026-02-18 12:42:45.660 [http-nio-9090-exec-1] CreditPurchaseService - ### Deleting purchase with ID: 191
+[ERROR] 2026-02-18 12:42:45.678 [http-nio-9090-exec-1] GlobalExceptionHandler - ### GLOBAL EXCEPTION HANDLER - NotFoundException
+[ERROR] 2026-02-18 12:42:45.679 [http-nio-9090-exec-1] GlobalExceptionHandler - ### Exception : class com.thukera.root.model.messages.NotFoundException
+[ERROR] 2026-02-18 12:42:45.679 [http-nio-9090-exec-1] GlobalExceptionHandler - ### Message : Purchase not found
+[WARN ] 2026-02-18 12:42:45.708 [http-nio-9090-exec-1] ExceptionHandlerExceptionResolver - Resolved [com.thukera.root.model.messages.NotFoundException: Purchase not found]
+[DEBUG] 2026-02-18 12:42:55.594 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/192
+[DEBUG] 2026-02-18 12:42:55.606 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/192
+[DEBUG] 2026-02-18 12:42:55.607 [http-nio-9090-exec-3] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 192 ### ########
+[DEBUG] 2026-02-18 12:42:55.608 [http-nio-9090-exec-3] CreditPurchaseService - ### Deleting purchase with ID: 192
+[DEBUG] 2026-02-18 12:42:55.632 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:42:55.638 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase ownership validated
+[DEBUG] 2026-02-18 12:42:55.638 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase is linked to 5 invoice(s)
+[DEBUG] 2026-02-18 12:42:55.638 [http-nio-9090-exec-3] CreditPurchaseService - ### Removing purchase from invoice relationships
+[DEBUG] 2026-02-18 12:42:55.642 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4002
+[DEBUG] 2026-02-18 12:42:55.644 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4003
+[DEBUG] 2026-02-18 12:42:55.648 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4004
+[DEBUG] 2026-02-18 12:42:55.650 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4005
+[DEBUG] 2026-02-18 12:42:55.652 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4006
+[DEBUG] 2026-02-18 12:42:55.675 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase deleted from database
+[DEBUG] 2026-02-18 12:42:55.675 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculating totals for affected invoices
+[DEBUG] 2026-02-18 12:42:55.684 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:42:55.692 [http-nio-9090-exec-3] CreditTransactionService - ## Purchase : PurchaseDTOFromInvoice(purchaseId=193, descricao=AMP Marshall, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290, installment=InstallmentDTOFromInvoice(installmentId=125, currentInstallment=1, totalInstallment=5, value=870.00))
+[DEBUG] 2026-02-18 12:42:55.692 [http-nio-9090-exec-3] CreditTransactionService - ## Get Installment's Value
+[DEBUG] 2026-02-18 12:42:55.692 [http-nio-9090-exec-3] CreditTransactionService - ## Value to add : 870.00
+[DEBUG] 2026-02-18 12:42:55.692 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 870.00
+[DEBUG] 2026-02-18 12:42:55.692 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount is correct! 
+[DEBUG] 2026-02-18 12:42:55.693 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4002
+[DEBUG] 2026-02-18 12:42:55.693 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:42:55.693 [http-nio-9090-exec-3] CreditTransactionService - ## Purchase : PurchaseDTOFromInvoice(purchaseId=193, descricao=AMP Marshall, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290, installment=InstallmentDTOFromInvoice(installmentId=126, currentInstallment=2, totalInstallment=5, value=870.00))
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditTransactionService - ## Get Installment's Value
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditTransactionService - ## Value to add : 870.00
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 870.00
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount is correct! 
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4003
+[DEBUG] 2026-02-18 12:42:55.694 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:42:55.695 [http-nio-9090-exec-3] CreditTransactionService - ## Purchase : PurchaseDTOFromInvoice(purchaseId=193, descricao=AMP Marshall, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290, installment=InstallmentDTOFromInvoice(installmentId=127, currentInstallment=3, totalInstallment=5, value=870.00))
+[DEBUG] 2026-02-18 12:42:55.695 [http-nio-9090-exec-3] CreditTransactionService - ## Get Installment's Value
+[DEBUG] 2026-02-18 12:42:55.695 [http-nio-9090-exec-3] CreditTransactionService - ## Value to add : 870.00
+[DEBUG] 2026-02-18 12:42:55.695 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 870.00
+[DEBUG] 2026-02-18 12:42:55.697 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount is correct! 
+[DEBUG] 2026-02-18 12:42:55.697 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4004
+[DEBUG] 2026-02-18 12:42:55.697 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditTransactionService - ## Purchase : PurchaseDTOFromInvoice(purchaseId=193, descricao=AMP Marshall, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290, installment=InstallmentDTOFromInvoice(installmentId=128, currentInstallment=4, totalInstallment=5, value=870.00))
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditTransactionService - ## Get Installment's Value
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditTransactionService - ## Value to add : 870.00
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 870.00
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount is correct! 
+[DEBUG] 2026-02-18 12:42:55.698 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4005
+[DEBUG] 2026-02-18 12:42:55.699 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:42:55.699 [http-nio-9090-exec-3] CreditTransactionService - ## Purchase : PurchaseDTOFromInvoice(purchaseId=193, descricao=AMP Marshall, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290, installment=InstallmentDTOFromInvoice(installmentId=129, currentInstallment=5, totalInstallment=5, value=870.00))
+[DEBUG] 2026-02-18 12:42:55.699 [http-nio-9090-exec-3] CreditTransactionService - ## Get Installment's Value
+[DEBUG] 2026-02-18 12:42:55.699 [http-nio-9090-exec-3] CreditTransactionService - ## Value to add : 870.00
+[DEBUG] 2026-02-18 12:42:55.700 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 870.00
+[DEBUG] 2026-02-18 12:42:55.700 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount is correct! 
+[DEBUG] 2026-02-18 12:42:55.700 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4006
+[DEBUG] 2026-02-18 12:42:55.700 [http-nio-9090-exec-3] CreditCardService - ### Updating credit card used limit: 38
+[DEBUG] 2026-02-18 12:42:55.700 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:42:55.721 [http-nio-9090-exec-3] CreditCardService - ### Total Amount updated: 4350.00
+[DEBUG] 2026-02-18 12:42:55.723 [http-nio-9090-exec-3] CreditPurchaseService - ### Credit card used limit updated
+[DEBUG] 2026-02-18 12:42:55.723 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase 192 successfully deleted
+[DEBUG] 2026-02-18 12:43:00.415 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/193
+[DEBUG] 2026-02-18 12:43:00.425 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/193
+[DEBUG] 2026-02-18 12:43:00.425 [http-nio-9090-exec-4] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 193 ### ########
+[DEBUG] 2026-02-18 12:43:00.425 [http-nio-9090-exec-4] CreditPurchaseService - ### Deleting purchase with ID: 193
+[DEBUG] 2026-02-18 12:43:00.431 [http-nio-9090-exec-4] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:43:00.434 [http-nio-9090-exec-4] CreditPurchaseService - ### Purchase ownership validated
+[DEBUG] 2026-02-18 12:43:00.434 [http-nio-9090-exec-4] CreditPurchaseService - ### Purchase is linked to 5 invoice(s)
+[DEBUG] 2026-02-18 12:43:00.434 [http-nio-9090-exec-4] CreditPurchaseService - ### Removing purchase from invoice relationships
+[DEBUG] 2026-02-18 12:43:00.436 [http-nio-9090-exec-4] CreditPurchaseService - ### Removed purchase from invoice 4002
+[DEBUG] 2026-02-18 12:43:00.437 [http-nio-9090-exec-4] CreditPurchaseService - ### Removed purchase from invoice 4003
+[DEBUG] 2026-02-18 12:43:00.438 [http-nio-9090-exec-4] CreditPurchaseService - ### Removed purchase from invoice 4004
+[DEBUG] 2026-02-18 12:43:00.439 [http-nio-9090-exec-4] CreditPurchaseService - ### Removed purchase from invoice 4005
+[DEBUG] 2026-02-18 12:43:00.440 [http-nio-9090-exec-4] CreditPurchaseService - ### Removed purchase from invoice 4006
+[DEBUG] 2026-02-18 12:43:00.443 [http-nio-9090-exec-4] CreditPurchaseService - ### Purchase deleted from database
+[DEBUG] 2026-02-18 12:43:00.443 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculating totals for affected invoices
+[DEBUG] 2026-02-18 12:43:00.443 [http-nio-9090-exec-4] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:43:00.444 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:43:00.444 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:43:00.444 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculated total for invoice 4002
+[DEBUG] 2026-02-18 12:43:00.444 [http-nio-9090-exec-4] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:43:00.445 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:43:00.445 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:43:00.445 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculated total for invoice 4003
+[DEBUG] 2026-02-18 12:43:00.445 [http-nio-9090-exec-4] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:43:00.446 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:43:00.446 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:43:00.446 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculated total for invoice 4004
+[DEBUG] 2026-02-18 12:43:00.446 [http-nio-9090-exec-4] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:43:00.446 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculated total for invoice 4005
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditPurchaseService - ### Recalculated total for invoice 4006
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] CreditCardService - ### Updating credit card used limit: 38
+[DEBUG] 2026-02-18 12:43:00.447 [http-nio-9090-exec-4] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:43:00.452 [http-nio-9090-exec-4] CreditCardService - ### Total Amount updated: 0
+[DEBUG] 2026-02-18 12:43:00.452 [http-nio-9090-exec-4] CreditPurchaseService - ### Credit card used limit updated
+[DEBUG] 2026-02-18 12:43:00.452 [http-nio-9090-exec-4] CreditPurchaseService - ### Purchase 193 successfully deleted
+[DEBUG] 2026-02-18 12:43:08.204 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:43:08.214 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:43:08.216 [http-nio-9090-exec-5] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:43:08.217 [http-nio-9090-exec-5] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:43:08.220 [http-nio-9090-exec-5] AuthenticationHelper - ### Fetching current user: lucy
+[INFO ] 2026-02-18 12:43:22.974 [RMI TCP Connection(9)-127.0.0.1] SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 2026-02-18 12:43:22.978 [RMI TCP Connection(9)-127.0.0.1] GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2026-02-18 12:43:22.979 [tomcat-shutdown] Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:43:22.991 [tomcat-shutdown] GracefulShutdown - Graceful shutdown complete
+[INFO ] 2026-02-18 12:43:22.992 [RMI TCP Connection(9)-127.0.0.1] Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:43:22.999 [RMI TCP Connection(9)-127.0.0.1] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2026-02-18 12:43:23.002 [RMI TCP Connection(9)-127.0.0.1] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2026-02-18 12:43:23.006 [RMI TCP Connection(9)-127.0.0.1] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2026-02-18 12:43:54.041 [background-preinit] Version - HV000001: Hibernate Validator 8.0.2.Final
+[INFO ] 2026-02-18 12:43:54.101 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 14772 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2026-02-18 12:43:54.106 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2026-02-18 12:43:54.107 [restartedMain] MyFinancesBffApplication - The following 1 profile is active: "dev"
+[INFO ] 2026-02-18 12:43:54.154 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2026-02-18 12:43:54.154 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2026-02-18 12:43:55.124 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2026-02-18 12:43:55.233 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 7 JPA repository interfaces.
+[INFO ] 2026-02-18 12:43:55.857 [restartedMain] TomcatWebServer - Tomcat initialized with port 9090 (http)
+[INFO ] 2026-02-18 12:43:55.870 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:43:55.872 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2026-02-18 12:43:55.873 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+[INFO ] 2026-02-18 12:43:55.936 [restartedMain] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2026-02-18 12:43:55.936 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1781 ms
+[INFO ] 2026-02-18 12:43:56.098 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2026-02-18 12:43:56.157 [restartedMain] Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+[INFO ] 2026-02-18 12:43:56.193 [restartedMain] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[INFO ] 2026-02-18 12:43:56.496 [restartedMain] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2026-02-18 12:43:56.531 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2026-02-18 12:43:56.714 [restartedMain] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@627205b4
+[INFO ] 2026-02-18 12:43:56.716 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[WARN ] 2026-02-18 12:43:56.752 [restartedMain] deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO ] 2026-02-18 12:43:56.773 [restartedMain] pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[INFO ] 2026-02-18 12:43:58.119 [restartedMain] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[WARN ] 2026-02-18 12:43:58.179 [restartedMain] ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:576) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:516) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySequence(AbstractSchemaMigrator.java:299) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:254) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) [spring-boot-3.5.3.jar:3.5.3]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) [spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.5.3.jar:3.5.3]
+	at com.thukera.MyFinancesBffApplication.main(MyFinancesBffApplication.java:15) [classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tb_users_id_seq" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.0.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	... 133 more
+[INFO ] 2026-02-18 12:43:58.607 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2026-02-18 12:43:58.975 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2026-02-18 12:43:59.069 [restartedMain] QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO ] 2026-02-18 12:43:59.197 [restartedMain] InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+[WARN ] 2026-02-18 12:43:59.197 [restartedMain] InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[WARN ] 2026-02-18 12:43:59.378 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2026-02-18 12:43:59.957 [restartedMain] H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/my-finances'
+[WARN ] 2026-02-18 12:44:00.011 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/uploads/**'], Ant [pattern='/uploads/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:44:00.011 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:44:00.011 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/error'], Ant [pattern='/error']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[INFO ] 2026-02-18 12:44:00.085 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2026-02-18 12:44:00.113 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:44:00.131 [restartedMain] TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[INFO ] 2026-02-18 12:44:00.140 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 6.639 seconds (process running for 7.854)
+[INFO ] 2026-02-18 12:44:00.143 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:44:00.144 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2026-02-18 12:44:00.144 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:44:16.730 [http-nio-9090-exec-1] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:44:16.731 [http-nio-9090-exec-1] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:44:16.733 [http-nio-9090-exec-1] DispatcherServlet - Completed initialization in 2 ms
+[DEBUG] 2026-02-18 12:44:16.758 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/OPEN
+[DEBUG] 2026-02-18 12:44:16.996 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/OPEN
+[DEBUG] 2026-02-18 12:44:17.027 [http-nio-9090-exec-1] CreditcardController - ######## ### UPDATE INVOICE STATUS: 4002 ### ########
+[DEBUG] 2026-02-18 12:44:17.049 [http-nio-9090-exec-1] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:44:17.052 [http-nio-9090-exec-1] InvoiceService - ### Invoice Selected: 4002
+[DEBUG] 2026-02-18 12:44:17.056 [http-nio-9090-exec-1] InvoiceService - ### Invoice status updated to: OPEN
+[DEBUG] 2026-02-18 12:44:25.980 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:25.988 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:25.990 [http-nio-9090-exec-3] CreditcardController - ######## ### GET INVOICE BY ID: 4002 ### ########
+[DEBUG] 2026-02-18 12:44:25.991 [http-nio-9090-exec-3] InvoiceService - ### Fetching invoice with ID: 4002
+[DEBUG] 2026-02-18 12:44:25.994 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:44:25.996 [http-nio-9090-exec-3] InvoiceService - ### Invoice access authorized
+[DEBUG] 2026-02-18 12:44:29.097 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:29.107 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:29.108 [http-nio-9090-exec-4] CreditcardController - ######## ### GET INVOICE BY ID: 4002 ### ########
+[DEBUG] 2026-02-18 12:44:29.108 [http-nio-9090-exec-4] InvoiceService - ### Fetching invoice with ID: 4002
+[DEBUG] 2026-02-18 12:44:29.111 [http-nio-9090-exec-4] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:44:29.115 [http-nio-9090-exec-4] InvoiceService - ### Invoice access authorized
+[DEBUG] 2026-02-18 12:44:41.745 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/PAYD
+[DEBUG] 2026-02-18 12:44:41.755 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/PAYD
+[DEBUG] 2026-02-18 12:44:41.756 [http-nio-9090-exec-5] CreditcardController - ######## ### UPDATE INVOICE STATUS: 4002 ### ########
+[DEBUG] 2026-02-18 12:44:41.759 [http-nio-9090-exec-5] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:44:41.761 [http-nio-9090-exec-5] InvoiceService - ### Invoice Selected: 4002
+[DEBUG] 2026-02-18 12:44:41.762 [http-nio-9090-exec-5] InvoiceService - ### Invoice status updated to: PAYD
+[DEBUG] 2026-02-18 12:44:46.071 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:46.078 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:44:46.080 [http-nio-9090-exec-6] CreditcardController - ######## ### GET INVOICE BY ID: 4002 ### ########
+[DEBUG] 2026-02-18 12:44:46.080 [http-nio-9090-exec-6] InvoiceService - ### Fetching invoice with ID: 4002
+[DEBUG] 2026-02-18 12:44:46.084 [http-nio-9090-exec-6] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:44:46.087 [http-nio-9090-exec-6] InvoiceService - ### Invoice access authorized
+[INFO ] 2026-02-18 12:45:44.553 [File Watcher] LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[INFO ] 2026-02-18 12:45:44.556 [Thread-5] GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2026-02-18 12:45:44.557 [tomcat-shutdown] Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:45:44.567 [tomcat-shutdown] GracefulShutdown - Graceful shutdown complete
+[INFO ] 2026-02-18 12:45:44.567 [Thread-5] Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:45:44.572 [Thread-5] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2026-02-18 12:45:44.574 [Thread-5] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2026-02-18 12:45:44.579 [Thread-5] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2026-02-18 12:45:44.691 [restartedMain] MyFinancesBffApplication - Starting MyFinancesBffApplication using Java 21.0.4 with PID 14772 (C:\Users\nitro\Workspace\STS\my-finances-bff\target\classes started by nitro in C:\Users\nitro\Workspace\STS\my-finances-bff)
+[DEBUG] 2026-02-18 12:45:44.692 [restartedMain] MyFinancesBffApplication - Running with Spring Boot v3.5.3, Spring v6.2.8
+[INFO ] 2026-02-18 12:45:44.692 [restartedMain] MyFinancesBffApplication - The following 1 profile is active: "dev"
+[INFO ] 2026-02-18 12:45:44.944 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2026-02-18 12:45:44.989 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 7 JPA repository interfaces.
+[INFO ] 2026-02-18 12:45:45.100 [restartedMain] TomcatWebServer - Tomcat initialized with port 9090 (http)
+[INFO ] 2026-02-18 12:45:45.102 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:45:45.102 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2026-02-18 12:45:45.102 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+[INFO ] 2026-02-18 12:45:45.130 [restartedMain] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2026-02-18 12:45:45.130 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 436 ms
+[INFO ] 2026-02-18 12:45:45.183 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2026-02-18 12:45:45.186 [restartedMain] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[INFO ] 2026-02-18 12:45:45.195 [restartedMain] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2026-02-18 12:45:45.196 [restartedMain] HikariDataSource - HikariPool-2 - Starting...
+[INFO ] 2026-02-18 12:45:45.251 [restartedMain] HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@521dd403
+[INFO ] 2026-02-18 12:45:45.252 [restartedMain] HikariDataSource - HikariPool-2 - Start completed.
+[WARN ] 2026-02-18 12:45:45.259 [restartedMain] deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO ] 2026-02-18 12:45:45.260 [restartedMain] pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[INFO ] 2026-02-18 12:45:45.436 [restartedMain] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[WARN ] 2026-02-18 12:45:45.455 [restartedMain] ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create sequence tb_users_id_seq start with 1 increment by 1" via JDBC [ERROR: relation "tb_users_id_seq" already exists]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:576) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:516) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySequence(AbstractSchemaMigrator.java:299) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:254) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429) ~[?:?]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1683) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:413) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52) [spring-boot-3.5.3.jar:3.5.3]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4464) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) [?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) [?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:438) [tomcat-embed-core-10.1.42.jar:10.1.42]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) [spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.5.3.jar:3.5.3]
+	at com.thukera.MyFinancesBffApplication.main(MyFinancesBffApplication.java:15) [classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "tb_users_id_seq" already exists
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:357) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:342) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:318) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:313) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-6.3.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-6.3.0.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.6.18.Final.jar:6.6.18.Final]
+	... 133 more
+[INFO ] 2026-02-18 12:45:45.874 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[DEBUG] 2026-02-18 12:45:45.962 [restartedMain] JwtAuthTokenFilter - Filter 'authenticationJwtTokenFilter' configured for use
+[INFO ] 2026-02-18 12:45:46.092 [restartedMain] InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+[WARN ] 2026-02-18 12:45:46.093 [restartedMain] InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[WARN ] 2026-02-18 12:45:46.154 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2026-02-18 12:45:46.388 [restartedMain] H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/my-finances'
+[WARN ] 2026-02-18 12:45:46.411 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/uploads/**'], Ant [pattern='/uploads/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:45:46.411 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/favicon.ico'], Ant [pattern='/favicon.ico']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[WARN ] 2026-02-18 12:45:46.411 [restartedMain] WebSecurity - You are asking Spring Security to ignore Deferred [Mvc [pattern='/error'], Ant [pattern='/error']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[INFO ] 2026-02-18 12:45:46.431 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2026-02-18 12:45:46.442 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:45:46.449 [restartedMain] TomcatWebServer - Tomcat started on port 9090 (http) with context path '/'
+[INFO ] 2026-02-18 12:45:46.453 [restartedMain] MyFinancesBffApplication - Started MyFinancesBffApplication in 1.795 seconds (process running for 114.166)
+[INFO ] 2026-02-18 12:45:46.456 [restartedMain] ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 2026-02-18 12:45:46.456 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:45:46.456 [restartedMain] MyFinancesBffApplication - ######## ###  MY FINANCES BFF APPLICATION STARTER  ### ########
+[INFO ] 2026-02-18 12:45:46.456 [restartedMain] MyFinancesBffApplication - ###### ######## ######## ######### ######## ######## ##########
+[INFO ] 2026-02-18 12:45:59.530 [http-nio-9090-exec-2] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:45:59.530 [http-nio-9090-exec-2] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2026-02-18 12:45:59.532 [http-nio-9090-exec-2] DispatcherServlet - Completed initialization in 2 ms
+[DEBUG] 2026-02-18 12:45:59.533 [http-nio-9090-exec-2] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/PAYD
+[DEBUG] 2026-02-18 12:45:59.546 [http-nio-9090-exec-2] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/PAYD
+[DEBUG] 2026-02-18 12:45:59.549 [http-nio-9090-exec-2] CreditcardController - ######## ### UPDATE INVOICE STATUS: 4002 ### ########
+[DEBUG] 2026-02-18 12:45:59.555 [http-nio-9090-exec-2] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:45:59.558 [http-nio-9090-exec-2] InvoiceService - ### Invoice Selected: 4002
+[DEBUG] 2026-02-18 12:45:59.559 [http-nio-9090-exec-2] InvoiceService - ### Invoice status updated to: PAYD
+[DEBUG] 2026-02-18 12:46:03.041 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:46:03.048 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:46:03.051 [http-nio-9090-exec-3] CreditcardController - ######## ### GET INVOICE BY ID: 4002 ### ########
+[DEBUG] 2026-02-18 12:46:03.052 [http-nio-9090-exec-3] InvoiceService - ### Fetching invoice with ID: 4002
+[DEBUG] 2026-02-18 12:46:03.055 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:46:03.057 [http-nio-9090-exec-3] InvoiceService - ### Invoice access authorized
+[DEBUG] 2026-02-18 12:46:10.643 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/OPEN
+[DEBUG] 2026-02-18 12:46:10.652 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/change-status/4002/OPEN
+[DEBUG] 2026-02-18 12:46:10.653 [http-nio-9090-exec-4] CreditcardController - ######## ### UPDATE INVOICE STATUS: 4002 ### ########
+[DEBUG] 2026-02-18 12:46:10.655 [http-nio-9090-exec-4] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:46:10.657 [http-nio-9090-exec-4] InvoiceService - ### Invoice Selected: 4002
+[DEBUG] 2026-02-18 12:46:10.658 [http-nio-9090-exec-4] InvoiceService - ### Invoice status updated to: OPEN
+[DEBUG] 2026-02-18 12:46:13.943 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:46:13.951 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/invoice/4002
+[DEBUG] 2026-02-18 12:46:13.952 [http-nio-9090-exec-5] CreditcardController - ######## ### GET INVOICE BY ID: 4002 ### ########
+[DEBUG] 2026-02-18 12:46:13.952 [http-nio-9090-exec-5] InvoiceService - ### Fetching invoice with ID: 4002
+[DEBUG] 2026-02-18 12:46:13.955 [http-nio-9090-exec-5] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:46:13.958 [http-nio-9090-exec-5] InvoiceService - ### Invoice access authorized
+[DEBUG] 2026-02-18 12:46:20.696 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:46:20.707 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:46:20.709 [http-nio-9090-exec-6] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:46:20.709 [http-nio-9090-exec-6] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:46:20.711 [http-nio-9090-exec-6] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:50:19.325 [http-nio-9090-exec-9] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:50:19.334 [http-nio-9090-exec-9] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:50:19.335 [http-nio-9090-exec-9] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:50:19.336 [http-nio-9090-exec-9] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:50:19.349 [http-nio-9090-exec-9] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:50:43.029 [http-nio-9090-exec-10] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:50:43.038 [http-nio-9090-exec-10] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:50:43.039 [http-nio-9090-exec-10] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:50:43.039 [http-nio-9090-exec-10] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:50:43.041 [http-nio-9090-exec-10] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:50:56.340 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:50:56.348 [http-nio-9090-exec-1] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:50:56.380 [http-nio-9090-exec-1] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2026-02-18 12:50:56.381 [http-nio-9090-exec-1] CreditcardController - ### PurchaseForm: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=5, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:50:56.387 [http-nio-9090-exec-1] CreditPurchaseService - ### Creating purchase: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=5, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:50:56.388 [http-nio-9090-exec-1] CreditCardService - ### Fetching credit card entity with ID: 38
+[DEBUG] 2026-02-18 12:50:56.390 [http-nio-9090-exec-1] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:50:56.392 [http-nio-9090-exec-1] CreditPurchaseService - ### CreditCard validated: 38
+[DEBUG] 2026-02-18 12:50:56.392 [http-nio-9090-exec-1] CreditTransactionService - ## ==================================== ## INSERT PURCHASE ## ==================================== ## 
+[DEBUG] 2026-02-18 12:50:56.397 [http-nio-9090-exec-1] CreditTransactionService - ## Purchase Class : CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:50:56.397 [http-nio-9090-exec-1] CreditTransactionService - ## Retroative : true
+[DEBUG] 2026-02-18 12:50:56.398 [http-nio-9090-exec-1] CreditTransactionService - ## Multiple Installment
+[DEBUG] 2026-02-18 12:50:56.398 [http-nio-9090-exec-1] CreditTransactionService - ## ----------------------------- ## CREATE RETROATIVE INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:50:56.398 [http-nio-9090-exec-1] CreditTransactionService - ## Purchase Date : 2026-02-18
+[DEBUG] 2026-02-18 12:50:56.398 [http-nio-9090-exec-1] CreditTransactionService - ## Due Date : 2026-03-10 - Start Date : 2026-02-01 - End Date : 2026-02-28
+[DEBUG] 2026-02-18 12:50:56.415 [http-nio-9090-exec-1] CreditTransactionService - ## First Invoice : Invoice(invoiceId=4052, totalAmount=870.00, estimateLimit=null, startDate=2026-02-01, endDate=2026-02-28, dueDate=2026-03-10, status=CLOSED, purchases=[CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:50:56.417 [http-nio-9090-exec-1] CreditTransactionService - ## First Installment : Installment(installmentId=null, currentInstallment=1, totalInstallment=5, value=870.00)
+[DEBUG] 2026-02-18 12:50:56.448 [http-nio-9090-exec-1] CreditTransactionService - ## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:50:56.491 [http-nio-9090-exec-1] CreditTransactionService - ## There´s no purchases that must repeat
+[DEBUG] 2026-02-18 12:50:56.494 [http-nio-9090-exec-1] CreditTransactionService - ## Invoice 1 : Invoice(invoiceId=4053, totalAmount=870.00, estimateLimit=null, startDate=2026-03-01, endDate=2026-03-31, dueDate=2026-04-10, status=PENDING, purchases=[CreditPurchase(purchaseId=194, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:50:56.494 [http-nio-9090-exec-1] CreditTransactionService - ## Installment 1 : Installment(installmentId=null, currentInstallment=1, totalInstallment=5, value=870.00)
+[DEBUG] 2026-02-18 12:50:56.500 [http-nio-9090-exec-1] CreditTransactionService - ## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:50:56.503 [http-nio-9090-exec-1] CreditTransactionService - ## There´s no purchases that must repeat
+[DEBUG] 2026-02-18 12:50:56.504 [http-nio-9090-exec-1] CreditTransactionService - ## Invoice 2 : Invoice(invoiceId=4054, totalAmount=870.00, estimateLimit=null, startDate=2026-04-01, endDate=2026-04-30, dueDate=2026-05-10, status=PENDING, purchases=[CreditPurchase(purchaseId=194, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:50:56.504 [http-nio-9090-exec-1] CreditTransactionService - ## Installment 2 : Installment(installmentId=null, currentInstallment=1, totalInstallment=5, value=870.00)
+[DEBUG] 2026-02-18 12:50:56.510 [http-nio-9090-exec-1] CreditTransactionService - ## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:50:56.513 [http-nio-9090-exec-1] CreditTransactionService - ## There´s no purchases that must repeat
+[DEBUG] 2026-02-18 12:50:56.515 [http-nio-9090-exec-1] CreditTransactionService - ## Invoice 3 : Invoice(invoiceId=4055, totalAmount=870.00, estimateLimit=null, startDate=2026-05-01, endDate=2026-05-31, dueDate=2026-06-10, status=PENDING, purchases=[CreditPurchase(purchaseId=194, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:50:56.515 [http-nio-9090-exec-1] CreditTransactionService - ## Installment 3 : Installment(installmentId=null, currentInstallment=1, totalInstallment=5, value=870.00)
+[DEBUG] 2026-02-18 12:50:56.527 [http-nio-9090-exec-1] CreditTransactionService - ## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:50:56.532 [http-nio-9090-exec-1] CreditTransactionService - ## There´s no purchases that must repeat
+[DEBUG] 2026-02-18 12:50:56.533 [http-nio-9090-exec-1] CreditTransactionService - ## Invoice 4 : Invoice(invoiceId=4056, totalAmount=870.00, estimateLimit=null, startDate=2026-06-01, endDate=2026-06-30, dueDate=2026-07-10, status=PENDING, purchases=[CreditPurchase(purchaseId=194, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:50:56.534 [http-nio-9090-exec-1] CreditTransactionService - ## Installment 4 : Installment(installmentId=null, currentInstallment=1, totalInstallment=5, value=870.00)
+[DEBUG] 2026-02-18 12:50:56.534 [http-nio-9090-exec-1] CreditTransactionService - ### PURCHASE : CreditPurchase(purchaseId=194, descricao=AMP Marshall, hasInstallments=true, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:50:56.542 [http-nio-9090-exec-1] CreditPurchaseService - ### Purchase created: 194
+[DEBUG] 2026-02-18 12:50:56.544 [http-nio-9090-exec-1] CreditCardService - ### Updating credit card: 38
+[DEBUG] 2026-02-18 12:51:14.557 [http-nio-9090-exec-2] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:51:14.565 [http-nio-9090-exec-2] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:51:14.569 [http-nio-9090-exec-2] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:51:14.569 [http-nio-9090-exec-2] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:51:14.571 [http-nio-9090-exec-2] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:52:08.693 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/194
+[DEBUG] 2026-02-18 12:52:08.702 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/194
+[DEBUG] 2026-02-18 12:52:08.705 [http-nio-9090-exec-3] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 194 ### ########
+[DEBUG] 2026-02-18 12:52:08.705 [http-nio-9090-exec-3] CreditPurchaseService - ### Deleting purchase with ID: 194
+[DEBUG] 2026-02-18 12:52:08.711 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:52:08.715 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase ownership validated
+[DEBUG] 2026-02-18 12:52:08.715 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase is linked to 5 invoice(s)
+[DEBUG] 2026-02-18 12:52:08.715 [http-nio-9090-exec-3] CreditPurchaseService - ### Removing purchase from invoice relationships
+[DEBUG] 2026-02-18 12:52:08.717 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4052
+[DEBUG] 2026-02-18 12:52:08.718 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4053
+[DEBUG] 2026-02-18 12:52:08.719 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4054
+[DEBUG] 2026-02-18 12:52:08.720 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4055
+[DEBUG] 2026-02-18 12:52:08.721 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4056
+[DEBUG] 2026-02-18 12:52:08.740 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase deleted from database
+[DEBUG] 2026-02-18 12:52:08.740 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculating totals for affected invoices
+[DEBUG] 2026-02-18 12:52:08.740 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:08.741 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:52:08.741 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:52:08.741 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4052
+[DEBUG] 2026-02-18 12:52:08.741 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:08.742 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:52:08.742 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:52:08.742 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4053
+[DEBUG] 2026-02-18 12:52:08.742 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:08.742 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4054
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4055
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:52:08.743 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4056
+[DEBUG] 2026-02-18 12:52:08.745 [http-nio-9090-exec-3] CreditCardService - ### Updating credit card used limit: 38
+[DEBUG] 2026-02-18 12:52:08.745 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:52:08.751 [http-nio-9090-exec-3] CreditCardService - ### Total Amount updated: 0
+[DEBUG] 2026-02-18 12:52:08.751 [http-nio-9090-exec-3] CreditPurchaseService - ### Credit card used limit updated
+[DEBUG] 2026-02-18 12:52:08.751 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase 194 successfully deleted
+[DEBUG] 2026-02-18 12:52:26.805 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[ERROR] 2026-02-18 12:52:26.807 [http-nio-9090-exec-4] JwtAuthEntryPoint - Unauthorized error. Message - Full authentication is required to access this resource
+[DEBUG] 2026-02-18 12:52:33.127 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/cookie/signin
+[DEBUG] 2026-02-18 12:52:33.127 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Skipping JWT authentication for public path: /api/cookie/signin
+[DEBUG] 2026-02-18 12:52:33.127 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/cookie/signin
+[DEBUG] 2026-02-18 12:52:33.127 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Skipping JWT authentication for public path: /api/cookie/signin
+[DEBUG] 2026-02-18 12:52:33.130 [http-nio-9090-exec-5] CookieRestAPI - ######## ### INSERT COOKIE ### ########
+[DEBUG] 2026-02-18 12:52:35.766 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:52:35.774 [http-nio-9090-exec-6] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:52:35.775 [http-nio-9090-exec-6] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:52:35.775 [http-nio-9090-exec-6] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:52:35.776 [http-nio-9090-exec-6] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:52:49.164 [http-nio-9090-exec-7] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:52:49.172 [http-nio-9090-exec-7] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:52:49.174 [http-nio-9090-exec-7] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2026-02-18 12:52:49.174 [http-nio-9090-exec-7] CreditcardController - ### PurchaseForm: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:52:49.174 [http-nio-9090-exec-7] CreditPurchaseService - ### Creating purchase: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:52:49.174 [http-nio-9090-exec-7] CreditCardService - ### Fetching credit card entity with ID: 38
+[DEBUG] 2026-02-18 12:52:49.176 [http-nio-9090-exec-7] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:52:49.178 [http-nio-9090-exec-7] CreditPurchaseService - ### CreditCard validated: 38
+[DEBUG] 2026-02-18 12:52:49.178 [http-nio-9090-exec-7] CreditTransactionService - ## ==================================== ## INSERT PURCHASE ## ==================================== ## 
+[DEBUG] 2026-02-18 12:52:49.180 [http-nio-9090-exec-7] CreditTransactionService - ## Purchase Class : CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:52:49.180 [http-nio-9090-exec-7] CreditTransactionService - ## Retroative : true
+[DEBUG] 2026-02-18 12:52:49.180 [http-nio-9090-exec-7] CreditTransactionService - ## Single Installment
+[DEBUG] 2026-02-18 12:52:49.182 [http-nio-9090-exec-7] CreditTransactionService - ## ----------------------------- ## CREATE RETROATIVE INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:52:49.182 [http-nio-9090-exec-7] CreditTransactionService - ## Purchase Date : 2026-02-18
+[DEBUG] 2026-02-18 12:52:49.182 [http-nio-9090-exec-7] CreditTransactionService - ## Due Date : 2026-03-10 - Start Date : 2026-02-01 - End Date : 2026-02-28
+[DEBUG] 2026-02-18 12:52:49.196 [http-nio-9090-exec-7] CreditTransactionService - ## Invoice : Invoice(invoiceId=4057, totalAmount=4350.00, estimateLimit=null, startDate=2026-02-01, endDate=2026-02-28, dueDate=2026-03-10, status=CLOSED, purchases=[CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:52:49.197 [http-nio-9090-exec-7] CreditPurchaseService - ### Purchase created: 195
+[DEBUG] 2026-02-18 12:52:49.197 [http-nio-9090-exec-7] CreditCardService - ### Updating credit card: 38
+[DEBUG] 2026-02-18 12:52:58.379 [http-nio-9090-exec-8] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:52:58.388 [http-nio-9090-exec-8] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:52:58.389 [http-nio-9090-exec-8] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:52:58.390 [http-nio-9090-exec-8] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:52:58.391 [http-nio-9090-exec-8] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:53:34.229 [http-nio-9090-exec-9] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/195
+[DEBUG] 2026-02-18 12:53:34.236 [http-nio-9090-exec-9] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/195
+[DEBUG] 2026-02-18 12:53:34.237 [http-nio-9090-exec-9] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 195 ### ########
+[DEBUG] 2026-02-18 12:53:34.237 [http-nio-9090-exec-9] CreditPurchaseService - ### Deleting purchase with ID: 195
+[DEBUG] 2026-02-18 12:53:34.241 [http-nio-9090-exec-9] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:53:34.243 [http-nio-9090-exec-9] CreditPurchaseService - ### Purchase ownership validated
+[DEBUG] 2026-02-18 12:53:34.243 [http-nio-9090-exec-9] CreditPurchaseService - ### Purchase is linked to 1 invoice(s)
+[DEBUG] 2026-02-18 12:53:34.243 [http-nio-9090-exec-9] CreditPurchaseService - ### Removing purchase from invoice relationships
+[DEBUG] 2026-02-18 12:53:34.244 [http-nio-9090-exec-9] CreditPurchaseService - ### Removed purchase from invoice 4057
+[DEBUG] 2026-02-18 12:53:34.247 [http-nio-9090-exec-9] CreditPurchaseService - ### Purchase deleted from database
+[DEBUG] 2026-02-18 12:53:34.247 [http-nio-9090-exec-9] CreditPurchaseService - ### Recalculating totals for affected invoices
+[DEBUG] 2026-02-18 12:53:34.247 [http-nio-9090-exec-9] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:53:34.247 [http-nio-9090-exec-9] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:53:34.248 [http-nio-9090-exec-9] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:53:34.248 [http-nio-9090-exec-9] CreditPurchaseService - ### Recalculated total for invoice 4057
+[DEBUG] 2026-02-18 12:53:34.248 [http-nio-9090-exec-9] CreditCardService - ### Updating credit card used limit: 38
+[DEBUG] 2026-02-18 12:53:34.248 [http-nio-9090-exec-9] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:53:34.252 [http-nio-9090-exec-9] CreditCardService - ### Total Amount updated: 0
+[DEBUG] 2026-02-18 12:53:34.252 [http-nio-9090-exec-9] CreditPurchaseService - ### Credit card used limit updated
+[DEBUG] 2026-02-18 12:53:34.252 [http-nio-9090-exec-9] CreditPurchaseService - ### Purchase 195 successfully deleted
+[DEBUG] 2026-02-18 12:54:08.132 [http-nio-9090-exec-10] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:54:08.139 [http-nio-9090-exec-10] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:54:08.141 [http-nio-9090-exec-10] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2026-02-18 12:54:08.142 [http-nio-9090-exec-10] CreditcardController - ### PurchaseForm: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:54:08.142 [http-nio-9090-exec-10] CreditPurchaseService - ### Creating purchase: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:54:08.142 [http-nio-9090-exec-10] CreditCardService - ### Fetching credit card entity with ID: 38
+[DEBUG] 2026-02-18 12:54:08.143 [http-nio-9090-exec-10] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:54:08.145 [http-nio-9090-exec-10] CreditPurchaseService - ### CreditCard validated: 38
+[DEBUG] 2026-02-18 12:54:08.145 [http-nio-9090-exec-10] CreditTransactionService - ## ==================================== ## INSERT PURCHASE ## ==================================== ## 
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## Purchase Class : CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## Retroative : true
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## Single Installment
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## ----------------------------- ## CREATE RETROATIVE INVOICE ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## Purchase Date : 2026-02-18
+[DEBUG] 2026-02-18 12:54:08.147 [http-nio-9090-exec-10] CreditTransactionService - ## Due Date : 2026-03-10 - Start Date : 2026-02-01 - End Date : 2026-02-28
+[DEBUG] 2026-02-18 12:54:08.152 [http-nio-9090-exec-10] CreditTransactionService - ## Invoice : Invoice(invoiceId=4058, totalAmount=4350.00, estimateLimit=null, startDate=2026-02-01, endDate=2026-02-28, dueDate=2026-03-10, status=CLOSED, purchases=[CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T11:56:27.221290)], installments=[])
+[DEBUG] 2026-02-18 12:54:08.152 [http-nio-9090-exec-10] CreditPurchaseService - ### Purchase created: 196
+[DEBUG] 2026-02-18 12:54:08.153 [http-nio-9090-exec-10] CreditCardService - ### Updating credit card: 38
+[DEBUG] 2026-02-18 12:57:06.792 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/196
+[DEBUG] 2026-02-18 12:57:06.799 [http-nio-9090-exec-3] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase/delete/196
+[DEBUG] 2026-02-18 12:57:06.800 [http-nio-9090-exec-3] CreditcardController - ######## ### DELETE PURCHASE WITH ID: 196 ### ########
+[DEBUG] 2026-02-18 12:57:06.800 [http-nio-9090-exec-3] CreditPurchaseService - ### Deleting purchase with ID: 196
+[DEBUG] 2026-02-18 12:57:06.804 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:57:06.806 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase ownership validated
+[DEBUG] 2026-02-18 12:57:06.806 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase is linked to 1 invoice(s)
+[DEBUG] 2026-02-18 12:57:06.806 [http-nio-9090-exec-3] CreditPurchaseService - ### Removing purchase from invoice relationships
+[DEBUG] 2026-02-18 12:57:06.808 [http-nio-9090-exec-3] CreditPurchaseService - ### Removed purchase from invoice 4058
+[DEBUG] 2026-02-18 12:57:06.810 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase deleted from database
+[DEBUG] 2026-02-18 12:57:06.810 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculating totals for affected invoices
+[DEBUG] 2026-02-18 12:57:06.810 [http-nio-9090-exec-3] CreditTransactionService - ## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## 
+[DEBUG] 2026-02-18 12:57:06.811 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount : 0
+[DEBUG] 2026-02-18 12:57:06.811 [http-nio-9090-exec-3] CreditTransactionService - ## Total Amount Updated! 
+[DEBUG] 2026-02-18 12:57:06.811 [http-nio-9090-exec-3] CreditPurchaseService - ### Recalculated total for invoice 4058
+[DEBUG] 2026-02-18 12:57:06.811 [http-nio-9090-exec-3] CreditCardService - ### Updating credit card used limit: 38
+[DEBUG] 2026-02-18 12:57:06.811 [http-nio-9090-exec-3] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:57:06.814 [http-nio-9090-exec-3] CreditCardService - ### Total Amount updated: 0
+[DEBUG] 2026-02-18 12:57:06.814 [http-nio-9090-exec-3] CreditPurchaseService - ### Credit card used limit updated
+[DEBUG] 2026-02-18 12:57:06.814 [http-nio-9090-exec-3] CreditPurchaseService - ### Purchase 196 successfully deleted
+[DEBUG] 2026-02-18 12:57:29.651 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:57:29.660 [http-nio-9090-exec-4] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/purchase
+[DEBUG] 2026-02-18 12:57:29.661 [http-nio-9090-exec-4] CreditcardController - ######## ### INSERT PURCHASE ### ########
+[DEBUG] 2026-02-18 12:57:29.662 [http-nio-9090-exec-4] CreditcardController - ### PurchaseForm: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=null)
+[DEBUG] 2026-02-18 12:57:29.662 [http-nio-9090-exec-4] CreditPurchaseService - ### Creating purchase: CreditPurchaseForm(puchaseID=0, descricao=AMP Marshall, creditCardId=38, invoiceId=0, totalInstallments=1, category=Outros, value=4350.00, purchaseDateTime=null)
+[DEBUG] 2026-02-18 12:57:29.662 [http-nio-9090-exec-4] CreditCardService - ### Fetching credit card entity with ID: 38
+[DEBUG] 2026-02-18 12:57:29.663 [http-nio-9090-exec-4] AuthenticationHelper - ### Fetching current user: lucy
+[DEBUG] 2026-02-18 12:57:29.666 [http-nio-9090-exec-4] CreditPurchaseService - ### CreditCard validated: 38
+[DEBUG] 2026-02-18 12:57:29.666 [http-nio-9090-exec-4] CreditTransactionService - ## ==================================== ## INSERT PURCHASE ## ==================================== ## 
+[DEBUG] 2026-02-18 12:57:29.669 [http-nio-9090-exec-4] CreditTransactionService - ## Purchase Class : CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T12:57:29.669540400)
+[DEBUG] 2026-02-18 12:57:29.669 [http-nio-9090-exec-4] CreditTransactionService - ## Retroative : false
+[DEBUG] 2026-02-18 12:57:29.669 [http-nio-9090-exec-4] CreditTransactionService - ## Single Installment
+[DEBUG] 2026-02-18 12:57:29.669 [http-nio-9090-exec-4] CreditTransactionService - ----------- ----- INVOICE SERVICE ----- -----------
+[DEBUG] 2026-02-18 12:57:29.669 [http-nio-9090-exec-4] CreditTransactionService - ## Today 2026-02-18
+[DEBUG] 2026-02-18 12:57:29.674 [http-nio-9090-exec-4] CreditTransactionService - ## Open Invoice not Present !
+[DEBUG] 2026-02-18 12:57:29.678 [http-nio-9090-exec-4] CreditTransactionService - ## Create Invoice! 
+[DEBUG] 2026-02-18 12:57:29.678 [http-nio-9090-exec-4] CreditTransactionService - ## New Invoice : Invoice(invoiceId=null, totalAmount=0, estimateLimit=null, startDate=2026-02-01, endDate=2026-02-28, dueDate=2026-03-10, status=OPEN, purchases=[], installments=[]) 
+[DEBUG] 2026-02-18 12:57:29.679 [http-nio-9090-exec-4] CreditTransactionService - ## Invoice : Invoice(invoiceId=4059, totalAmount=4350.00, estimateLimit=null, startDate=2026-02-01, endDate=2026-02-28, dueDate=2026-03-10, status=OPEN, purchases=[CreditPurchase(purchaseId=null, descricao=AMP Marshall, hasInstallments=false, category=PurchaseCategory(purchaseClassId=5, name=Outros, editable=false, repeat=false), value=4350.00, purchaseDateTime=2026-02-18T12:57:29.669540400)], installments=[])
+[DEBUG] 2026-02-18 12:57:29.680 [http-nio-9090-exec-4] CreditPurchaseService - ### Purchase created: 197
+[DEBUG] 2026-02-18 12:57:29.680 [http-nio-9090-exec-4] CreditCardService - ### Updating credit card: 38
+[DEBUG] 2026-02-18 12:57:36.024 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:57:36.030 [http-nio-9090-exec-5] JwtAuthTokenFilter - ### Checking if path should skip JWT filter: /api/creditcard/38
+[DEBUG] 2026-02-18 12:57:36.031 [http-nio-9090-exec-5] CreditcardController - ######## ### GET CREDIT CARD BY ID: 38 ### ########
+[DEBUG] 2026-02-18 12:57:36.031 [http-nio-9090-exec-5] CreditCardService - ### Fetching credit card with ID: 38
+[DEBUG] 2026-02-18 12:57:36.032 [http-nio-9090-exec-5] AuthenticationHelper - ### Fetching current user: lucy
+[INFO ] 2026-02-18 12:57:43.064 [RMI TCP Connection(26)-127.0.0.1] SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+[INFO ] 2026-02-18 12:57:43.065 [RMI TCP Connection(26)-127.0.0.1] GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+[INFO ] 2026-02-18 12:57:43.066 [tomcat-shutdown] Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:57:43.077 [tomcat-shutdown] GracefulShutdown - Graceful shutdown complete
+[INFO ] 2026-02-18 12:57:43.078 [RMI TCP Connection(26)-127.0.0.1] Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9090"]
+[INFO ] 2026-02-18 12:57:43.081 [RMI TCP Connection(26)-127.0.0.1] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2026-02-18 12:57:43.082 [RMI TCP Connection(26)-127.0.0.1] HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO ] 2026-02-18 12:57:43.086 [RMI TCP Connection(26)-127.0.0.1] HikariDataSource - HikariPool-2 - Shutdown completed.

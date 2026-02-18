@@ -97,7 +97,7 @@ public class InvoiceService {
     }
     
     // CHANGE INVOICE STATUS 
-    @Transactional(readOnly = true)
+    @Transactional
     public InvoiceDTO putInvoiceStatus(Long invoiceId, String status) {
         
     	Invoice invoice = invoiceRepository.findById(invoiceId)
