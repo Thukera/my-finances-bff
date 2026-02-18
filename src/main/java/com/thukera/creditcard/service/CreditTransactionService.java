@@ -338,4 +338,126 @@ public class CreditTransactionService {
     	LocalDate currentInvoiceStartBilling = calculateStartDate(LocalDate.now(), card.getBillingPeriodEnd());	
     	return purchaseDate.isBefore(currentInvoiceStartBilling);
     }
+    
+    // ========================================================== UPDATE PURCHASE HELPERS ==========================================================
+    
+    /**
+     * Find existing category or create a new one
+     * @param categoryName the category name
+     * @return PurchaseCategory entity
+     */
+    public PurchaseCategory findOrCreateCategory(String categoryName) {
+        return purchaseCategoryRepository
+                .findByName(categoryName)
+                .orElseGet(() -> purchaseCategoryRepository.save(new PurchaseCategory(categoryName, false, false)));
+    }
+    
+    /**
+     * Reassign a purchase to invoices based on new installment count
+     * Clears existing invoices and installments, then recreates them
+     * @param purchase the purchase to reassign
+     * @param newInstallmentCount the new number of installments
+     * @param creditCard the credit card
+     */
+    public void reassignPurchaseToInvoices(CreditPurchase purchase, int newInstallmentCount, CreditCard creditCard) {
+        logger.debug("## ----------------------------- ## REASSIGN PURCHASE TO INVOICES ## ----------------------------- ## ");
+        logger.debug("## New installment count: {}", newInstallmentCount);
+        
+        // Determine if purchase is retroactive
+        boolean retroativePurchase = (purchase.getPurchaseDateTime() != null) ? 
+                checkIfRetroative(purchase.getPurchaseDateTime().toLocalDate(), creditCard) : false;
+        logger.debug("## Retroactive: {}", retroativePurchase);
+        
+        // Single installment → add to current invoice
+        if (newInstallmentCount == 1) {
+            logger.debug("## Single Installment");
+            Invoice currentInvoice = retroativePurchase ? 
+                    findOrCreateRetroativeInvoiceForUpdate(creditCard, purchase.getPurchaseDateTime().toLocalDate()) : 
+                    getOrCreateCurrentInvoice(creditCard);
+            
+            currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(purchase.getValue()));
+            currentInvoice.getPurchases().add(purchase);            
+            purchase.getInvoices().add(currentInvoice);
+            logger.debug("## Invoice: " + currentInvoice.toString());
+            
+        } else {
+            // Multiple installments
+            logger.debug("## Multiple Installments");
+            
+            // Calculate installment value
+            BigDecimal installmentValue = purchase.getValue().divide(
+                    BigDecimal.valueOf(newInstallmentCount), 2, RoundingMode.HALF_UP);
+            
+            // Find or create current invoice
+            Invoice currentInvoice = retroativePurchase ? 
+                    findOrCreateRetroativeInvoiceForUpdate(creditCard, purchase.getPurchaseDateTime().toLocalDate()) : 
+                    getOrCreateCurrentInvoice(creditCard);
+            
+            currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(installmentValue));
+            currentInvoice.getPurchases().add(purchase);            
+            purchase.getInvoices().add(currentInvoice);
+            logger.debug("## First Invoice: " + currentInvoice.toString());
+            
+            LocalDate baseDate = retroativePurchase ? 
+                    purchase.getPurchaseDateTime().toLocalDate() : LocalDate.now();
+            
+            // Create first installment
+            Installment installment = new Installment(1, newInstallmentCount, installmentValue, purchase, currentInvoice);
+            purchase.getInstallments().add(installment);
+            logger.debug("## First Installment: " + installment.toString());
+            
+            // Create remaining invoices and installments
+            for (int i = 1; i < newInstallmentCount; i++) {
+                // Calculate dates for next invoice
+                LocalDate dateForNextInvoice = baseDate.plusMonths(i);
+                LocalDate nextStartDate = calculateStartDate(dateForNextInvoice, creditCard.getBillingPeriodStart());
+                LocalDate nextEndDate = calculateEndDate(dateForNextInvoice, creditCard.getBillingPeriodEnd());
+                LocalDate nextDueDate = calculateDueDate(dateForNextInvoice, creditCard.getDueDate());
+                
+                // Find or create next invoice
+                Invoice nextInvoice = findOrCreateInvoice(creditCard, nextStartDate, nextEndDate, nextDueDate);
+                nextInvoice.setTotalAmount(nextInvoice.getTotalAmount().add(installmentValue));
+                nextInvoice.getPurchases().add(purchase);
+                purchase.getInvoices().add(nextInvoice);
+                
+                invoiceRepository.save(nextInvoice);
+                logger.debug("## Invoice " + i + ": " + nextInvoice.toString());
+                
+                // Create installment
+                Installment nextInstallment = new Installment(i + 1, newInstallmentCount, installmentValue, purchase, nextInvoice);
+                purchase.getInstallments().add(nextInstallment);
+                logger.debug("## Installment " + i + ": " + nextInstallment.toString());
+            }
+        }
+        
+        logger.debug("## Purchase reassigned with {} installments", purchase.getInstallments().size());
+    }
+    
+    /**
+     * Find or create retroactive invoice for update operations
+     * @param card the credit card
+     * @param purchaseDate the purchase date
+     * @return Invoice entity
+     */
+    private Invoice findOrCreateRetroativeInvoiceForUpdate(CreditCard card, LocalDate purchaseDate) {
+        logger.debug("## Find or create retroactive invoice for date: {}", purchaseDate);
+        
+        LocalDate dueDate = calculateDueDate(purchaseDate, card.getDueDate());
+        LocalDate startDate = calculateStartDate(purchaseDate, card.getBillingPeriodStart());
+        LocalDate endDate = calculateEndDate(purchaseDate, card.getBillingPeriodEnd());
+        
+        return invoiceRepository
+                .findByCreditCardAndStartDateAndEndDate(card, startDate, endDate)
+                .orElseGet(() -> {
+                    Invoice invoice = new Invoice();
+                    invoice.setCreditCard(card);
+                    invoice.setStartDate(startDate);
+                    invoice.setEndDate(endDate);
+                    invoice.setDueDate(dueDate);
+                    invoice.setStatus(InvoiceStatus.CLOSED);
+                    invoice.setTotalAmount(BigDecimal.ZERO);
+                    return invoiceRepository.save(invoice);
+                });
+    }
 }
+

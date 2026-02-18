@@ -116,6 +116,24 @@ public class CreditcardController {
 		PurchaseDTO purchaseDTO = creditPurchaseService.getPurchaseById(purchaseId);
 		return ResponseEntity.ok(purchaseDTO);
 	}
+	
+	@PutMapping("/purchase/update/{purchaseId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<PurchaseDTO> updatePurchaseDetails(@PathVariable Long purchaseId, @RequestBody CreditPurchaseForm purchaseForm) {
+		logger.debug("######## ### UPDATE PURCHASE WITH ID: {} ### ########", purchaseId);
+
+		PurchaseDTO purchaseDTO = creditPurchaseService.updatePurchaseById(purchaseId,purchaseForm);
+		return ResponseEntity.ok(purchaseDTO);
+	}
+	
+	@PostMapping("/purchase/delete/{purchaseId}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<PurchaseDTO> deletePurchase(@PathVariable Long purchaseId) {
+		logger.debug("######## ### DELETE PURCHASE WITH ID: {} ### ########", purchaseId);
+
+		creditPurchaseService.deletePurchase(purchaseId);
+		return ResponseEntity.ok().build();
+	}
 
 
 
