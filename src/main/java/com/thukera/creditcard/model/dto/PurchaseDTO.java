@@ -13,8 +13,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class PurchaseDTO {
 	
 	private Long purchaseId;
@@ -25,6 +23,7 @@ public class PurchaseDTO {
 	private LocalDateTime purchaseDateTime;
 	private PurchaseCategory category;
 	private InvoiceDTOFromPurchase invoice;
+	private BigDecimal installmentPayd;
 	private List<InstallmentDTOFromPurchase> installments;
 	
 	public static PurchaseDTO fromEntity(CreditPurchase purchase) {
@@ -50,5 +49,36 @@ public class PurchaseDTO {
         	currentInvoice,
         	purchase.getInstallments().stream().map(InstallmentDTOFromPurchase::fromEntity).collect(Collectors.toList()));
     }
+
+	public PurchaseDTO() {
+		super();
+	}
+	
+	public PurchaseDTO(Long purchaseId, String descricao, boolean hasIinstallment, BigDecimal value,
+			LocalDateTime purchaseDateTime, PurchaseCategory category, InvoiceDTOFromPurchase invoice) {
+		super();
+		this.purchaseId = purchaseId;
+		this.descricao = descricao;
+		this.hasIinstallment = hasIinstallment;
+		this.value = value;
+		this.purchaseDateTime = purchaseDateTime;
+		this.category = category;
+		this.invoice = invoice;
+	}
+	
+	public PurchaseDTO(Long purchaseId, String descricao, boolean hasIinstallment, BigDecimal value,
+			LocalDateTime purchaseDateTime, PurchaseCategory category, InvoiceDTOFromPurchase invoice,
+			List<InstallmentDTOFromPurchase> installments) {
+		super();
+		this.purchaseId = purchaseId;
+		this.descricao = descricao;
+		this.hasIinstallment = hasIinstallment;
+		this.value = value;
+		this.purchaseDateTime = purchaseDateTime;
+		this.category = category;
+		this.invoice = invoice;
+		this.installments = installments;
+	}
+	
 }
 

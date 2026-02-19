@@ -150,7 +150,7 @@ public class InvoiceService {
     }
     
  // UPDATE INVOICE 
-    @Transactional(readOnly = true)
+    @Transactional
     public InvoiceDTO putInvoice(Long invoiceId, InvoiceForm invoiceForm) {
         
     	logger.debug("### Form: {}", invoiceForm.toString());

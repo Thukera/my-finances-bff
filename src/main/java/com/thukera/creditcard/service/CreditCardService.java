@@ -120,7 +120,7 @@ public class CreditCardService {
         BigDecimal totalAmount = BigDecimal.ZERO;
         
         for (var invoice : card.getInvoices()) {
-			if (invoice.getStatus() != com.thukera.creditcard.model.enums.InvoiceStatus.PAYD || invoice.getStatus() != com.thukera.creditcard.model.enums.InvoiceStatus.OPEN) {
+			if (invoice.getStatus() != com.thukera.creditcard.model.enums.InvoiceStatus.PAID || invoice.getStatus() != com.thukera.creditcard.model.enums.InvoiceStatus.OPEN) {
 				totalAmount = totalAmount.add(invoice.getTotalAmount());
 			}
 		}

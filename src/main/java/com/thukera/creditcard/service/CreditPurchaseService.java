@@ -162,7 +162,16 @@ public class CreditPurchaseService {
         }
 
         logger.debug("### Purchase access authorized");
-        return PurchaseDTO.fromEntity(purchase);
+        PurchaseDTO purchaseDTO = PurchaseDTO.fromEntity(purchase);
+        
+        BigDecimal totalInstallmentPaid = purchaseDTO.getInstallments().stream()
+				.filter(installment -> installment.getInvoice().getStatus() == "PAID")
+				.map(installment -> installment.getValue())
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+        purchaseDTO.setInstallmentPayd(totalInstallmentPaid);
+        
+        
+        return purchaseDTO;
     }
 
     /**

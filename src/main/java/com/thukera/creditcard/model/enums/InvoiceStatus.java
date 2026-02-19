@@ -4,5 +4,5 @@ public enum InvoiceStatus {
 	OPEN, 
 	CLOSED,
 	PENDING,
-	PAYD;
+	PAID;
 }
