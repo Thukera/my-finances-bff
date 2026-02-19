@@ -24,6 +24,7 @@ public class PurchaseDTOFromInvoice {
 	private BigDecimal value;
 	@JsonFormat(pattern = "dd/MM/yyyy - hh:mm")
 	private LocalDateTime purchaseDateTime;
+	private String category;
 	private InstallmentDTOFromInvoice installment;
 
 	public static PurchaseDTOFromInvoice fromEntity(CreditPurchase purchase, Invoice invoice) {
@@ -39,6 +40,7 @@ public class PurchaseDTOFromInvoice {
 	        purchase.getDescricao(),
 	        purchase.getValue(),
 	        purchase.getPurchaseDateTime(),
+	        purchase.getCategory() != null ? purchase.getCategory().getName() : null,
 	        currentInstallment
 	    );
 	}

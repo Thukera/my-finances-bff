@@ -32,7 +32,7 @@ public class CreditCardMapper {
         card.setBillingPeriodStart(form.getBillingPeriodStart());
         card.setBillingPeriodEnd(form.getBillingPeriodEnd());
         card.setTotalLimit(form.getTotalLimit());
-        card.setEstimateLimit(form.getEstimateLimit());
+        card.setEstimateLimitforInvoice(form.getEstimateLimitForinvoices());
         
         return card;
     }
@@ -48,11 +48,12 @@ public class CreditCardMapper {
             entity.getBank(),
             entity.getEndnumbers(),
             entity.getNickname(),
+            entity.getDueDate(),
             entity.getBillingPeriodStart(),
             entity.getBillingPeriodEnd(),
             entity.getUsedLimit(),
             entity.getTotalLimit(),
-            entity.getEstimateLimit(),
+            entity.getEstimateLimitforInvoice(),
             entity.getDataCadastro(),
             entity.getInvoices().stream()
                 .map(InvoiceDTOFromCreditCard::fromEntity)
@@ -65,7 +66,7 @@ public class CreditCardMapper {
      * @param entity existing entity
      * @param form updated form data
      */
-    public void updateEntity(CreditCard entity, CreditCardForm form) {
+    public CreditCard updateEntity(CreditCard entity, CreditCardForm form) {
         if (form.getBank() != null) {
             entity.setBank(form.getBank());
         }
@@ -87,8 +88,10 @@ public class CreditCardMapper {
         if (form.getTotalLimit() != null) {
             entity.setTotalLimit(form.getTotalLimit());
         }
-        if (form.getEstimateLimit() != null) {
-            entity.setEstimateLimit(form.getEstimateLimit());
+        if (form.getEstimateLimitForinvoices() != null) {
+            entity.setEstimateLimitforInvoice(form.getEstimateLimitForinvoices());
         }
+        
+        return entity;
     }
 }

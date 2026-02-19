@@ -1,311 +1,201 @@
 package com.thukera.creditcard.service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.thukera.creditcard.model.dto.InvoiceDTO;
 import com.thukera.creditcard.model.entities.CreditCard;
 import com.thukera.creditcard.model.entities.CreditPurchase;
-import com.thukera.creditcard.model.entities.Installment;
 import com.thukera.creditcard.model.entities.Invoice;
-import com.thukera.creditcard.model.entities.PurchaseCategory;
 import com.thukera.creditcard.model.enums.InvoiceStatus;
-import com.thukera.creditcard.model.form.CreditPurchaseForm;
-import com.thukera.creditcard.repository.CreditPurchaseRepository;
+import com.thukera.creditcard.model.form.CategoryPanel;
+import com.thukera.creditcard.model.form.CreditPanel;
+import com.thukera.creditcard.model.form.InvoiceForm;
 import com.thukera.creditcard.repository.InvoiceRepository;
-import com.thukera.creditcard.repository.PurchaseCategoryRepository;
+import com.thukera.root.model.messages.NotFoundException;
+import com.thukera.user.service.AuthenticationHelper;
 
-import jakarta.transaction.Transactional;
-
+/**
+ * Service layer for Invoice retrieval and management
+ * Handles invoice queries with proper authorization
+ */
 @Service
 public class InvoiceService {
 
-	private static final Logger logger = LogManager.getLogger(InvoiceService.class);
+    private static final Logger logger = LogManager.getLogger(InvoiceService.class);
 
-	
     @Autowired
     private InvoiceRepository invoiceRepository;
-    
+
     @Autowired
-    private CreditPurchaseRepository creditPurchaseRepository;
-    
+    private CreditCardService creditCardService;
+
     @Autowired
-    private PurchaseCategoryRepository purchaseCategoryRepository;
-  
-    // ========================================================== PURCHASES METHODS ==========================================================
-    //
-    // --------------------------------------------------  CREATE AND INSERT NEW PURCHASE --------------------------------------------------  
+    private AuthenticationHelper authHelper;
+    
+ // GET INVOICE BY ID - Entity
+    @Transactional(readOnly = true)
+    public Invoice getInvoiceEntityById(Long invoiceId) {
+        logger.debug("### Fetching invoice with ID: {}", invoiceId);
+
+        Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+
+        validateInvoiceOwnership(invoice);
+
+        logger.debug("### Invoice access authorized");
+        return invoice;
+    }
+
+    // GET INVOICE BY ID - DTO
+    @Transactional(readOnly = true)
+    public InvoiceDTO getInvoiceById(Long invoiceId) {
+        logger.debug("### Fetching invoice with ID: {}", invoiceId);
+
+        Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+
+        validateInvoiceOwnership(invoice);
+        logger.debug("### Invoice access authorized");   
+        
+        // INVOICE ALREADY RECOVERED
+        InvoiceDTO invoiceDTO = InvoiceDTO.fromEntity(invoice);
+
+        
+        // BUILD FOR METRICS PANEL - Travels Trough Purchases and recovery details
+        CreditPanel creditPanel = new CreditPanel();
+        creditPanel.setTotalLimit(invoice.getCreditCard().getTotalLimit());
+        creditPanel.setUsedLimit(invoice.getCreditCard().getUsedLimit());
+        
+        ArrayList<CategoryPanel> categoryPanels = new ArrayList<>();
+        BigDecimal totalInstallments = BigDecimal.ZERO;
+        BigDecimal paydInstallments = BigDecimal.ZERO;
+        
+        // Runs through DTO Class
+        for (int i = 0; i < invoiceDTO.getPurchases().size(); i++) {
+			
+        	logger.debug("### Purchase {}: {}", i, invoiceDTO.getPurchases().get(i).toString());
+			
+        	// Recovery From Entity - category details - stores on array of objets
+			CategoryPanel categoryPanel = new CategoryPanel();
+			categoryPanel.setCategory(invoice.getPurchases().get(i).getCategory().getName());
+			categoryPanel.setValue(invoice.getPurchases().get(i).getValue());
+			categoryPanels.add(categoryPanel);
+			
+			// Recovery From DTO - total / payd value details
+			if(invoiceDTO.getPurchases().get(i).getInstallment() != null) {
+				BigDecimal purchaseValue = invoiceDTO.getPurchases().get(i).getValue();
+				int currentInstallment = invoiceDTO.getPurchases().get(i).getInstallment().getCurrentInstallment();
+				BigDecimal paydAmount = purchaseValue.multiply(BigDecimal.valueOf(currentInstallment))
+						.divide(BigDecimal.valueOf(invoiceDTO.getPurchases().get(i).getInstallment().getTotalInstallment()), 2, BigDecimal.ROUND_HALF_UP);
+				totalInstallments = totalInstallments.add(invoiceDTO.getPurchases().get(i).getValue());
+				paydInstallments = paydInstallments.add(paydAmount);
+			}else {
+				totalInstallments = totalInstallments.add(invoiceDTO.getPurchases().get(i).getValue());
+				paydInstallments = paydInstallments.add(invoiceDTO.getPurchases().get(i).getValue());
+			}	
+			creditPanel.setTotalInstallments(totalInstallments);
+			creditPanel.setPaydInstallments(paydInstallments);			
+		}
+
+        
+        
+        Map<String, BigDecimal> categoryMap = new HashMap<>();
+        // Sum values by category
+        for (CategoryPanel panel : categoryPanels) {
+        	categoryMap.merge(panel.getCategory(), panel.getValue(), BigDecimal::add);
+        }
+	    // Convert back to list
+	    List<CategoryPanel> consolidatedCategories = categoryMap.entrySet().stream()
+	        .map(entry -> {
+	            CategoryPanel panel = new CategoryPanel();
+	            panel.setCategory(entry.getKey());
+	            panel.setValue(entry.getValue());
+	            return panel;
+	        })
+	        .collect(Collectors.toList());
+        
+	   creditPanel.setCategoryPanel(consolidatedCategories);
+	    
+	   invoiceDTO.setCreditPanel(creditPanel);
+	    
+       return invoiceDTO;
+    }
+
+
+    // GET CURRETNT INVOICE BY DATE AND CARD ID- DTO 
+    @Transactional(readOnly = true)
+    public InvoiceDTO getCurrentInvoice(Long cardId) {
+        logger.debug("### Fetching current invoice for card ID: {}", cardId);
+
+        // This validates ownership
+        CreditCard card = creditCardService.getCreditCardEntityById(cardId);
+
+        // Find current invoice based on today's date
+        Invoice invoice = invoiceRepository.findTargetInvoice(cardId, java.time.LocalDate.now())
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+
+        logger.debug("### Current invoice found: {}", invoice.getInvoiceId());
+        return InvoiceDTO.fromEntity(invoice);
+    }
+    
+ // UPDATE INVOICE 
     @Transactional
-    public CreditPurchase createPurchase(CreditPurchaseForm purchaseForm, CreditCard creditCard) {
-    	
-    	logger.debug("## ==================================== ## INSERT PURCHASE ## ==================================== ## ");
-
-        // Lookup or create category
-        PurchaseCategory category = purchaseCategoryRepository
-                .findByName(purchaseForm.getCategory())
-                .orElseGet(() -> purchaseCategoryRepository.save(new PurchaseCategory(purchaseForm.getCategory(), false,false)));
-
-        // Build purchase entity
-        CreditPurchase purchase = new CreditPurchase(purchaseForm.getDescricao(),purchaseForm.getValue(),(purchaseForm.getPurchaseDateTime() != null) ? purchaseForm.getPurchaseDateTime() : LocalDateTime.now());
-        purchase.setHasInstallments((purchaseForm.getTotalInstallments() > 1));
-        purchase.setCategory(category);
-        purchase.setCreditCard(creditCard);    
-        logger.debug("## Purchase Class : {}",purchase.toString());
-
-        // check if retroative : 
-        boolean retroativePurchase = (purchaseForm.getPurchaseDateTime() != null) ? checkIfRetroative(purchaseForm.getPurchaseDateTime().toLocalDate(),creditCard) : false;
-        logger.debug("## Retroative : {}",retroativePurchase);
+    public InvoiceDTO putInvoice(Long invoiceId, InvoiceForm invoiceForm) {
         
-        // Single installment → add to current invoice
-        if (purchaseForm.getTotalInstallments() == 1) {
-        	logger.debug("## Single Installment");
-        	Invoice currentInvoice = retroativePurchase ? findOrCreateRetroativeInvoice(creditCard, purchaseForm) : getOrCreateCurrentInvoice(creditCard);
-        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(purchase.getValue()));
-            currentInvoice.getPurchases().add(purchase);            
-            purchase.getInvoices().add(currentInvoice);
-            logger.debug("## Invoice : " + currentInvoice.toString());
-            return creditPurchaseRepository.save(purchase);
+    	logger.debug("### Form: {}", invoiceForm.toString());
+    	Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+    	
+    	validateInvoiceOwnership(invoice);
+        logger.debug("### Invoice Selected: {}", invoice.getInvoiceId());
+        
+        invoice.setEstimateLimit(invoiceForm.getEstimateLimit());
+        logger.debug("### Invoice Updated: {}", invoice.toString());
+        invoiceRepository.save(invoice);
+        
+        return InvoiceDTO.fromEntity(invoice);
+    }
+    
+    // CHANGE INVOICE STATUS 
+    @Transactional
+    public InvoiceDTO putInvoiceStatus(Long invoiceId, String status) {
+        
+    	Invoice invoice = invoiceRepository.findById(invoiceId)
+                .orElseThrow(() -> new NotFoundException("Invoice not found"));
+    	
+    	validateInvoiceOwnership(invoice);
+        logger.debug("### Invoice Selected: {}", invoice.getInvoiceId());
+        
+        try {
+        	InvoiceStatus newStatus = InvoiceStatus.valueOf(status.toUpperCase());	
+			invoice.setStatus(newStatus);
+			invoiceRepository.save(invoice);
+			logger.debug("### Invoice status updated to: {}", newStatus);
+		} catch (IllegalArgumentException e) {
+			logger.error("### Invalid status value: {}", status);
+			throw new IllegalArgumentException("Invalid status value: " + status);
+		}
+        return InvoiceDTO.fromEntity(invoice);
+    }
+    
 
-        // For Multiple Installment/Invoices
-        } else {
-        	logger.debug("## Multiple Installment");
-        	// calculate Installment
-            BigDecimal installmentValue = purchase.getValue().divide(BigDecimal.valueOf(purchaseForm.getTotalInstallments()), 2, RoundingMode.HALF_UP);                       
-            
-            // Find or create current invoice
-            Invoice currentInvoice = retroativePurchase ? findOrCreateRetroativeInvoice(creditCard, purchaseForm) : getOrCreateCurrentInvoice(creditCard);
-        	currentInvoice.setTotalAmount(currentInvoice.getTotalAmount().add(installmentValue));
-            currentInvoice.getPurchases().add(purchase);            
-            purchase.getInvoices().add(currentInvoice);
-            logger.debug("## First Invoice : " + currentInvoice.toString());
-            
-            LocalDate baseDate = retroativePurchase ? purchaseForm.getPurchaseDateTime().toLocalDate() : LocalDate.now();
-            LocalDate installmentDate = purchaseForm.getPurchaseDateTime().toLocalDate();
-            
-            // Find or create next Invoices ; generate installments child
-            ArrayList<Invoice> invoiceList = new ArrayList<Invoice>();
-            ArrayList<Installment> installmentList = new ArrayList<Installment>();
-            
-            // Child Installment Handler
-            Installment installment = new Installment(1, purchaseForm.getTotalInstallments(), installmentValue, purchase,currentInvoice);
-            installmentList.add(installment);
-            logger.debug("## First Installment : " + installment.toString());
-            
-            for (int i = 1; i < purchaseForm.getTotalInstallments(); i++) {
-	
-            	// Child Invoices Handler - Calculate dates from base date with proper month offset
-                LocalDate dateForNextInvoice = baseDate.plusMonths(i);
-                LocalDate nextStartDate = calculateStartDate(dateForNextInvoice, creditCard.getBillingPeriodStart());
-                LocalDate nextEndDate   = calculateEndDate(dateForNextInvoice, creditCard.getBillingPeriodEnd());
-                LocalDate nextdueDate   = calculateDueDate(dateForNextInvoice, creditCard.getDueDate());
-                installmentDate = installmentDate.plusMonths(1);
-
-                // Check if Retroative Invoice or reach real current
-                Invoice nextInvoice = findOrCreateInvoice(creditCard, nextStartDate, nextEndDate, nextdueDate); 
-                //Invoice nextInvoice = findOrCreateInvoice(creditCard, nextStartDate, nextEndDate, nextdueDate);
-                nextInvoice.setTotalAmount(nextInvoice.getTotalAmount().add(installmentValue));
-                nextInvoice.getPurchases().add(purchase);
-                
-                // check if is necessary according cascate structure
-                invoiceRepository.save(nextInvoice);
-                logger.debug("## Invoice " + i + " : " + nextInvoice.toString());
-                invoiceList.add(nextInvoice);
-  	
-                // Child Installment Handler
-                Installment nextInstallment = new Installment(i+1, purchaseForm.getTotalInstallments(), installmentValue, purchase,nextInvoice);
-                installmentList.add(nextInstallment);
-                logger.debug("## Installment " + i + " : " + installment.toString());
-            }
-            
-            purchase.getInvoices().addAll(invoiceList);
-            purchase.getInstallments().addAll(installmentList);
-            logger.debug("### PURCHASE : {}", purchase.toString());
-            return creditPurchaseRepository.save(purchase); 
+    // VALIDATE OWNERSHIP
+    private void validateInvoiceOwnership(Invoice invoice) {
+        Long cardOwnerId = invoice.getCreditCard().getUser().getId();
+        if (!authHelper.canAccessUserResource(cardOwnerId)) {
+            logger.warn("### Unauthorized access attempt to invoice: {}", invoice.getInvoiceId());
+            throw new SecurityException("Não autorizado");
         }
-    }
-
-    // -------------------------------- FIND AND ADD SIGNATURES ON CREDIT CARD -------------------------------- 
-    private CreditPurchase creteRepeatedPurchase(CreditPurchase creditPurchase, Invoice currentInvoice) {
-    	
-    	 CreditPurchase purchase = new CreditPurchase();
-         purchase.setDescricao(creditPurchase.getDescricao());
-         purchase.setValue(creditPurchase.getValue());
-         purchase.setHasInstallments(false);
-         purchase.setCategory(creditPurchase.getCategory());
-         purchase.setCreditCard(creditPurchase.getCreditCard());
-         purchase.setPurchaseDateTime(creditPurchase.getPurchaseDateTime().plusMonths(1)); 
-         purchase.getInvoices().add(currentInvoice);
-         
-         return creditPurchaseRepository.save(purchase);
-    	
-    }
-
-    
-    // =========================================== INVOICES METHODS ===================================================
-    //
-    // -------------------------------- GET OR CREATE CURRENT INVOICE BY PURCHASE DATE --------------------------
-    public Invoice getOrCreateCurrentInvoice(CreditCard creditCard) {
-    	
-    	logger.debug("----------- ----- INVOICE SERVICE ----- -----------");
-    	
-        LocalDate today = LocalDate.now();
-        logger.debug("## Today {}", today);
-
-        // 1) Check for current OPEN invoice
-        Optional<Invoice> openInvoice = invoiceRepository.findByCreditCardAndStatus(creditCard, InvoiceStatus.OPEN);
-        if (openInvoice.isPresent()) {
-        	logger.debug("## Opened Invoice is Present : {}", openInvoice.toString());
-        	
-        	if (openInvoice.get().getEndDate().isBefore(today)) {
-        		logger.debug("## Opened Invoice Must Close");
-        		openInvoice.get().setStatus(InvoiceStatus.CLOSED);
-        		invoiceRepository.save(openInvoice.get());	
-        	} else {
-        		return openInvoice.get();
-        	}       
-        }
-        logger.debug("## Open Invoice not Present !");    
-        
-        
-        // 2) Check for a PENDING invoice that should be opened now
-        Optional<Invoice> pendingInvoice = invoiceRepository.findFirstByCreditCardAndStatusOrderByStartDateAsc(creditCard,InvoiceStatus.PENDING);
-        
-        
-        if (pendingInvoice.isPresent()) {
-        	logger.debug("## Pending Invoice is Present : {}", openInvoice.toString());
-            Invoice invoice = pendingInvoice.get();
-            if (!today.isBefore(invoice.getStartDate()) && !today.isAfter(invoice.getEndDate())) {
-                invoice.setStatus(InvoiceStatus.OPEN);
-                return invoiceRepository.save(invoice);
-            }
-        }
-
-        logger.debug("## Create Invoice! ");
-        
-        // 3) Create new invoice
-        Invoice newInvoice = new Invoice();
-        newInvoice.setCreditCard(creditCard);
-        newInvoice.setDueDate(calculateDueDate(today, creditCard.getDueDate()));
-        newInvoice.setStartDate(calculateStartDate(today, creditCard.getBillingPeriodStart()));
-        newInvoice.setEndDate(calculateEndDate(today, creditCard.getBillingPeriodEnd()));
-        newInvoice.setTotalAmount(BigDecimal.ZERO);
-        newInvoice.setStatus(InvoiceStatus.OPEN);
-        
-        logger.debug("## New Invoice : {} ",newInvoice.toString());
-        return invoiceRepository.save(newInvoice);
-    }
-    
-    // -------------------------------- FIND OR CREATE INVOICES BY CREDIT CARD DATE CONFIGURATIONS  ----------------------------------------------
-    private Invoice findOrCreateInvoice(CreditCard card, LocalDate startDate, LocalDate endDate, LocalDate dueDate) {
-        return invoiceRepository
-                .findByCreditCardAndStartDateAndEndDate(card, startDate, endDate)
-                .orElseGet(() -> {
-                	
-                	logger.debug("## ----------------------------- ## CREATE NEXT INVOICE ## ----------------------------- ## ");
-                	// INVOICE 
-                    Invoice invoice = new Invoice();
-                    invoice.setCreditCard(card);
-                    invoice.setStartDate(startDate);
-                    invoice.setEndDate(endDate);
-                    invoice.setDueDate(dueDate);
-                    invoice.setStatus( endDate.isBefore(LocalDate.now()) ? InvoiceStatus.CLOSED : InvoiceStatus.PENDING);
-                    invoice.setTotalAmount(BigDecimal.ZERO);      
-                    
-                    
-                	// FIND SIGNATURES ON CREDIT CARD
-                	if(creditPurchaseRepository.existsRepeatsOnLastInvoice(card.getCardId())) {
-                		logger.debug("## Repeat exists on credit card");
-                		List<CreditPurchase> repeatPurchases = creditPurchaseRepository.findRepeatPurchasesFromLastInvoice(card.getCardId());
-                		invoice = invoiceRepository.save(invoice);
-                		invoice.getPurchases().addAll(repeatPurchases);		
-                		for (CreditPurchase creditPurchase : repeatPurchases) {
-                			
-                			logger.debug("## Repeat Purchase : " + creditPurchase.toString());
-                			CreditPurchase newPurchase = creteRepeatedPurchase(creditPurchase,invoice);
-                			invoice.setTotalAmount(invoice.getTotalAmount().add(newPurchase.getValue()));
-	
-						}
-                		
-                	}  else {
-                		logger.debug("## There´s no purchases that must repeat");
-                	}
-                    return invoiceRepository.save(invoice);
-                });
-    }
-    
-
-    // --------------------------------  FIND OR CREATE FIRST OR SINGLE RETROATIVE INVOICE ( BY PURCHASE DATE ) -------------------------------- 
-    private Invoice findOrCreateRetroativeInvoice(CreditCard card, CreditPurchaseForm purchaseForm) {
-    	
-    	logger.debug("## ----------------------------- ## CREATE RETROATIVE INVOICE ## ----------------------------- ## ");
-    	LocalDate purchaseDate = purchaseForm.getPurchaseDateTime().toLocalDate();
-    	logger.debug("## Purchase Date : {}",  purchaseDate);
-    	
-    	LocalDate dueDate = calculateDueDate(purchaseDate, card.getDueDate());
-    	LocalDate startDate = calculateStartDate(purchaseDate, card.getBillingPeriodStart());
-    	LocalDate endDate = calculateEndDate(purchaseDate, card.getBillingPeriodEnd());
-        
-    	logger.debug("## Due Date : {} - Start Date : {} - End Date : {}" ,  dueDate,startDate,endDate);
-        return invoiceRepository
-                .findByCreditCardAndStartDateAndEndDate(card, startDate, endDate)
-                .orElseGet(() -> {	
-                	// INVOICE 
-                    Invoice invoice = new Invoice();
-                    invoice.setCreditCard(card);
-                    invoice.setStartDate(startDate);
-                    invoice.setEndDate(endDate);
-                    invoice.setDueDate(dueDate);
-                    invoice.setStatus(InvoiceStatus.CLOSED);
-                    invoice.setTotalAmount(BigDecimal.ZERO);     
-                    return invoiceRepository.save(invoice);
-                });
-    }
-    
-    //  -------------------------------------------- INVOICEs DATE HANDLER -----------------------------------------------------
-    
-    private LocalDate calculateStartDate(LocalDate today, int startDate) {
-        // e.g., start today or card's billing cycle
-        return getValidDayOfMonth(today, startDate);
-    }
-
-    private LocalDate calculateEndDate(LocalDate today, int endDate) {
-    	LocalDate invoiceEndDate = getValidDayOfMonth(today, endDate);
-        // End date stays in the same month as start date
-        return invoiceEndDate;
-    }
-    
-    private LocalDate calculateDueDate(LocalDate today , int dueDate) {
-    	LocalDate invoiceDueDate = getValidDayOfMonth(today, dueDate);
-    	invoiceDueDate = invoiceDueDate.plusMonths(1);
-        // example: end of month
-        return invoiceDueDate;
-    }
-
-    /**
-     * Helper method to get a valid day of month, handling cases where the day doesn't exist
-     * (e.g., February 31). If the day is invalid, it uses the last valid day of the month.
-     * 
-     * @param date the base date
-     * @param dayOfMonth the desired day of month
-     * @return a valid LocalDate with the closest valid day
-     */
-    private LocalDate getValidDayOfMonth(LocalDate date, int dayOfMonth) {
-        int maxDayInMonth = date.lengthOfMonth();
-        int validDay = Math.min(dayOfMonth, maxDayInMonth);
-        return date.withDayOfMonth(validDay);
-    }
-
-    private boolean checkIfRetroative(LocalDate purchaseDate, CreditCard card) { 		
-    	LocalDate currentInvoiceStartBilling = calculateStartDate(LocalDate.now(), card.getBillingPeriodEnd());	
-    	return purchaseDate.isBefore(currentInvoiceStartBilling);
     }
 }

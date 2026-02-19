@@ -46,6 +46,9 @@ public class Invoice {
 
 	@Column(name = "total_amount", precision = 16, scale = 2)
 	private BigDecimal totalAmount;
+	
+	@Column(name = "estimate_limit", precision = 16, scale = 2)
+    private BigDecimal estimateLimit;
 
 	@Column(name = "start_date", nullable = false)
 	private LocalDate startDate;

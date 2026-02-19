@@ -17,12 +17,15 @@ import lombok.NoArgsConstructor;
 public class InvoiceDTOFromPurchase {
 	
 	private Long invoiceId;
+	private String status;
 	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate dueDate;
+	
 	
 	public static InvoiceDTOFromPurchase fromEntity(Invoice invoice) {
 		return new InvoiceDTOFromPurchase(
 				invoice.getInvoiceId(), 
+				invoice.getStatus() != null ? invoice.getStatus().name() : null,
 				invoice.getDueDate()
 			);
 	}

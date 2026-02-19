@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 
 import com.thukera.creditcard.model.entities.Installment;
-
+import com.thukera.creditcard.model.enums.InvoiceStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
