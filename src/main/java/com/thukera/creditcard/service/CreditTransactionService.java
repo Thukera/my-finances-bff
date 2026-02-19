@@ -204,7 +204,7 @@ public class CreditTransactionService {
         	if (openInvoice.get().getEndDate().isBefore(today)) {
         		logger.debug("## Opened Invoice Must Close");
         		openInvoice.get().setStatus(InvoiceStatus.CLOSED);
-        		invoiceRepository.save(openInvoice.get());	
+        		return invoiceRepository.save(openInvoice.get());	
         	} else {
         		return openInvoice.get();
         	}       
@@ -234,6 +234,7 @@ public class CreditTransactionService {
         newInvoice.setStartDate(calculateStartDate(today, creditCard.getBillingPeriodStart()));
         newInvoice.setEndDate(calculateEndDate(today, creditCard.getBillingPeriodEnd()));
         newInvoice.setTotalAmount(BigDecimal.ZERO);
+        newInvoice.setEstimateLimit(creditCard.getEstimateLimitforInvoice());
         newInvoice.setStatus(InvoiceStatus.OPEN);
         
         logger.debug("## New Invoice : {} ",newInvoice.toString());
@@ -254,7 +255,8 @@ public class CreditTransactionService {
                     invoice.setEndDate(endDate);
                     invoice.setDueDate(dueDate);
                     invoice.setStatus( endDate.isBefore(LocalDate.now()) ? InvoiceStatus.CLOSED : InvoiceStatus.PENDING);
-                    invoice.setTotalAmount(BigDecimal.ZERO);      
+                    invoice.setTotalAmount(BigDecimal.ZERO);  
+                    invoice.setEstimateLimit(card.getEstimateLimitforInvoice());
                     
                     
                 	// FIND SIGNATURES ON CREDIT CARD
@@ -301,7 +303,8 @@ public class CreditTransactionService {
                     invoice.setEndDate(endDate);
                     invoice.setDueDate(dueDate);
                     invoice.setStatus(InvoiceStatus.CLOSED);
-                    invoice.setTotalAmount(BigDecimal.ZERO);     
+                    invoice.setTotalAmount(BigDecimal.ZERO);  
+                    invoice.setEstimateLimit(card.getEstimateLimitforInvoice());
                     return invoiceRepository.save(invoice);
                 });
     }
