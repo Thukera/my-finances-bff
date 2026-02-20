@@ -47,6 +47,7 @@ jobs:
           docker run -d \
             -p 9090:9090 \
             --name myfinances-bff \
+            --env-file /home/thukera/.env.myfinances \
             --restart unless-stopped \
             -v ~/Projects/MyFinances/backend/uploads:/app/uploads \
             -v ~/Projects/MyFinances/backend/logs:/app/logs \
