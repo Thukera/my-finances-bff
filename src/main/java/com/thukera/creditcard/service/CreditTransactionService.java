@@ -26,7 +26,7 @@ import com.thukera.creditcard.repository.CreditPurchaseRepository;
 import com.thukera.creditcard.repository.InvoiceRepository;
 import com.thukera.creditcard.repository.PurchaseCategoryRepository;
 
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CreditTransactionService {
@@ -155,8 +155,9 @@ public class CreditTransactionService {
     // =========================================== INVOICES METHODS ===================================================
     //
     // --------------------------------  DOUBLE CHECK INVOICE TOTAL AMOUNT  -------------------------------- 
+    @Transactional
     public Invoice updateTotalAmount(InvoiceDTO invoiceDTO) {  	
-    	logger.debug("## ----------------------------- ## VEVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## ");
+    	logger.debug("## ----------------------------- ## REVIEW TOTAL AMOUNT BY PURCHASES COUNT ## ----------------------------- ## ");
     	Invoice invoice = invoiceRepository.findById(invoiceDTO.getInvoiceId()).orElseThrow(() -> new RuntimeException("Invoice not found"));
     	
     	// Recalculate total amount based on purchases and installments from DTO
